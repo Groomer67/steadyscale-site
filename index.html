@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; form-action 'none'; frame-ancestors 'none';">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>SteadyScale — Track your weight honestly</title>
+<!-- App description — keep in sync: meta description, og:description, and .subtitle in body -->
+<meta name="description" content="Your weight can fluctuate by several pounds in a single day. SteadyScale shows you the trend beneath the noise — and when you'll reach your goal.">
+<meta name="theme-color" content="#2781DB">
+<link rel="canonical" href="https://steadyscale.app/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="SteadyScale — Track your weight honestly">
+<meta property="og:description" content="Your weight can fluctuate by several pounds in a single day. SteadyScale shows you the trend beneath the noise — and when you'll reach your goal.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://steadyscale.app">
+<meta property="og:site_name" content="SteadyScale">
+<meta property="og:image" content="https://steadyscale.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SteadyScale — Track your weight honestly">
+<meta name="twitter:description" content="Your weight can fluctuate by several pounds in a single day. SteadyScale shows you the trend beneath the noise — and when you'll reach your goal.">
+<meta name="twitter:image" content="https://steadyscale.app/og-image.png">
+
+<style>
+/* ─── Reset & base ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+  color: #1C1C1E;
+  background: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* ─── Hero ──────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 80px 24px 60px;
+}
+.hero-mark {
+  margin-bottom: -8px;
+}
+.hero-wordmark {
+  font-size: 34px;
+  letter-spacing: -.9px;
+  margin-bottom: 6px;
+}
+.hero-wordmark .w-steady { font-weight: 700; color: #2781DB; }
+.hero-wordmark .w-scale  { font-weight: 400; color: #1C1C1E; margin-left: .2em; }
+.hero h1 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: #1C1C1E;
+}
+.hero .subtitle {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.55;
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+.hero .app-store-badge {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #1C1C1E;
+  color: #FFF;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: .01em;
+  transition: background .15s;
+}
+.hero .app-store-badge:hover {
+  background: #333;
+}
+.hero .app-store-sub {
+  font-size: 13px;
+  color: #767676;
+  margin-top: 10px;
+}
+
+/* ─── Footer ────────────────────────────────────────────── */
+.footer {
+  padding: 40px 24px;
+  text-align: center;
+  border-top: 1px solid #E8E8E8;
+}
+.footer-mark {
+  margin-bottom: -8px;
+  opacity: .35;
+}
+.footer-wordmark {
+  font-size: 15px;
+  letter-spacing: -.4px;
+  margin-bottom: 16px;
+  opacity: .35;
+}
+.footer-wordmark .w-steady { font-weight: 700; color: #2781DB; }
+.footer-wordmark .w-scale  { font-weight: 400; color: #1C1C1E; margin-left: .15em; }
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.footer-links a {
+  font-size: 13px;
+  color: #595959;
+  text-decoration: none;
+  padding: 12px 0;
+}
+.footer-links a:hover {
+  color: #2781DB;
+}
+.footer-copy {
+  font-size: 12px;
+  color: #767676;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .hero { padding: 56px 20px 44px; }
+  .hero h1 { font-size: 30px; }
+  .hero .subtitle { font-size: 16px; }
+
+}
+</style>
+</head>
+<body>
+
+<!-- ─── Hero ─────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-mark">
+    <svg viewBox="0 0 64 64" width="72" height="72" fill="none" role="img" aria-label="SteadyScale logo">
+      <path d="M 9 18 C 22 17, 30 46, 53 46" stroke="#2781DB" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="53" cy="46" r="6" fill="#2781DB"/>
+    </svg>
+  </div>
+  <div class="hero-wordmark">
+    <span class="w-steady">steady</span><span class="w-scale">scale</span>
+  </div>
+  <div style="font-size:15px; color:#767676; letter-spacing:.02em; margin-bottom:40px;">Set your plan. See the finish line.</div>
+  <h1>Track your weight honestly.</h1>
+  <p class="subtitle">Your weight can fluctuate by several pounds in a single day. SteadyScale shows you the trend beneath the noise — and when you'll reach your goal.</p>
+  <div class="app-store-badge">Coming soon to the App Store</div>
+  <div class="app-store-sub">iOS &middot; Free 7-day trial</div>
+</section>
+
+<!-- ─── Footer ───────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-mark">
+    <svg viewBox="0 0 64 64" width="20" height="20" fill="none" aria-hidden="true">
+      <path d="M 9 18 C 22 17, 30 46, 53 46" stroke="#2781DB" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="53" cy="46" r="6" fill="#2781DB"/>
+    </svg>
+  </div>
+  <div class="footer-wordmark">
+    <span class="w-steady">steady</span><span class="w-scale">scale</span>
+  </div>
+  <div class="footer-links">
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="mailto:feedback@steadyscale.app">Contact</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 SteadyScale</div>
+</footer>
+
+</body>
+</html>
