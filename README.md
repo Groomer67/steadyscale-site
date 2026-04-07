@@ -26,7 +26,7 @@ SteadyScale is a weight tracking app for iOS. It averages multiple daily reading
 
 ## Contact
 
-[feedback@steadyscale.app](mailto:feedback@steadyscale.app)
+[support@steadyscale.app](mailto:support@steadyscale.app)
 
 ## Legal
 
