@@ -4,179 +4,553 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Open Graph — placed early so mobile crawlers with limited parsing budgets see them first -->
-<meta property="og:title" content="SteadyScale — Track your weight honestly">
-<meta property="og:description" content="Your weight can fluctuate by several pounds in a single day. SteadyScale shows you the trend beneath the noise — and when you'll reach your goal.">
+<meta property="og:title" content="Steady Scale — Keep a steady view">
+<meta property="og:description" content="Multiple daily readings, averaged into a clear trend. See what's actually happening — not just today's number.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://steadyscale.app/">
-<meta property="og:site_name" content="SteadyScale">
+<meta property="og:site_name" content="Steady Scale">
 <meta property="og:image" content="https://steadyscale.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Steady Scale — chart showing noisy daily measurements smoothed into a clear trend line.">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SteadyScale — Track your weight honestly">
-<meta name="twitter:description" content="Your weight can fluctuate by several pounds in a single day. SteadyScale shows you the trend beneath the noise — and when you'll reach your goal.">
+<meta name="twitter:title" content="Steady Scale — Keep a steady view">
+<meta name="twitter:description" content="Multiple daily readings, averaged into a clear trend. See what's actually happening — not just today's number.">
 <meta name="twitter:image" content="https://steadyscale.app/og-image.png">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>SteadyScale — Track your weight honestly</title>
-<!-- App description — keep in sync: meta description, og:description, and .subtitle in body -->
-<meta name="description" content="Your weight can fluctuate by several pounds in a single day. SteadyScale shows you the trend beneath the noise — and when you'll reach your goal.">
+<title>Steady Scale — Keep a steady view</title>
+<meta name="description" content="Multiple daily readings, averaged into a clear trend. See what's actually happening — not just today's number. iOS, on-device, $1.99/month.">
 <meta name="theme-color" content="#2781DB">
 <link rel="canonical" href="https://steadyscale.app/">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Steady Scale",
+  "description": "Simple weight tracking that turns daily ups and downs into a clear trend.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "iOS 17 or later",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Steady Scale Inc.",
+    "address": "Ottawa, Ontario, Canada"
+  },
+  "offers": [
+    { "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "name": "Monthly" },
+    { "@type": "Offer", "price": "14.99", "priceCurrency": "USD", "name": "Annual" }
+  ],
+  "url": "https://steadyscale.app/"
+}
+</script>
+
 <style>
-/* ─── Reset & base ──────────────────────────────────────── */
+:root {
+  --bg: #FFFFFF;
+  --surface: #F5F5F5;
+  --surface-tint: #EBF4FF;
+  --celebration-border: rgba(39, 129, 219, 0.18);
+  --border: #E0E0E0;
+  --border-soft: #ECECEC;
+  --text: #2C2C2C;
+  --secondary: #555555;
+  --muted: #999999;
+  --blue: #2781DB;
+  --blue-deep: #1D65C4;
+  --shadow-md: 0 1px 3px rgba(0,0,0,.05), 0 4px 16px rgba(0,0,0,.06);
+  --radius-card: 12px;
+  --nav-h: 56px;
+}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
-  color: #1C1C1E;
-  background: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  padding-top: var(--nav-h);
+}
+a { color: inherit; }
+
+.skip { position: absolute; top: -40px; left: 8px; background: var(--text); color: #FFF; padding: 8px 14px; border-radius: 6px; font-size: 13px; z-index: 100; transition: top 0.15s; }
+.skip:focus { top: 8px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Sticky nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid rgba(0,0,0,0.06); z-index: 50; }
+.nav-inner { max-width: 1080px; margin: 0 auto; height: 100%; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-brand:hover { text-decoration: none; }
+.nav-brand svg { width: 22px; height: 22px; }
+.nav-wm { font-size: 17px; letter-spacing: -0.4px; text-transform: lowercase; }
+.nav-wm .w-steady { font-weight: 700; color: var(--blue); }
+.nav-wm .w-scale  { font-weight: 400; color: var(--text); margin-left: 0.15em; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--secondary); text-decoration: none; transition: color 0.15s; }
+.nav-links a:hover { color: var(--blue); }
+
+/* Tour intro */
+.tour-head { text-align: center; padding: 72px 24px 0; max-width: 620px; margin: 0 auto; }
+.tour-head .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+.tour-head h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 14px; color: var(--text); }
+.tour-head p { font-size: 17px; color: var(--secondary); line-height: 1.55; }
+
+/* Carousel — native scroll-snap track */
+.carousel {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 72px 32px;
+}
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+.slide-image { display: flex; justify-content: center; }
+.slide-image img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.slide-text .eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+.slide-text h2 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.slide-text p {
+  font-size: 17px;
+  color: var(--secondary);
   line-height: 1.6;
 }
 
-/* ─── Hero ──────────────────────────────────────────────── */
-.hero {
-  text-align: center;
-  padding: 80px 24px 60px;
+/* Arrow buttons */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--secondary);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: color 0.15s, border-color 0.15s, transform 0.1s, box-shadow 0.15s;
+  z-index: 2;
 }
-.hero-mark {
-  margin-bottom: -8px;
+.carousel-arrow:hover { color: var(--blue); border-color: var(--blue); box-shadow: var(--shadow-md); }
+.carousel-arrow:active { transform: translateY(-50%) scale(0.95); }
+.carousel-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
 }
-.hero-wordmark {
-  font-size: 34px;
-  letter-spacing: -.9px;
-  margin-bottom: 6px;
-}
-.hero-wordmark .w-steady { font-weight: 700; color: #2781DB; }
-.hero-wordmark .w-scale  { font-weight: 400; color: #1C1C1E; margin-left: .2em; }
-.hero h1 {
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: -.5px;
-  line-height: 1.15;
-  margin-bottom: 16px;
-  color: #1C1C1E;
-}
-.hero .subtitle {
-  font-size: 18px;
-  color: #555;
-  line-height: 1.55;
-  max-width: 520px;
-  margin: 0 auto 36px;
-}
-.hero .app-store-badge {
-  display: inline-block;
-  padding: 14px 28px;
-  background: #1C1C1E;
-  color: #FFF;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: .01em;
-  transition: background .15s;
-}
-.hero .app-store-badge:hover {
-  background: #333;
-}
-.hero .app-store-sub {
-  font-size: 13px;
-  color: #767676;
-  margin-top: 10px;
-}
+.carousel-arrow:disabled:hover { color: var(--secondary); border-color: var(--border); box-shadow: none; }
+.carousel-arrow svg { width: 18px; height: 18px; }
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
 
-/* ─── Footer ────────────────────────────────────────────── */
-.footer {
-  padding: 40px 24px;
-  text-align: center;
-  border-top: 1px solid #E8E8E8;
-}
-.footer-mark {
-  margin-bottom: -8px;
-  opacity: .35;
-}
-.footer-wordmark {
-  font-size: 15px;
-  letter-spacing: -.4px;
-  margin-bottom: 16px;
-  opacity: .35;
-}
-.footer-wordmark .w-steady { font-weight: 700; color: #2781DB; }
-.footer-wordmark .w-scale  { font-weight: 400; color: #1C1C1E; margin-left: .15em; }
-.footer-links {
+/* Dots — 24×24 hit area, 8×8 visual */
+.carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-bottom: 14px;
+  gap: 4px;
+  margin-top: 28px;
 }
-.footer-links a {
-  font-size: 13px;
-  color: #595959;
-  text-decoration: none;
-  padding: 12px 0;
+.carousel-dots .dot {
+  width: 24px; height: 24px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
-.footer-links a:hover {
-  color: #2781DB;
+.carousel-dots .dot::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.15s, transform 0.15s;
 }
-.footer-copy {
-  font-size: 12px;
-  color: #767676;
-}
+.carousel-dots .dot:hover::before { background: var(--muted); }
+.carousel-dots .dot.is-active::before { background: var(--blue); transform: scale(1.25); }
+.carousel-dots .dot:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
-/* ─── Responsive ────────────────────────────────────────── */
-@media (max-width: 560px) {
-  .hero { padding: 56px 20px 44px; }
-  .hero h1 { font-size: 30px; }
-  .hero .subtitle { font-size: 16px; }
+/* Pricing section */
+.pricing-section { padding: 80px 24px; text-align: center; background: var(--surface-tint); }
+.pricing-inner { max-width: 620px; margin: 0 auto; }
+.pricing-inner .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+.pricing-inner h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 14px; color: var(--text); }
+.pricing-inner p { font-size: 17px; color: var(--secondary); line-height: 1.55; }
 
+/* Data posture */
+.data-section { padding: 80px 24px; background: var(--surface); }
+.data-inner { max-width: 1080px; margin: 0 auto; }
+.data-head { text-align: center; max-width: 620px; margin: 0 auto; }
+.data-head .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+.data-head h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 14px; color: var(--text); }
+.data-head p { font-size: 17px; color: var(--secondary); line-height: 1.55; }
+.posture-list { max-width: 760px; margin: 44px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; }
+.posture-item { display: flex; align-items: flex-start; gap: 12px; }
+.posture-icon { flex: 0 0 32px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 8px; color: var(--blue); }
+.posture-icon svg { width: 16px; height: 16px; }
+.posture-text { font-size: 14.5px; color: var(--secondary); line-height: 1.55; }
+.posture-text .posture-name { font-weight: 700; color: var(--text); display: block; margin-bottom: 2px; }
+
+/* Footer */
+.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); }
+.footer-nav { display: flex; justify-content: center; gap: 6px 22px; flex-wrap: wrap; margin-bottom: 20px; }
+.footer-nav a { font-size: 13px; color: var(--secondary); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--blue); }
+.footer-meta { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .tour-head { padding: 48px 20px 0; }
+  .tour-head h1 { font-size: 26px; }
+  .carousel { padding: 32px 0 16px; }
+  .carousel-slide { grid-template-columns: 1fr; gap: 20px; text-align: center; padding: 0 24px; }
+  .slide-image img { max-width: 220px; }
+  .slide-text h2 { font-size: 24px; }
+  .slide-text p { font-size: 15px; }
+  /* Arrows hidden on mobile — swipe + dots are the primary affordances. */
+  .carousel-arrow { display: none; }
+  .data-section { padding: 56px 20px; }
+  .data-head h2 { font-size: 26px; }
+  .posture-list { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+  .pricing-section { padding: 56px 20px; }
+  .pricing-inner h2 { font-size: 26px; }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 12px; }
+  .footer-nav { gap: 6px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { scroll-behavior: auto; }
+  .carousel-dots .dot::before { transition: none; }
+  html { scroll-behavior: auto; }
 }
 </style>
 </head>
 <body>
 
-<!-- ─── Hero ─────────────────────────────────────────────── -->
-<section class="hero">
-  <div class="hero-mark">
-    <svg viewBox="0 0 64 64" width="72" height="72" fill="none" role="img" aria-label="SteadyScale logo">
-      <path d="M 9 18 C 22 17, 30 46, 53 46" stroke="#2781DB" stroke-width="4" stroke-linecap="round"/>
-      <circle cx="53" cy="46" r="6" fill="#2781DB"/>
-    </svg>
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Steady Scale home">
+      <svg viewBox="0 0 64 64" fill="none" role="img" aria-hidden="true">
+        <path d="M 9 18 C 22 17, 30 46, 53 46" stroke="#2781DB" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="53" cy="46" r="6" fill="#2781DB"/>
+      </svg>
+      <span class="nav-wm"><span class="w-steady">steady</span><span class="w-scale">scale</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/support.html">Support</a>
+    </nav>
   </div>
-  <div class="hero-wordmark">
-    <span class="w-steady">steady</span><span class="w-scale">scale</span>
+</header>
+
+<main id="main">
+
+<div class="tour-head">
+  <div class="eyebrow">Inside the app</div>
+  <h1>A quick tour.</h1>
+  <p>Ten screens — click, arrow, or swipe through to see the whole app.</p>
+</div>
+
+<section class="carousel" aria-roledescription="carousel" aria-label="A tour of Steady Scale">
+
+  <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous screen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+
+  <div class="carousel-track" aria-live="polite">
+
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 10: Welcome">
+      <div class="slide-image"><img src="/assets/screenshots/cropped/01-welcome.png" alt="Welcome screen with a small trend chart and the subtitle: Simple tracking that turns daily ups and downs into something you can trust." width="800" height="1588"></div>
+      <div class="slide-text">
+        <div class="eyebrow">Welcome</div>
+        <h2>A short setup.</h2>
+        <p>Onboarding takes about a minute. Pick how you want to track, choose a goal or reference weight, and set your weekly check-in day.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 10: Tracking mode">
+      <div class="slide-image"><img src="/assets/screenshots/cropped/02-tracking-mode.png" alt="Tracking mode selection: Lose weight, Gain weight, or Monitor weight." width="800" height="1588"></div>
+      <div class="slide-text">
+        <div class="eyebrow">Tracking mode</div>
+        <h2>Loss, Gain, or Monitor.</h2>
+        <p>Pick the one that fits. The weekly trend works the same for all three — and you can switch any time without losing your history.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 10: Goal weight">
+      <div class="slide-image"><img src="/assets/screenshots/cropped/03-goal-weight.png" alt="Goal weight picker with a BMI bar and an expandable card titled What makes a good goal weight." width="800" height="1588"></div>
+      <div class="slide-text">
+        <div class="eyebrow">Goal weight</div>
+        <h2>A goal you could maintain.</h2>
+        <p>Pick a weight you could see yourself maintaining, not just reaching. BMI is shown as a reference, not a prescription.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 10: Weekly rate">
+      <div class="slide-image"><img src="/assets/screenshots/cropped/04-weekly-rate.png" alt="Weekly rate picker with four presets (0.5, 1.0, 1.5, 2.0 lb per week) and a day-of-week check-in selector." width="800" height="1588"></div>
+      <div class="slide-text">
+        <div class="eyebrow">Weekly rate</div>
+        <h2>Pick a pace.</h2>
+        <p>Choose any rate from 0.5 to 2.0 lb per week. Your rate sets a weekly target that stays constant throughout the week and updates after each check-in day.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 10: Free trial">
+      <div class="slide-image"><img src="/assets/screenshots/cropped/05-completion.png" alt="Completion screen with a checkmark, You're all set heading, and a Start 7-Day Free Trial button." width="800" height="1588"></div>
+      <div class="slide-text">
+        <div class="eyebrow">Free trial</div>
+        <h2>Free for 7 days.</h2>
+        <p>No account, no marketing list, no upsells. Your data stays on your device and backs up to your iCloud. Cancel any time in iOS Settings.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="6 of 10: Dashboard">
+      <div class="slide-image"><img src="/assets/screenshots/cropped/06-dashboard.png" alt="Dashboard with three cards: Goal arrival date, This Week pace, and Today's daily average." width="800" height="1588"></div>
+      <div class="slide-text">
+        <div class="eyebrow">Dashboard</div>
+        <h2>Long term, this week, today.</h2>
+        <p>Three cards show three time horizons: where you're heading, how this week's pace compares to plan, and today's daily average. The layout stays the same every morning — only the numbers update.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="7 of 10: Chart">
+      <div class="slide-image"><img src="/assets/screenshots/cropped/07-chart.png" alt="Chart screen showing daily measurements, a smoothed trend line, a goal projection, and check-in markers." width="800" height="1588"></div>
+      <div class="slide-text">
+        <div class="eyebrow">Chart</div>
+        <h2>Noise into signal.</h2>
+        <p>The chart layers raw weigh-ins, daily averages, and a 14-day rolling trend that filters out day-to-day noise. From your trend and chosen rate, it projects forward to your goal — so you can see when you'll get there.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="8 of 10: Log">
+      <div class="slide-image"><img src="/assets/screenshots/cropped/08-log.png" alt="Log screen with a weight input field, date and time rows, and a list of recent measurements." width="800" height="1588"></div>
+      <div class="slide-text">
+        <div class="eyebrow">Log</div>
+        <h2>Log as often as you like.</h2>
+        <p>Weigh in once a day or multiple times a day — whatever works for you. You can edit or backfill measurements any time, and unlikely entries get flagged so a typo doesn't throw off your trend.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="9 of 10: Settings">
+      <div class="slide-image"><img src="/assets/screenshots/cropped/09-settings.png" alt="Settings screen with Profile, Plan card showing goal, rate, and check-in day, plus Edit, Pause, and Delete actions." width="800" height="1588"></div>
+      <div class="slide-text">
+        <div class="eyebrow">Settings</div>
+        <h2>Plan, preferences, and backup.</h2>
+        <p>Your active plan lives in one card: edit, pause, or delete from there. Switching between Loss, Gain, and Monitor preserves your history — and deleted plans can be restored from Past plans.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="10 of 10: Help">
+      <div class="slide-image"><img src="/assets/screenshots/cropped/10-help.png" alt="Help screen with How it works, Reading the chart, Choosing a goal weight, and other expandable sections." width="800" height="1588"></div>
+      <div class="slide-text">
+        <div class="eyebrow">Help</div>
+        <h2>Every element explained.</h2>
+        <p>The Help tab covers how the math works, how to read the chart, how your data is handled, and how to get in touch. Every part of the system is open.</p>
+      </div>
+    </div>
+
   </div>
-  <div style="font-size:15px; color:#767676; letter-spacing:.02em; margin-bottom:40px;">Set your plan. See the finish line.</div>
-  <h1>Track your weight honestly.</h1>
-  <p class="subtitle">Your weight can fluctuate by several pounds in a single day. SteadyScale shows you the trend beneath the noise — and when you'll reach your goal.</p>
-  <div class="app-store-badge">Coming soon to the App Store</div>
-  <div class="app-store-sub">iOS &middot; Free 7-day trial</div>
+
+  <button class="carousel-arrow carousel-next" type="button" aria-label="Next screen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+
+  <div class="carousel-dots" role="tablist" aria-label="Choose a screen">
+    <button class="dot is-active" type="button" data-idx="0" aria-label="Welcome" aria-current="true"></button>
+    <button class="dot" type="button" data-idx="1" aria-label="Tracking mode"></button>
+    <button class="dot" type="button" data-idx="2" aria-label="Goal weight"></button>
+    <button class="dot" type="button" data-idx="3" aria-label="Weekly rate"></button>
+    <button class="dot" type="button" data-idx="4" aria-label="Free trial"></button>
+    <button class="dot" type="button" data-idx="5" aria-label="Dashboard"></button>
+    <button class="dot" type="button" data-idx="6" aria-label="Chart"></button>
+    <button class="dot" type="button" data-idx="7" aria-label="Log"></button>
+    <button class="dot" type="button" data-idx="8" aria-label="Settings"></button>
+    <button class="dot" type="button" data-idx="9" aria-label="Help"></button>
+  </div>
 </section>
 
-<!-- ─── Footer ───────────────────────────────────────────── -->
-<footer class="footer">
-  <div class="footer-mark">
-    <svg viewBox="0 0 64 64" width="20" height="20" fill="none" aria-hidden="true">
-      <path d="M 9 18 C 22 17, 30 46, 53 46" stroke="#2781DB" stroke-width="4" stroke-linecap="round"/>
-      <circle cx="53" cy="46" r="6" fill="#2781DB"/>
-    </svg>
+<section class="pricing-section" aria-labelledby="pricing-title">
+  <div class="pricing-inner">
+    <div class="eyebrow">Pricing</div>
+    <h2 id="pricing-title">Free for 7 days.</h2>
+    <p>Then $1.99 USD/month or $14.99 USD/year. Cancel any time.</p>
   </div>
-  <div class="footer-wordmark">
-    <span class="w-steady">steady</span><span class="w-scale">scale</span>
+</section>
+
+<section class="data-section" aria-labelledby="data-title">
+  <div class="data-inner">
+    <div class="data-head">
+      <div class="eyebrow">Your data</div>
+      <h2 id="data-title">No accounts, no servers, no ads.</h2>
+      <p>Your data belongs to you. We never see it. We've also removed every design pattern that adds pressure — no streaks, points, reminders, or motivational messages.</p>
+    </div>
+    <div class="posture-list">
+      <div class="posture-item">
+        <div class="posture-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg>
+        </div>
+        <div class="posture-text"><span class="posture-name">No accounts.</span>No username, password, or sign-in.</div>
+      </div>
+      <div class="posture-item">
+        <div class="posture-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+        </div>
+        <div class="posture-text"><span class="posture-name">Local-first storage.</span>Your measurements live on your device.</div>
+      </div>
+      <div class="posture-item">
+        <div class="posture-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a4 4 0 0 0 0-8 6 6 0 0 0-11.7-1.5A4.5 4.5 0 0 0 6 18z"/></svg>
+        </div>
+        <div class="posture-text"><span class="posture-name">Optional iCloud backup.</span>Encrypted under your Apple ID.</div>
+      </div>
+      <div class="posture-item">
+        <div class="posture-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M7 7V5a5 5 0 0 1 10 0v2"/></svg>
+        </div>
+        <div class="posture-text"><span class="posture-name">No servers we operate.</span>Your data never touches our infrastructure.</div>
+      </div>
+      <div class="posture-item">
+        <div class="posture-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+        </div>
+        <div class="posture-text"><span class="posture-name">No ads, no trackers.</span>No ad identifiers, no behavioural telemetry.</div>
+      </div>
+      <div class="posture-item">
+        <div class="posture-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12"/><polyline points="6 12 12 18 18 12"/><line x1="4" y1="21" x2="20" y2="21"/></svg>
+        </div>
+        <div class="posture-text"><span class="posture-name">CSV export.</span>Your data is yours — take it with you anytime.</div>
+      </div>
+    </div>
   </div>
-  <div class="footer-links">
-    <a href="/privacy">Privacy Policy</a>
-    <a href="/terms">Terms of Service</a>
-    <a href="mailto:support@steadyscale.app">Contact</a>
+</section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <nav class="footer-nav" aria-label="Secondary">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/licenses.html">Open-source licenses</a>
+  </nav>
+  <div class="footer-meta">
+    &copy; 2026 Steady Scale Inc., Canada
   </div>
-  <div class="footer-copy">&copy; 2026 SteadyScale</div>
 </footer>
+
+<script>
+(() => {
+  const carousel = document.querySelector('.carousel');
+  if (!carousel) return;
+  const track = carousel.querySelector('.carousel-track');
+  const slides = [...carousel.querySelectorAll('.carousel-slide')];
+  const dots = [...carousel.querySelectorAll('.carousel-dots .dot')];
+  const prev = carousel.querySelector('.carousel-prev');
+  const next = carousel.querySelector('.carousel-next');
+  let current = 0;
+
+  const updateUI = (idx) => {
+    current = idx;
+    dots.forEach((d, i) => {
+      d.classList.toggle('is-active', i === current);
+      if (i === current) d.setAttribute('aria-current', 'true');
+      else d.removeAttribute('aria-current');
+    });
+    prev.disabled = current <= 0;
+    next.disabled = current >= slides.length - 1;
+  };
+
+  const scrollToSlide = (idx) => {
+    if (idx < 0 || idx >= slides.length) return;
+    track.scrollTo({ left: slides[idx].offsetLeft, behavior: 'smooth' });
+  };
+
+  // Sync active slide to the one most visible in the track viewport.
+  const observer = new IntersectionObserver(
+    (entries) => {
+      let mostVisible = null;
+      let maxRatio = 0;
+      entries.forEach((e) => {
+        if (e.intersectionRatio > maxRatio) {
+          maxRatio = e.intersectionRatio;
+          mostVisible = e.target;
+        }
+      });
+      if (mostVisible && maxRatio > 0.5) {
+        updateUI(slides.indexOf(mostVisible));
+      }
+    },
+    { root: track, threshold: [0.5, 0.75, 1.0] }
+  );
+  slides.forEach((s) => observer.observe(s));
+
+  prev.addEventListener('click', () => scrollToSlide(current - 1));
+  next.addEventListener('click', () => scrollToSlide(current + 1));
+  dots.forEach((d, i) => d.addEventListener('click', () => scrollToSlide(i)));
+
+  // Arrow keys: only when carousel is in the viewport and user isn't typing.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const tag = document.activeElement?.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || document.activeElement?.isContentEditable) return;
+    const rect = carousel.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.2;
+    if (!inView) return;
+    e.preventDefault();
+    scrollToSlide(current + (e.key === 'ArrowLeft' ? -1 : 1));
+  });
+
+  // Reset to first slide on load (browsers may otherwise restore scroll position).
+  track.scrollLeft = 0;
+  updateUI(0);
+})();
+</script>
 
 </body>
 </html>

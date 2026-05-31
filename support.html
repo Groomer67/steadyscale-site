@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title" content="Support — Steady Scale">
+<meta property="og:description" content="Bug reports, ideas, questions — write to support@steadyscale.app. We read every email and reply as soon as we can.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://steadyscale.app/support">
+<meta property="og:site_name" content="Steady Scale">
+<meta property="og:image" content="https://steadyscale.app/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Support — Steady Scale</title>
+<meta name="description" content="Bug reports, ideas, questions — write to support@steadyscale.app. We read every email and reply as soon as we can.">
+<meta name="theme-color" content="#2781DB">
+<link rel="canonical" href="https://steadyscale.app/support">
+
+<style>
+:root {
+  --bg: #FFFFFF;
+  --surface: #F5F5F5;
+  --surface-tint: #EBF4FF;
+  --celebration-border: rgba(39, 129, 219, 0.18);
+  --border: #E0E0E0;
+  --border-soft: #ECECEC;
+  --text: #2C2C2C;
+  --secondary: #555555;
+  --muted: #999999;
+  --blue: #2781DB;
+  --blue-deep: #1D65C4;
+  --shadow-md: 0 1px 3px rgba(0,0,0,.05), 0 4px 16px rgba(0,0,0,.06);
+  --nav-h: 56px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  padding-top: var(--nav-h);
+}
+a { color: inherit; }
+
+.skip { position: absolute; top: -40px; left: 8px; background: var(--text); color: #FFF; padding: 8px 14px; border-radius: 6px; font-size: 13px; z-index: 100; transition: top 0.15s; }
+.skip:focus { top: 8px; }
+
+/* Sticky nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid rgba(0,0,0,0.06); z-index: 50; }
+.nav-inner { max-width: 1080px; margin: 0 auto; height: 100%; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-brand:hover { text-decoration: none; }
+.nav-brand svg { width: 22px; height: 22px; }
+.nav-wm { font-size: 17px; letter-spacing: -0.4px; text-transform: lowercase; }
+.nav-wm .w-steady { font-weight: 700; color: var(--blue); }
+.nav-wm .w-scale  { font-weight: 400; color: var(--text); margin-left: 0.15em; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--secondary); text-decoration: none; transition: color 0.15s; }
+.nav-links a:hover { color: var(--blue); }
+.nav-links a.is-active { color: var(--blue); }
+
+/* Support page */
+.support { padding: 96px 24px 80px; }
+.support-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+.support-inner .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
+.support-inner h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.6px; line-height: 1.1; margin-bottom: 20px; color: var(--text); }
+.support-inner p { font-size: 17px; color: var(--secondary); line-height: 1.6; margin-bottom: 36px; }
+.email-block { margin-top: 8px; }
+.email-address {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 18px;
+  user-select: all;
+}
+.email-actions { display: inline-flex; gap: 10px; }
+.email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border: 1.5px solid var(--celebration-border);
+  background: var(--surface-tint);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s, color 0.15s, transform 0.08s;
+}
+.email-btn:hover { border-color: var(--blue); color: var(--blue-deep); }
+.email-btn:active { transform: scale(0.97); }
+.email-btn svg { width: 15px; height: 15px; flex: none; }
+.email-btn.is-copied { color: var(--blue-deep); border-color: var(--blue); }
+
+/* Footer */
+.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); }
+.footer-nav { display: flex; justify-content: center; gap: 6px 22px; flex-wrap: wrap; margin-bottom: 20px; }
+.footer-nav a { font-size: 13px; color: var(--secondary); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--blue); }
+.footer-meta { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+@media (max-width: 640px) {
+  .support { padding: 56px 20px 56px; }
+  .support-inner h1 { font-size: 32px; }
+  .support-inner p { font-size: 16px; }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 12px; }
+  .footer-nav { gap: 6px 16px; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Steady Scale home">
+      <svg viewBox="0 0 64 64" fill="none" role="img" aria-hidden="true">
+        <path d="M 9 18 C 22 17, 30 46, 53 46" stroke="#2781DB" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="53" cy="46" r="6" fill="#2781DB"/>
+      </svg>
+      <span class="nav-wm"><span class="w-steady">steady</span><span class="w-scale">scale</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/support.html" class="is-active">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="support">
+  <div class="support-inner">
+    <div class="eyebrow">Support</div>
+    <h1>We'd love to hear from you.</h1>
+    <p>Bug reports, ideas, questions, or just a quick hello — write to us any time. We read every email and try to reply within a few days.</p>
+    <div class="email-block">
+      <div class="email-address">support@steadyscale.app</div>
+      <div class="email-actions">
+        <a class="email-btn" href="mailto:support@steadyscale.app">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+          </svg>
+          Email
+        </a>
+        <button class="email-btn" id="copy-btn" type="button" aria-label="Copy support email address to clipboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="11" height="11" rx="2"/>
+            <path d="M5 15V5a2 2 0 0 1 2-2h10"/>
+          </svg>
+          <span class="btn-label">Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+(() => {
+  const btn = document.getElementById('copy-btn');
+  if (!btn) return;
+  const label = btn.querySelector('.btn-label');
+  const EMAIL = 'support@steadyscale.app';
+  let resetTimer = null;
+
+  const flashCopied = () => {
+    btn.classList.add('is-copied');
+    label.textContent = 'Copied';
+    if (resetTimer) clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      btn.classList.remove('is-copied');
+      label.textContent = 'Copy';
+      resetTimer = null;
+    }, 1800);
+  };
+
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      flashCopied();
+    } catch (e) {
+      // Fallback for older browsers / non-secure contexts: select the address so the user can ⌘C.
+      const range = document.createRange();
+      range.selectNodeContents(document.querySelector('.email-address'));
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+  });
+})();
+</script>
+
+<footer class="footer" role="contentinfo">
+  <nav class="footer-nav" aria-label="Secondary">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/licenses.html">Open-source licenses</a>
+  </nav>
+  <div class="footer-meta">
+    &copy; 2026 Steady Scale Inc., Canada
+  </div>
+</footer>
+
+</body>
+</html>

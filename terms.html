@@ -4,69 +4,397 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta property="og:title" content="Terms of Service — Steady Scale">
+<meta property="og:description" content="Terms of Service for Steady Scale. Subscription, trial, disclaimers, and governing law.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://steadyscale.app/terms">
+<meta property="og:site_name" content="Steady Scale">
+<meta property="og:image" content="https://steadyscale.app/og-image.png">
+<meta property="og:image:alt" content="Steady Scale — chart showing noisy daily measurements smoothed into a clear trend line.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Terms of Service — Steady Scale">
+<meta name="twitter:description" content="Terms of Service for Steady Scale. Subscription, trial, disclaimers, and governing law.">
+<meta name="twitter:image" content="https://steadyscale.app/og-image.png">
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta name="description" content="Terms of Service for SteadyScale, a personal weight tracking app for iOS. Subscription details, data ownership, and disclaimers.">
-<title>Terms of Service — SteadyScale</title>
+<meta name="description" content="Terms of Service for the Steady Scale iOS app and steadyscale.app website. Subscription, trial, refunds, disclaimers, and governing law.">
+<title>Terms of Service — Steady Scale</title>
+<meta name="theme-color" content="#2781DB">
+<link rel="canonical" href="https://steadyscale.app/terms">
+
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
-  color: #1C1C1E;
-  background: #FFFFFF;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.7;
-  padding: 60px 24px 80px;
+:root {
+  --bg: #FFFFFF;
+  --surface: #F5F5F5;
+  --surface-tint: #EBF4FF;
+  --celebration-border: rgba(39, 129, 219, 0.18);
+  --border: #E0E0E0;
+  --border-soft: #ECECEC;
+  --text: #2C2C2C;
+  --secondary: #555555;
+  --muted: #999999;
+  --blue: #2781DB;
+  --nav-h: 56px;
 }
-.container { max-width: 640px; margin: 0 auto; }
-h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
-.updated { font-size: 13px; color: #767676; margin-bottom: 32px; }
-h2 { font-size: 18px; font-weight: 700; margin-top: 32px; margin-bottom: 8px; }
-p { font-size: 15px; color: #444; margin-bottom: 16px; }
-ul { margin-left: 20px; margin-bottom: 16px; }
-li { font-size: 15px; color: #444; margin-bottom: 6px; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.65;
+  padding-top: var(--nav-h);
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.skip { position: absolute; top: -40px; left: 8px; background: var(--text); color: #FFF; padding: 8px 14px; border-radius: 6px; font-size: 13px; z-index: 100; transition: top 0.15s; }
+.skip:focus { top: 8px; }
+
+.nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid rgba(0,0,0,0.06); z-index: 50; }
+.nav-inner { max-width: 1080px; margin: 0 auto; height: 100%; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-brand:hover { text-decoration: none; }
+.nav-brand svg { width: 22px; height: 22px; }
+.nav-wm { font-size: 17px; letter-spacing: -0.4px; text-transform: lowercase; }
+.nav-wm .w-steady { font-weight: 700; color: var(--blue); }
+.nav-wm .w-scale  { font-weight: 400; color: var(--text); margin-left: 0.15em; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--secondary); text-decoration: none; }
+.nav-links a:hover { color: var(--blue); text-decoration: none; }
+
+.container { max-width: 720px; margin: 0 auto; padding: 56px 24px 64px; }
+
+/* Legal document typography */
+.legal-doc h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; color: var(--text); }
+.legal-doc .doc-meta { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+.legal-doc .doc-meta strong { color: var(--secondary); font-weight: 600; }
+.legal-doc h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.25px; margin-top: 44px; margin-bottom: 14px; color: var(--text); line-height: 1.25; }
+.legal-doc h3 { font-size: 17px; font-weight: 600; margin-top: 28px; margin-bottom: 10px; color: var(--text); line-height: 1.3; }
+.legal-doc h4 { font-size: 15px; font-weight: 700; margin-top: 20px; margin-bottom: 8px; color: var(--text); }
+.legal-doc p { font-size: 15px; color: var(--secondary); margin-bottom: 14px; line-height: 1.65; }
+.legal-doc ul, .legal-doc ol { margin-left: 22px; margin-bottom: 14px; }
+.legal-doc li { font-size: 15px; color: var(--secondary); margin-bottom: 6px; line-height: 1.6; }
+.legal-doc li > ul, .legal-doc li > ol { margin-top: 6px; margin-bottom: 6px; }
+.legal-doc strong { color: var(--text); font-weight: 600; }
+.legal-doc em { color: var(--text); font-style: italic; }
+.legal-doc hr { border: 0; border-top: 1px solid var(--border-soft); margin: 40px 0; }
+.legal-doc blockquote {
+  border-left: 3px solid var(--border);
+  padding: 6px 0 6px 20px;
+  margin: 16px 0;
+  color: var(--secondary);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+.legal-doc blockquote p { margin-bottom: 4px; font-size: 14.5px; }
+.legal-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.legal-doc th {
+  text-align: left;
+  font-weight: 700;
+  color: var(--text);
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--border);
+  background: var(--surface);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+.legal-doc td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--secondary);
+  vertical-align: top;
+  line-height: 1.55;
+}
+.legal-doc tbody tr:last-child td { border-bottom: none; }
+.legal-doc a { color: var(--blue); }
+.legal-doc .doc-footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-soft);
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+}
+
+.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); }
+.footer-nav { display: flex; justify-content: center; gap: 6px 22px; flex-wrap: wrap; margin-bottom: 20px; }
+.footer-nav a { font-size: 13px; color: var(--secondary); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--blue); }
+.footer-meta { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+@media (max-width: 640px) {
+  .container { padding: 40px 20px 48px; }
+  .legal-doc h1 { font-size: 28px; }
+  .legal-doc h2 { font-size: 19px; margin-top: 36px; }
+  .legal-doc h3 { font-size: 16px; }
+  .legal-doc table { font-size: 13px; }
+  .legal-doc th, .legal-doc td { padding: 8px 10px; }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 12px; }
+}
 </style>
 </head>
 <body>
-<main class="container">
-  <h1>Terms of Service</h1>
-  <div class="updated">Last updated: April 2026</div>
 
-  <h2>Acceptance</h2>
-  <p>By downloading or using SteadyScale, you agree to these terms. If you do not agree, do not use the app.</p>
+<a href="#main" class="skip">Skip to content</a>
 
-  <h2>Description of service</h2>
-  <p>SteadyScale is a personal weight tracking application for iOS. It stores your data on your device and optionally in your personal iCloud account. The app provides statistical projections based on your logged measurements — these are mathematical estimates, not medical advice.</p>
+<header class="nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Steady Scale home">
+      <svg viewBox="0 0 64 64" fill="none" role="img" aria-hidden="true">
+        <path d="M 9 18 C 22 17, 30 46, 53 46" stroke="#2781DB" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="53" cy="46" r="6" fill="#2781DB"/>
+      </svg>
+      <span class="nav-wm"><span class="w-steady">steady</span><span class="w-scale">scale</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
 
-  <h2>Not medical advice</h2>
-  <p>SteadyScale is not a medical device and does not provide medical advice, diagnosis, or treatment. The projections, forecasts, and rates shown in the app are based on the data you enter and simple statistical methods. Always consult a qualified healthcare provider before making changes to your diet or exercise routine, especially for weight changes of 20 lb (9 kg) or more.</p>
-
-  <h2>Subscription and payment</h2>
-  <p>SteadyScale offers a free 7-day trial. After the trial, a subscription is required for full functionality. Subscriptions are managed through the Apple App Store and subject to Apple's terms. You can cancel at any time through your Apple ID subscription settings.</p>
-  <p>If your subscription expires, your data remains on your device and you retain read-only access and CSV export.</p>
-
-  <h2>Your data</h2>
-  <p>You own your data. We do not collect, access, or store your weight measurements on our servers. See our <a href="/privacy" style="color:#1D6AB8;">Privacy Policy</a> for full details.</p>
-
-  <h2>Acceptable use</h2>
-  <p>You agree to use the app for personal, non-commercial weight tracking. You may not reverse-engineer, redistribute, or resell the app or its components.</p>
-
-  <h2>Disclaimers</h2>
-  <p>The app is provided "as is" without warranty of any kind. We do not guarantee the accuracy of any projection or forecast. Statistical estimates depend on the data you provide and the assumptions of the underlying model.</p>
-
-  <h2>Limitation of liability</h2>
-  <p>To the maximum extent permitted by law, SteadyScale is not liable for any indirect, incidental, or consequential damages arising from your use of the app.</p>
-
-  <h2>Changes to these terms</h2>
-  <p>We may update these terms from time to time. Material changes will be reflected in the "last updated" date above. Continued use of the app after changes constitutes acceptance.</p>
-
-  <h2>Third-party beneficiary</h2>
-  <p>Apple Inc. is not a party to these terms and is not responsible for the app or its content. However, Apple and its subsidiaries are third-party beneficiaries of these terms. Upon your acceptance, Apple has the right to enforce these terms against you as a third-party beneficiary.</p>
-
-  <h2>Governing law</h2>
-  <p>These terms are governed by the laws of the Province of Ontario, Canada.</p>
-
-  <h2>Contact</h2>
-  <p>Questions? Email <a href="mailto:support@steadyscale.app" style="color:#1D6AB8;">support@steadyscale.app</a>.</p>
+<main id="main" class="container legal-doc">
+<h1>Terms of Service</h1>
+<div class="doc-meta"><strong>Effective date:</strong> May 30, 2026 &middot; <strong>Last updated:</strong> May 30, 2026</div>
+<p>These Terms of Service (the "<strong>Terms</strong>") constitute a binding legal agreement between you ("<strong>you</strong>" or "<strong>User</strong>") and <strong>Steady Scale Inc.</strong>, a corporation incorporated under the <em>Canada Business Corporations Act</em> ("<strong>Steady Scale</strong>," "<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>"), governing your access to and use of the Steady Scale mobile application for iOS (the "<strong>App</strong>"), our website at https://steadyscale.app (the "<strong>Site</strong>"), and any related services we make available (collectively, the "<strong>Services</strong>").</p>
+<p><strong>PLEASE READ THESE TERMS CAREFULLY. THEY CONTAIN IMPORTANT INFORMATION, INCLUDING A DISCLAIMER OF WARRANTIES (SECTION 14), A LIMITATION OF LIABILITY (SECTION 15), AN INDEMNIFICATION OBLIGATION (SECTION 16), AND PROVISIONS GOVERNING DISPUTE RESOLUTION AND THE GOVERNING LAW (SECTION 21).</strong></p>
+<p>By downloading, installing, accessing, or using the Services, you agree to be bound by these Terms and by our <a href="/privacy.html">Privacy Policy</a>, which is incorporated by reference. If you do not agree to these Terms, do not download, install, access, or use the Services.</p>
+<hr />
+<h2>1. Definitions</h2>
+<p>In these Terms, the following capitalized terms have the meanings set out below:</p>
+<ul>
+<li><strong>"Apple"</strong> means Apple Inc. and its subsidiaries.</li>
+<li><strong>"App Store"</strong> means the digital storefront operated by Apple from which the App is distributed.</li>
+<li><strong>"Content"</strong> means the text, graphics, charts, designs, computations, algorithms, audio, video, and other materials made available through the Services.</li>
+<li><strong>"Subscription"</strong> means a recurring paid subscription to the App offered through the App Store, as described in Section 6.</li>
+<li><strong>"Trial"</strong> means the seven (7) day free trial period described in Section 6.2.</li>
+<li>Other capitalized terms used in these Terms have the meanings given to them elsewhere in these Terms or in our <a href="/privacy.html">Privacy Policy</a>.</li>
+</ul>
+<hr />
+<h2>2. Eligibility</h2>
+<p>You must be at least the age of majority in your jurisdiction of residence (or, if younger, the age at which you can lawfully enter into binding contracts with parental consent under applicable law, and you must have such consent) to use the Services. By accepting these Terms, you represent and warrant that you meet these requirements and that you have the legal capacity to enter into a binding agreement.</p>
+<p>The Services are not directed to, and may not be used by, children under the age of 13 (or the equivalent minimum age in your jurisdiction). If you are a parent or guardian and you believe a child has used the Services in violation of this Section, please contact us at support@steadyscale.app.</p>
+<p>You may not use the Services if you are barred from doing so under applicable export controls, sanctions, or similar laws of Canada, the United States, the European Union, the United Kingdom, or other applicable jurisdictions.</p>
+<hr />
+<h2>3. License Grant</h2>
+<p>Subject to your compliance with these Terms, Steady Scale grants you a personal, limited, non-exclusive, non-transferable, non-sublicensable, revocable license to download, install, and use the App on an iOS device that you own or control, solely for your personal, non-commercial use, and to access and use the Site for the same purpose.</p>
+<p>This license is granted only for the period during which you continue to comply with these Terms. All rights not expressly granted to you are reserved by Steady Scale and its licensors.</p>
+<hr />
+<h2>4. Restrictions</h2>
+<p>You agree that you will not, and will not permit any third party to:</p>
+<p>(a) copy, modify, adapt, translate, or create derivative works of the Services, except as expressly permitted by applicable law;
+(b) reverse engineer, disassemble, decompile, decode, or otherwise attempt to discover the source code, object code, or underlying structure, ideas, or algorithms of the Services, except to the extent applicable law expressly prohibits this restriction;
+(c) rent, lease, lend, sell, sublicense, assign, distribute, publish, transfer, or otherwise make the Services available to any third party, including on a "software as a service" or other commercial basis;
+(d) remove, alter, or obscure any proprietary notices (including notices of copyright or trademark) on or in the Services;
+(e) use the Services in any manner that violates applicable law, regulation, or third-party rights;
+(f) use any automated means (including bots, scrapers, or crawlers) to access, monitor, or copy any portion of the Services;
+(g) interfere with or disrupt the integrity or performance of the Services;
+(h) attempt to gain unauthorized access to the Services or related systems or networks; or
+(i) use the Services to develop, train, or improve any product, service, model, or system that competes with the Services, or any artificial-intelligence or machine-learning system, except with our prior written consent.</p>
+<p>A breach of this Section 4 constitutes a material breach of these Terms and may result in immediate termination of your license.</p>
+<hr />
+<h2>5. No Account; Your Device</h2>
+<p>The App does not require you to create an account, register, or provide credentials. Your data is associated with your device and, if you have enabled iCloud backup, with your Apple ID. You are solely responsible for safeguarding access to your device, your device passcode, your Apple ID credentials, and any backups you create. We are not responsible for any loss of, unauthorized access to, or alteration of data that results from the loss, theft, or compromise of your device or Apple ID, or from your failure to maintain appropriate security on your device.</p>
+<hr />
+<h2>6. Subscription, Free Trial, and Auto-Renewal</h2>
+<h3>6.1 Subscription Plans</h3>
+<p>Following the Trial, continued access to the full functionality of the App requires an active Subscription. We offer the following Subscription plans through the App Store:</p>
+<table>
+<thead>
+<tr>
+<th>Plan</th>
+<th>Price (USD)</th>
+<th>Billing cycle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monthly</td>
+<td>$1.99 per month</td>
+<td>Monthly</td>
+</tr>
+<tr>
+<td>Annual</td>
+<td>$14.99 per year</td>
+<td>Annual</td>
+</tr>
+</tbody>
+</table>
+<p>Prices in other currencies are determined by Apple and may vary by region. Applicable taxes may apply.</p>
+<h3>6.2 Free Trial</h3>
+<p>New Users may receive a free trial of seven (7) consecutive calendar days commencing on first launch of the App ("<strong>Trial</strong>"). During the Trial, all features of the App are made available without charge. The Trial ends at 11:59:59 PM (local device time) on the seventh calendar day following first launch.</p>
+<p>A Trial is offered once per Apple ID. We reserve the right, in our sole discretion, to determine your eligibility for a Trial, to modify or discontinue the Trial, or to charge for any features previously offered free of charge, subject to applicable law.</p>
+<h3>6.3 Auto-Renewal of Subscriptions</h3>
+<p><strong>SUBSCRIPTIONS AUTOMATICALLY RENEW.</strong> When you purchase a Subscription, you authorize Apple to charge your Apple ID payment method for the applicable Subscription fee, plus any applicable taxes, at the beginning of each billing period.</p>
+<ul>
+<li><strong>Your Subscription will automatically renew at the end of each billing period</strong> at the then-current price for the applicable plan, unless you cancel at least twenty-four (24) hours before the end of the current period.</li>
+<li>Your Apple ID account will be charged for renewal within twenty-four (24) hours prior to the end of the current period.</li>
+<li>The renewal amount and billing cycle will be the same as the original Subscription unless we have given you advance notice of a change.</li>
+<li>You can manage your Subscription, view renewal pricing, and turn off auto-renewal at any time by going to <strong>Settings → [your name] → Subscriptions</strong> on your iOS device. Cancellation of the current Subscription takes effect at the end of the then-current billing period.</li>
+</ul>
+<h3>6.4 Price Changes</h3>
+<p>We may change the price of any Subscription from time to time. Where required by applicable law or the App Store rules, we will provide advance notice of price changes through Apple's standard mechanisms (which may include in-App or email notice from Apple) and an opportunity for you to consent or cancel before the change takes effect. Your continued use of the Subscription after the price change takes effect constitutes your acceptance of the new price.</p>
+<h3>6.5 Cancellation; No Refunds Except as Required by Law</h3>
+<p>You may cancel your Subscription at any time through your Apple ID Subscription settings. <strong>Cancellation takes effect at the end of the then-current billing period; you will retain access to paid features through the end of that period.</strong> Deleting the App does not cancel your Subscription.</p>
+<p>Except as expressly stated in these Terms or as required by applicable law (including the App Store's refund process and the consumer-protection rights described in Section 6.6), Subscription fees are non-refundable, and partial billing periods, unused time, and unused features are not credited or refunded. <strong>All refund requests are administered by Apple in accordance with the App Store's policies.</strong> To request a refund, follow Apple's refund procedure at https://reportaproblem.apple.com.</p>
+<h3>6.6 EU and UK Consumer Withdrawal Right</h3>
+<p>If you are a consumer resident in the European Economic Area or the United Kingdom, you have a statutory right to withdraw from a distance contract for digital content or a digital-content subscription within fourteen (14) days of the date the contract is concluded, without giving any reason.</p>
+<p>By starting your free Trial and continuing to use the App during the Trial, and by purchasing or allowing your Trial to convert to a paid Subscription, you expressly request that performance of the contract begin immediately and acknowledge that, under Article 16(m) of the EU <em>Consumer Rights Directive</em> (2011/83/EU) and the equivalent UK regulations, you will lose your right of withdrawal once performance has begun. Where applicable law nonetheless preserves the right of withdrawal in whole or in part, you may exercise it by contacting us at support@steadyscale.app with the subject line "<strong>EU/UK Withdrawal</strong>" within the applicable 14-day period. Because all Subscription payments are processed by Apple, any refund you are entitled to as a result of a valid withdrawal will be administered by Apple through the App Store refund process described in Section 6.5.</p>
+<p>This Section does not limit any non-waivable consumer rights you have under applicable law.</p>
+<h3>6.7 Access After Trial or Subscription Expiry</h3>
+<p>When your Trial ends without an active Subscription, or when your Subscription expires or is cancelled, certain App features may become subscription-gated. <strong>Regardless of subscription status, you retain the ability to view your historical data and to export your full data set as a CSV file at any time</strong> from within the App's <strong>Settings → Backup &amp; Export</strong> menu. You can restore full functionality by purchasing a Subscription at any time.</p>
+<h3>6.8 Promotional Offers and Offer Codes</h3>
+<p>We may, in our discretion, make offer codes available through third parties (for example, healthcare professionals or content partners) that provide an extended Trial or a discounted Subscription. Offer codes are redeemed through the App Store and are subject to Apple's terms. Offer codes are non-transferable, may not be combined with other offers, and may be revoked at any time prior to redemption.</p>
+<hr />
+<h2>7. Your Data</h2>
+<p>You retain all rights to the information you enter into the App (your "<strong>User Data</strong>"), including your weight measurements, notes, and configuration. We do not claim ownership of your User Data.</p>
+<ul>
+<li><strong>Local storage.</strong> Your User Data is stored on your device.</li>
+<li><strong>Optional iCloud backup.</strong> If you enable iCloud backup, a copy of your User Data is stored under your Apple ID in your iCloud account, as further described in our <a href="/privacy.html">Privacy Policy</a>. Steady Scale does not have access to your iCloud backup.</li>
+<li><strong>Export.</strong> You can export your full User Data set as a CSV file at any time from within <strong>Settings → Backup &amp; Export</strong> in the App.</li>
+<li><strong>Deletion.</strong> You can delete individual measurements within the App or remove all locally stored data by uninstalling the App. iCloud backup files can be removed through iOS Settings.</li>
+</ul>
+<p>Our collection, use, and disclosure of information are described in our <a href="/privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+<hr />
+<h2>8. Acceptable Use</h2>
+<p>You agree to use the Services only for lawful purposes and only as expressly permitted by these Terms. Without limiting Section 4, you agree not to use the Services:</p>
+<p>(a) in any way that violates any applicable federal, provincial, state, local, or international law or regulation;
+(b) to transmit, distribute, or store any material that is unlawful, infringing, defamatory, obscene, threatening, harassing, hateful, or otherwise objectionable;
+(c) to upload or transmit viruses, worms, malicious code, or other harmful computer code;
+(d) to interfere with or compromise the security of the Services or the systems of any other party; or
+(e) to misrepresent your identity or affiliation with any person or organization.</p>
+<hr />
+<h2>9. Intellectual Property</h2>
+<p>The Services, including all underlying software, designs, algorithms, computation logic, graphics, text, charts, layouts, and other Content (other than your User Data), and all intellectual property rights therein, are and remain the exclusive property of Steady Scale Inc. and its licensors. "<strong>SteadyScale</strong>," "<strong>Steady Scale</strong>," and the Steady Scale logo are trademarks of Steady Scale Inc. All other trademarks, service marks, and trade names appearing in the Services are the property of their respective owners.</p>
+<p>Nothing in these Terms transfers any right, title, or interest in or to the Services or its Content to you, except for the limited license expressly granted in Section 3.</p>
+<hr />
+<h2>10. Feedback</h2>
+<p>If you provide us with comments, suggestions, ideas, or other feedback regarding the Services ("<strong>Feedback</strong>"), you grant us a perpetual, irrevocable, worldwide, royalty-free, fully paid, sublicensable, and transferable license to use, reproduce, modify, distribute, and incorporate the Feedback into the Services and other products and services without restriction or compensation to you. Feedback is provided voluntarily and is non-confidential.</p>
+<hr />
+<h2>11. Not Medical Advice; No Medical Device</h2>
+<p><strong>THE SERVICES ARE FOR GENERAL INFORMATIONAL AND PERSONAL TRACKING PURPOSES ONLY. THEY ARE NOT INTENDED TO PROVIDE, AND DO NOT PROVIDE, MEDICAL ADVICE, DIAGNOSIS, OR TREATMENT.</strong></p>
+<ul>
+<li>The Services are <strong>not a medical device</strong>, are not intended to diagnose, treat, cure, mitigate, or prevent any disease or condition, and have not been evaluated or approved by the United States Food and Drug Administration, Health Canada, the European Medicines Agency, the UK Medicines and Healthcare products Regulatory Agency, or any other regulatory authority.</li>
+<li>The daily averages, trend lines, forecasts, projections, weekly check-in targets, achievement triggers, and similar outputs displayed by the App are <strong>statistical estimates</strong> derived from the data you enter and from the App's computational model. They are not predictions of future health outcomes and are not personalized medical recommendations.</li>
+<li>You should <strong>always consult a qualified healthcare professional</strong> before beginning, modifying, or discontinuing any diet, exercise, weight-management program, or other health-related activity. This is particularly important if you are pregnant or nursing, have a history of eating disorders or disordered eating, have diabetes or another endocrine condition, have cardiovascular or kidney disease, are an athlete preparing for competition, are taking medication that affects weight or fluid balance, or are under the age of 18.</li>
+<li><strong>If you experience or are at risk of an eating disorder, body-image disturbance, or other mental-health concern, please stop using the App and seek qualified professional help.</strong> Resources in your region may include, in Canada, the National Eating Disorder Information Centre (https://nedic.ca); in the United States, the National Eating Disorders Association (https://www.nationaleatingdisorders.org); and in the United Kingdom, Beat (https://www.beateatingdisorders.org.uk).</li>
+<li><strong>In case of a medical emergency</strong>, contact your local emergency services immediately. The Services are not designed to detect or respond to medical emergencies.</li>
+<li>Your reliance on any information or computation provided through the Services is <strong>at your sole risk</strong>. Steady Scale is not liable for any decision you make or action you take based on any output of the Services.</li>
+</ul>
+<p>You acknowledge and agree that the disclaimers in this Section 11 are a material part of the basis of the bargain between you and Steady Scale, and that we would not provide the Services to you without them.</p>
+<hr />
+<h2>12. Third-Party Services and Links</h2>
+<p>The Services may rely on or interoperate with third-party services (including, without limitation, the App Store, StoreKit, iCloud, App Store Connect, and RevenueCat), and the Site may contain links to third-party websites. We do not control, are not responsible for, and do not endorse the content, terms, or practices of any third party. Your use of any third-party service is governed by that third party's terms and policies. You access third-party services at your own risk.</p>
+<hr />
+<h2>13. Modification, Suspension, and Discontinuation of the Services</h2>
+<p>We may, at any time and without prior notice, modify, update, suspend, or discontinue any part of the Services, or impose limits on certain features or restrict your access to parts or all of the Services. Where the change has a material adverse effect on your paid Subscription, we will, to the extent reasonably practicable, provide advance notice and, where appropriate and required by law, a pro-rata refund or alternative remedy.</p>
+<p>We are not liable to you or to any third party for any modification, suspension, or discontinuation of the Services except as expressly provided in these Terms or required by law.</p>
+<hr />
+<h2>14. Disclaimer of Warranties</h2>
+<p><strong>THE SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND.</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, STEADY SCALE AND ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, SUPPLIERS, AND LICENSORS (COLLECTIVELY, THE "<strong>STEADY SCALE PARTIES</strong>") EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, WITH RESPECT TO THE SERVICES, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY, MERCHANTABLE QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, QUIET ENJOYMENT, NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE.</p>
+<p>WITHOUT LIMITING THE FOREGOING, THE STEADY SCALE PARTIES DO NOT WARRANT THAT:
+(a) THE SERVICES WILL BE UNINTERRUPTED, SECURE, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS;
+(b) THE FORECASTS, PROJECTIONS, TRENDS, OR OTHER COMPUTATIONAL OUTPUTS OF THE APP WILL BE ACCURATE, RELIABLE, OR ACHIEVE ANY PARTICULAR RESULT;
+(c) THE SERVICES WILL MEET YOUR REQUIREMENTS OR EXPECTATIONS;
+(d) ANY DEFECTS WILL BE CORRECTED; OR
+(e) USE OF THE SERVICES WILL RESULT IN ANY PARTICULAR HEALTH OR WEIGHT-RELATED OUTCOME.</p>
+<p><strong>SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES, SO SOME OR ALL OF THE ABOVE EXCLUSIONS MAY NOT APPLY TO YOU.</strong> In such jurisdictions, the Steady Scale Parties' liability is limited to the maximum extent permitted by law.</p>
+<hr />
+<h2>15. Limitation of Liability</h2>
+<p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW:</strong></p>
+<p>(a) <strong>EXCLUDED DAMAGES.</strong> IN NO EVENT WILL ANY OF THE STEADY SCALE PARTIES BE LIABLE TO YOU OR TO ANY THIRD PARTY FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, BUSINESS, GOODWILL, DATA, USE, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATED TO THESE TERMS OR THE SERVICES, REGARDLESS OF THE THEORY OF LIABILITY (WHETHER IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, STATUTE, OR OTHERWISE), AND EVEN IF ANY OF THE STEADY SCALE PARTIES HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+<p>(b) <strong>CAP ON DIRECT DAMAGES.</strong> THE AGGREGATE LIABILITY OF THE STEADY SCALE PARTIES, TAKEN AS A WHOLE, FOR ALL CLAIMS ARISING OUT OF OR RELATED TO THESE TERMS OR THE SERVICES WILL NOT EXCEED THE GREATER OF (i) THE TOTAL AMOUNTS PAID BY YOU TO STEADY SCALE (THROUGH APPLE) FOR THE SERVICES DURING THE TWELVE (12) MONTHS IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM, OR (ii) FIFTY CANADIAN DOLLARS (CA$50.00).</p>
+<p>(c) <strong>NO LIMITATION OF NON-WAIVABLE RIGHTS.</strong> NOTHING IN THESE TERMS LIMITS OR EXCLUDES ANY LIABILITY THAT CANNOT BE LIMITED OR EXCLUDED UNDER APPLICABLE LAW, INCLUDING LIABILITY FOR FRAUD OR FRAUDULENT MISREPRESENTATION, FOR DEATH OR PERSONAL INJURY CAUSED BY NEGLIGENCE, OR FOR ANY OTHER LIABILITY THAT CANNOT BE LAWFULLY EXCLUDED.</p>
+<p>(d) <strong>BASIS OF THE BARGAIN.</strong> YOU ACKNOWLEDGE THAT THE LIMITATIONS IN THIS SECTION 15 ARE AN ESSENTIAL ELEMENT OF THESE TERMS AND THAT, IN THE ABSENCE OF SUCH LIMITATIONS, THE PRICING AND OTHER TERMS WOULD BE SUBSTANTIALLY DIFFERENT.</p>
+<hr />
+<h2>16. Indemnification</h2>
+<p>To the maximum extent permitted by applicable law, you agree to defend, indemnify, and hold harmless the Steady Scale Parties from and against any and all claims, demands, suits, actions, liabilities, damages, losses, costs, and expenses (including reasonable legal fees) arising out of or related to: (a) your use of the Services in breach of these Terms; (b) your violation of any applicable law or regulation; (c) your violation of any third-party right, including any intellectual-property or privacy right; or (d) your User Data, including any claim that your User Data infringes or violates the rights of any third party.</p>
+<p>We reserve the right, at our own expense, to assume the exclusive defence and control of any matter otherwise subject to indemnification by you. You agree to cooperate with our defence of such claims.</p>
+<hr />
+<h2>17. Termination</h2>
+<p>(a) <strong>By you.</strong> You may terminate these Terms at any time by ceasing to use the Services and uninstalling the App. Termination does not entitle you to a refund of any Subscription fees previously paid, except as expressly provided in Section 6 or as required by applicable law.</p>
+<p>(b) <strong>By us.</strong> We may suspend or terminate your access to the Services, in whole or in part, immediately and without notice, if we believe in good faith that you have breached these Terms, that termination is required to comply with applicable law, or that continued provision of the Services would expose us to liability or harm.</p>
+<p>(c) <strong>Effect of termination.</strong> Upon termination, the license granted in Section 3 immediately ends, and you must cease all use of the Services. Sections 4 (Restrictions), 7 (Your Data), 9 (Intellectual Property), 10 (Feedback), 11 (Not Medical Advice), 14 (Disclaimer of Warranties), 15 (Limitation of Liability), 16 (Indemnification), 17 (Termination), 21 (Governing Law and Dispute Resolution), and 22 (Miscellaneous) survive any termination of these Terms.</p>
+<hr />
+<h2>18. Apple-Specific Terms</h2>
+<p>The following terms apply to your use of the App on iOS devices and are required by Apple. To the extent these Apple-specific terms conflict with any other provision of these Terms in respect of your use of the App on an iOS device, the Apple-specific terms in this Section 18 control with respect to such use.</p>
+<p>(a) <strong>Acknowledgement.</strong> These Terms are concluded between you and Steady Scale only, and not with Apple. Steady Scale, not Apple, is solely responsible for the App and its content. Your use of the App must comply with the App Store Terms of Service in addition to these Terms.</p>
+<p>(b) <strong>Scope of license.</strong> The license granted to you in Section 3 is further limited to a non-transferable license to use the App on any iOS device that you own or control, as permitted by the <em>Usage Rules</em> set forth in the <em>Apple Media Services Terms and Conditions</em>, except that the App may be accessed and used by other accounts associated with you through Family Sharing or volume purchasing, where applicable.</p>
+<p>(c) <strong>Maintenance and support.</strong> Steady Scale is solely responsible for providing any maintenance and support services with respect to the App, as specified in these Terms or as required under applicable law. Apple has no obligation whatsoever to furnish any maintenance or support services with respect to the App.</p>
+<p>(d) <strong>Warranty.</strong> In the event of any failure of the App to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the App (if any) to you. To the maximum extent permitted by applicable law, Apple will have no other warranty obligation whatsoever with respect to the App. As between Steady Scale and Apple, any other claims, losses, liabilities, damages, costs, or expenses attributable to any failure to conform to any warranty will be the sole responsibility of Steady Scale.</p>
+<p>(e) <strong>Product claims.</strong> Steady Scale, and not Apple, is responsible for addressing any claims by you or any third party relating to the App or your possession or use of the App, including (i) product-liability claims; (ii) any claim that the App fails to conform to any applicable legal or regulatory requirement; and (iii) claims arising under consumer-protection, privacy, or similar legislation.</p>
+<p>(f) <strong>Intellectual-property claims.</strong> In the event of any third-party claim that the App or your possession and use of the App infringes that third party's intellectual-property rights, Steady Scale, and not Apple, will be solely responsible for the investigation, defence, settlement, and discharge of any such infringement claim.</p>
+<p>(g) <strong>Legal compliance.</strong> You represent and warrant that (i) you are not located in a country that is subject to a U.S. Government embargo or that has been designated by the U.S. Government as a "terrorist supporting" country; and (ii) you are not listed on any U.S. Government list of prohibited or restricted parties.</p>
+<p>(h) <strong>Developer name and address.</strong> Any questions, complaints, or claims with respect to the App should be directed to <strong>Steady Scale Inc., 207 Bell Street North, Ottawa, Ontario K1R 0B9, Canada, support@steadyscale.app</strong>.</p>
+<p>(i) <strong>Third-party beneficiary.</strong> You and Steady Scale acknowledge and agree that Apple and Apple's subsidiaries are third-party beneficiaries of these Terms, and that, upon your acceptance of these Terms, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary thereof.</p>
+<hr />
+<h2>19. Export Controls and Sanctions</h2>
+<p>You agree to comply with all applicable export and re-export control laws and regulations, including the <em>Export and Import Permits Act</em> (Canada), the U.S. Export Administration Regulations, and the U.S. International Traffic in Arms Regulations, as well as end-user, end-use, and destination restrictions issued by Canadian, U.S., or other governments. You represent and warrant that you are not located in, under the control of, or a national or resident of any country subject to a Canadian, U.S., U.N., or other applicable embargo or sanction, and that you are not on any list of prohibited or restricted parties maintained by any such authority.</p>
+<hr />
+<h2>20. Changes to These Terms</h2>
+<p>We may revise these Terms from time to time. The "Last updated" date at the top of these Terms indicates when the Terms were last revised. If we make material changes, we will provide reasonable advance notice (for example, by posting a notice on the Site or, where appropriate, in the App) before the changes take effect. Your continued use of the Services after a revised version of these Terms takes effect constitutes your acceptance of those revised Terms. If you do not agree to the revised Terms, you must stop using the Services and may cancel any active Subscription in accordance with Section 6.</p>
+<hr />
+<h2>21. Governing Law and Dispute Resolution</h2>
+<p>(a) <strong>Governing law.</strong> These Terms and any dispute or claim (including non-contractual disputes or claims) arising out of or in connection with them or their subject matter or formation are governed by, and construed in accordance with, the laws of the Province of Ontario and the federal laws of Canada applicable in that Province, without regard to its conflict-of-laws rules. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded.</p>
+<p>(b) <strong>Jurisdiction.</strong> Subject to Section 21(d), the courts of the Province of Ontario, sitting in the City of Toronto, have exclusive jurisdiction over any dispute arising out of or in connection with these Terms or the Services. Each party irrevocably submits to the personal jurisdiction of, and waives any objection to venue in, such courts.</p>
+<p>(c) <strong>Informal resolution.</strong> Before filing any formal claim, you agree to first contact us at support@steadyscale.app and to attempt in good faith to resolve the dispute informally for a period of at least sixty (60) days from the date you first notify us of the dispute.</p>
+<p>(d) <strong>Mandatory consumer protections.</strong> Nothing in this Section 21, in Sections 14 (Disclaimer of Warranties), 15 (Limitation of Liability), or 16 (Indemnification), or in any other provision of these Terms, limits, excludes, or modifies any right or remedy you have under mandatory consumer-protection laws in your jurisdiction of residence that cannot lawfully be limited, excluded, or modified. Without limitation:</p>
+<ul>
+<li>residents of <strong>Quebec</strong> retain all rights and remedies granted under the Quebec <em>Consumer Protection Act</em> (CQLR c P-40.1) and the <em>Civil Code of Quebec</em>, including any non-waivable warranty rights and any restrictions on the enforceability of limitation-of-liability clauses against consumers;</li>
+<li>residents of <strong>other Canadian provinces and territories</strong> retain all rights and remedies granted under their applicable consumer-protection legislation (for example, the Ontario <em>Consumer Protection Act, 2002</em>) and any implied conditions or warranties that cannot lawfully be excluded;</li>
+<li>residents of the <strong>European Economic Area, the United Kingdom, and Switzerland</strong> retain all rights and remedies granted under applicable consumer-protection law, including the right to bring proceedings in the courts of their place of residence and the right to use online dispute-resolution mechanisms made available by the European Commission or the relevant national authority;</li>
+<li>residents of <strong>California, New York, New Jersey, Massachusetts</strong>, and other U.S. states retain all rights and remedies granted under their applicable state consumer-protection statutes.</li>
+</ul>
+<p>Where a provision of these Terms is unenforceable as against a consumer in a particular jurisdiction because of mandatory law, that provision will be modified only to the minimum extent necessary to make it enforceable in that jurisdiction, and the remainder of these Terms will continue in full force and effect.</p>
+<hr />
+<h2>22. Miscellaneous</h2>
+<p>(a) <strong>Entire agreement.</strong> These Terms, together with our <a href="/privacy.html">Privacy Policy</a>, constitute the entire agreement between you and Steady Scale with respect to the Services and supersede all prior agreements, communications, and understandings, whether oral or written, on the subject matter.</p>
+<p>(b) <strong>No waiver.</strong> A failure or delay by us in exercising any right or remedy under these Terms does not constitute a waiver of that right or remedy. A single or partial exercise of any right or remedy does not preclude any other or further exercise of it.</p>
+<p>(c) <strong>Severability.</strong> If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining provisions remain in full force and effect, and the invalid, illegal, or unenforceable provision will be reformed to the minimum extent necessary to make it valid, legal, and enforceable while preserving the parties' original intent.</p>
+<p>(d) <strong>Assignment.</strong> You may not assign, transfer, or delegate these Terms or any of your rights or obligations under them, in whole or in part, without our prior written consent. Any attempted assignment in violation of this provision is void. We may assign or transfer these Terms, in whole or in part, without restriction, including to an affiliate or in connection with a merger, acquisition, financing, or sale of assets.</p>
+<p>(e) <strong>Force majeure.</strong> We are not liable for any failure or delay in performance of these Terms that results from causes beyond our reasonable control, including acts of God, natural disaster, fire, flood, epidemic or pandemic, war, terrorism, civil unrest, labour disputes, governmental action, failure of telecommunications or internet service providers, or failure of Apple's services.</p>
+<p>(f) <strong>Notices.</strong> We may provide notices to you through the App, the Site, or any other reasonable means. You may provide notice to us by email at support@steadyscale.app or by mail to the address in Section 18(h).</p>
+<p>(g) <strong>Headings.</strong> Section headings are for convenience only and do not affect the interpretation of these Terms.</p>
+<p>(h) <strong>Language.</strong> These Terms have been prepared in English. Where these Terms are translated into another language for your convenience, the English version controls in case of any conflict, except where applicable consumer-protection law requires the local-language version to prevail.</p>
+<p>(i) <strong>No agency.</strong> Nothing in these Terms creates an agency, partnership, joint venture, or employment relationship between you and Steady Scale.</p>
+<hr />
+<h2>23. Contact</h2>
+<p>If you have questions about these Terms, please contact us at:</p>
+<blockquote>
+<p><strong>Steady Scale Inc.</strong><br>
+207 Bell Street North<br>
+Ottawa, Ontario K1R 0B9<br>
+Canada<br>
+Email: <strong>support@steadyscale.app</strong></p>
+</blockquote>
+<hr />
+<div class="doc-footer">© 2026 Steady Scale Inc. All rights reserved.</div>
 </main>
+
+<footer class="footer" role="contentinfo">
+  <nav class="footer-nav" aria-label="Secondary">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/licenses.html">Open-source licenses</a>
+  </nav>
+  <div class="footer-meta">
+    &copy; 2026 Steady Scale Inc., Canada
+  </div>
+</footer>
+
 </body>
 </html>
