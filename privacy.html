@@ -169,7 +169,7 @@ a:hover { text-decoration: underline; }
 
 <main id="main" class="container legal-doc">
 <h1>Privacy Policy</h1>
-<div class="doc-meta"><strong>Effective date:</strong> May 30, 2026 &middot; <strong>Last updated:</strong> May 30, 2026</div>
+<div class="doc-meta"><strong>Effective date:</strong> May 30, 2026 &middot; <strong>Last updated:</strong> June 7, 2026</div>
 <p>This Privacy Policy describes how <strong>Steady Scale Inc.</strong> ("<strong>Steady Scale</strong>," "<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>") collects, uses, discloses, and protects information in connection with the Steady Scale mobile application for iOS (the "<strong>App</strong>"), our website at steadyscale.app (the "<strong>Site</strong>"), and any related services (collectively, the "<strong>Services</strong>").</p>
 <p>By downloading, installing, or using the Services, you ("<strong>you</strong>" or "<strong>User</strong>") acknowledge that you have read and understood this Privacy Policy. If you do not agree with this Policy, do not install or use the Services.</p>
 <hr />
@@ -225,7 +225,7 @@ Email: support@steadyscale.app</p>
 <ul>
 <li><strong>Apple App Store and StoreKit.</strong> Apple Inc. processes the purchase of the App and any in-App subscription. Apple provides us with anonymous, aggregated reporting (downloads, retention metrics, subscription events) through App Store Connect. We do not receive your name, Apple ID, payment information, or precise location from Apple.</li>
 <li><strong>iCloud (Apple).</strong> If iCloud backup is enabled on your device, the App writes a backup of your local database to the iCloud Documents container associated with your Apple ID. This backup is stored under your Apple ID and is governed by Apple's iCloud terms and privacy policies. We do not have access to it.</li>
-<li><strong>RevenueCat (RevenueCat, Inc.).</strong> RevenueCat is our subscription infrastructure provider. RevenueCat receives a randomly generated anonymous identifier (an "App User ID") and the validated subscription receipt issued by Apple, which it uses to determine whether you have an active entitlement. RevenueCat does not receive your weight measurements, health information, name, email, or Apple ID.</li>
+<li><strong>RevenueCat (RevenueCat, Inc.).</strong> RevenueCat is our subscription infrastructure provider. RevenueCat receives a randomly generated anonymous identifier (an "App User ID"), the validated subscription receipt issued by Apple, and standard technical metadata collected by its software development kit — including a device-scoped vendor identifier (the iOS "identifier for vendor," or IDFV), the App version, the operating-system version, and your country or region. RevenueCat uses this information to validate your subscription, determine whether you have an active entitlement, and detect and prevent fraud. It is used only to operate and secure the subscription service and is <strong>not</strong> used for advertising. RevenueCat does not receive your weight measurements, health information, name, email address, or Apple ID.</li>
 <li><strong>Apple App Store Connect crash diagnostics.</strong> Apple's iOS operating system includes a system-level setting at <strong>Settings → Privacy &amp; Security → Analytics &amp; Improvements → Share With App Developers</strong>. If you have enabled this setting on your device, Apple shares anonymous, aggregated crash reports and performance metrics with us through App Store Connect, including information such as a stack trace, the App version, the iOS version, and the device model. <strong>No weight measurements, plan information, notes, or other health information are included in these crash reports.</strong> This setting is controlled at the iOS level and is independent of the App; it is off by default unless you have previously opted in. Steady Scale does not operate a separate crash-reporting SDK in v1 of the App, and we do not transmit crash data to any third party other than Apple.</li>
 </ul>
 <h3>4.4 Information We Do Not Collect</h3>
@@ -303,8 +303,8 @@ Email: support@steadyscale.app</p>
 </tr>
 <tr>
 <td>RevenueCat, Inc.</td>
-<td>Subscription entitlement management</td>
-<td>Anonymous App User ID and Apple-issued subscription receipt</td>
+<td>Subscription entitlement management and fraud prevention</td>
+<td>Anonymous App User ID, Apple-issued subscription receipt, and standard SDK technical metadata (device-scoped vendor identifier (IDFV), App version, operating-system version, country/region)</td>
 </tr>
 </tbody>
 </table>
@@ -330,7 +330,7 @@ Email: support@steadyscale.app</p>
 <li><strong>Local data</strong> persists on your device until you delete individual records within the App, reset the App from within Settings, or uninstall the App. Uninstalling the App removes all locally stored information immediately.</li>
 <li><strong>iCloud backup files</strong> persist in your iCloud account until you remove them through iOS Settings or until your Apple ID is deactivated, in accordance with Apple's terms.</li>
 <li><strong>Support correspondence</strong> (Section 4.2) is retained for <strong>twenty-four (24) months</strong> following the resolution of your inquiry, after which it is deleted or de-identified. We may retain correspondence for a longer period only where required to comply with legal obligations, to defend or pursue a legal claim, or to maintain accounting and tax records as required by applicable law.</li>
-<li><strong>Subscription transaction records</strong> (Section 4.3) — including the association between the anonymous App User ID and your subscription entitlement state — are retained for so long as your Subscription remains active and for <strong>twenty-four (24) months</strong> following the termination or expiry of your last Subscription, after which the association is deleted from our records held with RevenueCat. We may retain anonymized, aggregated subscription statistics for longer periods for accounting and business reporting purposes.</li>
+<li><strong>Subscription transaction records</strong> (Section 4.3) — including the association between the anonymous App User ID and your subscription entitlement state — are held by our subscription processor, RevenueCat, for so long as your Subscription remains active and thereafter in accordance with RevenueCat's data-retention practices. Because no account links these records to your identity, they remain associated only with the anonymous App User ID. You may request deletion of these records at any time by contacting us as described in Section 11, and we will direct their deletion from our RevenueCat records, subject to any retention required to comply with legal, accounting, or tax obligations. We may retain anonymized, aggregated subscription statistics for longer periods for accounting and business reporting purposes.</li>
 <li><strong>Aggregated, anonymous crash diagnostics</strong> that you have elected to share with developers through your iOS device settings (Section 4.3) are retained by Apple in accordance with Apple's retention practices for App Store Connect data, over which we have no control. We retain only aggregated diagnostic summaries derived from this information for as long as is reasonably necessary for product debugging and quality improvement, and not longer than twenty-four (24) months.</li>
 </ul>
 <hr />
