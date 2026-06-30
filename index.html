@@ -43,7 +43,8 @@
     { "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "name": "Monthly" },
     { "@type": "Offer", "price": "14.99", "priceCurrency": "USD", "name": "Annual" }
   ],
-  "url": "https://steadyscale.app/"
+  "url": "https://steadyscale.app/",
+  "downloadUrl": "https://apps.apple.com/us/app/steady-scale/id6775728814"
 }
 </script>
 
@@ -235,6 +236,28 @@ a { color: inherit; }
 .posture-text { font-size: 14.5px; color: var(--secondary); line-height: 1.55; }
 .posture-text .posture-name { font-weight: 700; color: var(--text); display: block; margin-bottom: 2px; }
 
+/* App Store badge */
+.appstore-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #000;
+  color: #FFF;
+  border-radius: 9px;
+  padding: 8px 15px;
+  text-decoration: none;
+  line-height: 1;
+  margin-top: 28px;
+  transition: transform 0.1s ease, box-shadow 0.15s ease;
+}
+.appstore-badge:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); text-decoration: none; }
+.appstore-badge:active { transform: translateY(0); }
+.appstore-badge:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.appstore-badge svg { width: 18px; height: 24px; flex: 0 0 auto; }
+.appstore-badge .as-text { display: flex; flex-direction: column; align-items: flex-start; }
+.appstore-badge .as-sub { font-size: 10px; font-weight: 400; letter-spacing: 0.01em; }
+.appstore-badge .as-name { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin-top: 1px; }
+
 /* Footer */
 .footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); }
 .footer-nav { display: flex; justify-content: center; gap: 6px 22px; flex-wrap: wrap; margin-bottom: 20px; }
@@ -295,6 +318,10 @@ a { color: inherit; }
   <div class="eyebrow">Inside the app</div>
   <h1>A quick tour.</h1>
   <p>Ten screens — click, arrow, or swipe through to see the whole app.</p>
+  <a class="appstore-badge" href="https://apps.apple.com/us/app/steady-scale/id6775728814" aria-label="Download Steady Scale on the App Store">
+    <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C40.5 141.5-.9 184.8-.9 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+    <span class="as-text"><span class="as-sub">Download on the</span><span class="as-name">App Store</span></span>
+  </a>
 </div>
 
 <section class="carousel" aria-roledescription="carousel" aria-label="A tour of Steady Scale">
@@ -420,6 +447,10 @@ a { color: inherit; }
     <div class="eyebrow">Pricing</div>
     <h2 id="pricing-title">Free for 7 days.</h2>
     <p>Then $1.99 USD/month or $14.99 USD/year. Cancel any time.</p>
+    <a class="appstore-badge" href="https://apps.apple.com/us/app/steady-scale/id6775728814" aria-label="Download Steady Scale on the App Store">
+      <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C40.5 141.5-.9 184.8-.9 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+      <span class="as-text"><span class="as-sub">Download on the</span><span class="as-name">App Store</span></span>
+    </a>
   </div>
 </section>
 
