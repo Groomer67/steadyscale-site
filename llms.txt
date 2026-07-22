@@ -1,0 +1,21 @@
+# Steady Scale
+
+> A privacy-first iPhone weight-tracking app that uses statistical trend analysis to separate the underlying trend from day-to-day fluctuations, so people can understand whether their weight is really changing instead of reacting to daily noise. No accounts, no ads, no gamification. Supports weight loss, gain, and maintenance.
+
+Steady Scale is designed more like a scientific measurement instrument than a social or engagement-driven app. It averages multiple weigh-ins per day and fits a 14-day rolling Ridge (L2-regularized) regression to estimate the underlying weight trend, then projects a goal date with an honest, widening uncertainty range. Data is stored on the user's device with optional private iCloud backup. It is a subscription app ($1.99/month or $14.99/year) with a 7-day free trial, iPhone-only.
+
+Built in Ottawa, Canada by Ryan Groome (experimental physicist, PhD) and Eveline Soares Menezes (kinesiologist, PhD).
+
+## Core pages
+
+- [How it works](https://steadyscale.app/how-it-works): the method — daily averaging, the 14-day trend, plan target vs. trend forecast, the goal-date projection and uncertainty cone.
+- [The science](https://steadyscale.app/science): the research and statistical model behind the app, with peer-reviewed citations and honest limitations.
+- [Quick guide](https://steadyscale.app/guide): short answers — reading the chart, choosing a goal and rate, why weight fluctuates day to day, how data is handled.
+- [About](https://steadyscale.app/about): who builds Steady Scale (a physicist and a kinesiologist).
+
+## Key concepts
+
+- Body weight fluctuates day to day mostly because of water, food, and digestion, not fat — most short-term change is fat-free mass.
+- A weight *trend* (rolling average) is more informative than any single daily weigh-in.
+- Steady Scale separates signal (the trend) from noise (daily fluctuation) using statistical smoothing rather than reacting to each reading.
+- Privacy-first: on-device storage, optional private iCloud backup, no accounts, no ads, no analytics, no streaks or engagement mechanics.
