@@ -62,14 +62,14 @@ a:hover { text-decoration: underline; }
 .nav-wm { font-size: 17px; letter-spacing: -0.4px; text-transform: lowercase; }
 .nav-wm .w-steady { font-weight: 700; color: var(--blue); }
 .nav-wm .w-scale  { font-weight: 400; color: var(--text); margin-left: 0.15em; }
-.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a { font-size: 13px; font-weight: 500; color: var(--secondary); text-decoration: none; }
 .nav-links a:hover { color: var(--blue); text-decoration: none; }
 
-.container { max-width: 720px; margin: 0 auto; padding: 56px 24px 64px; }
+.container { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
 
 /* Legal document typography */
-.legal-doc h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; color: var(--text); }
+.legal-doc h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; color: var(--text); }
 .legal-doc .doc-meta { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
 .legal-doc .doc-meta strong { color: var(--secondary); font-weight: 600; }
 .legal-doc h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.25px; margin-top: 44px; margin-bottom: 14px; color: var(--text); line-height: 1.25; }
@@ -129,7 +129,7 @@ a:hover { text-decoration: underline; }
   font-style: italic;
 }
 
-.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); }
+.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); border-image: linear-gradient(to right, transparent, var(--border) 25%, var(--border) 75%, transparent) 1; }
 .footer-nav { display: flex; justify-content: center; gap: 6px 22px; flex-wrap: wrap; margin-bottom: 20px; }
 .footer-nav a { font-size: 13px; color: var(--secondary); text-decoration: none; transition: color 0.15s; }
 .footer-nav a:hover { color: var(--blue); }
@@ -137,7 +137,7 @@ a:hover { text-decoration: underline; }
 
 @media (max-width: 640px) {
   .container { padding: 40px 20px 48px; }
-  .legal-doc h1 { font-size: 28px; }
+  .legal-doc h1 { font-size: 32px; }
   .legal-doc h2 { font-size: 19px; margin-top: 36px; }
   .legal-doc h3 { font-size: 16px; }
   .legal-doc table { font-size: 13px; }
@@ -162,7 +162,12 @@ a:hover { text-decoration: underline; }
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="/">Home</a>
-      <a href="/support.html">Support</a>
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/science.html">Science</a>
+      <a href="/guide.html">Quick guide</a>
+      <a href="/news.html">News</a>
+      <a href="/about.html">About</a>
+      <a href="/support.html">Contact us</a>
     </nav>
   </div>
 </header>

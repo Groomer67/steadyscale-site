@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News feature card — logo & photo explorations</title>
+<style>
+  :root {
+    --bg: #FFFFFF; --surface: #F5F5F5; --surface-tint: #EBF4FF;
+    --celebration-border: rgba(39, 129, 219, 0.18);
+    --border: #E0E0E0; --border-soft: #ECECEC;
+    --text: #2C2C2C; --secondary: #555555; --muted: #999999;
+    --blue: #2781DB; --blue-deep: #1D65C4;
+    --shadow-md: 0 1px 3px rgba(0,0,0,.05), 0 4px 16px rgba(0,0,0,.06);
+    --radius-card: 12px; --maxw-prose: 680px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif; color: var(--text); background: #F0F1F3; -webkit-font-smoothing: antialiased; line-height: 1.6; padding: 48px 0 96px; }
+  .page-head { max-width: var(--maxw-prose); margin: 0 auto; padding: 0 24px; }
+  .page-head h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.4px; }
+  .page-head p { font-size: 15px; color: var(--secondary); margin-top: 8px; }
+
+  .stage { background: var(--bg); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); margin-top: 40px; padding: 36px 0 44px; }
+  .stage-label { max-width: var(--maxw-prose); margin: 0 auto; padding: 0 24px; }
+  .stage-label .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); }
+  .stage-label .name { font-size: 18px; font-weight: 700; letter-spacing: -0.2px; margin-top: 6px; }
+  .stage-label .why { font-size: 14px; color: var(--secondary); margin-top: 4px; line-height: 1.55; }
+  .stage-body { max-width: var(--maxw-prose); margin: 22px auto 0; padding: 0 24px; }
+
+  /* Shared card shell (real .news-feature-card) */
+  .card { display: block; background: var(--surface-tint); border: 1px solid var(--celebration-border); border-radius: var(--radius-card); padding: 32px 34px; text-decoration: none; color: inherit; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+  .headline { font-size: 23px; font-weight: 700; line-height: 1.32; letter-spacing: -0.3px; color: var(--text); margin-bottom: 14px; }
+  .excerpt { font-size: 16px; color: var(--secondary); line-height: 1.62; margin-bottom: 18px; }
+  .source { font-size: 15px; color: var(--secondary); }
+  .cta { margin-top: 10px; font-size: 15px; font-weight: 600; color: var(--blue); }
+  .logo { display: block; border-radius: 50%; }
+
+  /* Reference: current 40px */
+  .l40 { height: 40px; width: 40px; margin-bottom: 18px; }
+  /* Bigger top-left */
+  .l64 { height: 64px; width: 64px; margin-bottom: 18px; }
+  .l84 { height: 84px; width: 84px; margin-bottom: 20px; }
+
+  /* Masthead header row */
+  .masthead { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+  .masthead .logo { height: 58px; width: 58px; margin: 0; flex: none; }
+  .masthead .mh-text .mh-name { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.1px; }
+  .masthead .mh-text .mh-meta { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); margin-top: 3px; }
+
+  /* Photo variant — top banner */
+  .photo-banner { width: 100%; aspect-ratio: 16 / 8; border-radius: 10px; margin-bottom: 22px; background: linear-gradient(135deg, #cfd8e6, #aebdd2 60%, #c9b8a6); display: flex; align-items: center; justify-content: center; color: #4a5568; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; overflow: hidden; }
+  .photo-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+
+  @media (max-width: 560px) { .headline { font-size: 20px; } }
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <h1>News feature card — logo &amp; photo explorations</h1>
+  <p>The OBJ logo bigger, three ways, plus one showing the founders photo in-card. Real tokens; the logo is the live <code>/assets/press/obj-logo.svg</code> at each size. Every variant has "Read the article" on its own line.</p>
+</div>
+
+<!-- REFERENCE -->
+<div class="stage">
+  <div class="stage-label"><div class="tag">Current</div><div class="name">40px logo (for reference)</div><div class="why">What's live now. The mark is small enough that its wordmark is illegible, so the eyebrow carries the publication name.</div></div>
+  <div class="stage-body">
+    <a class="card">
+      <img class="logo l40" src="/assets/press/obj-logo.svg" alt="Ottawa Business Journal">
+      <div class="eyebrow">Ottawa Business Journal · July 17, 2026</div>
+      <p class="headline">“Frustrated with weight management apps, couple builds ‘scientific’ alternative”</p>
+      <p class="excerpt">“There’s no engagement mechanics at all. … There are no badges, no streaks and body language is neutral throughout the app. A lot of it is to inform in an objective and neutral way.”</p>
+      <div class="source">— Ryan Groome, in the Ottawa Business Journal</div>
+      <div class="cta">Read the article →</div>
+    </a>
+  </div>
+</div>
+
+<!-- A -->
+<div class="stage">
+  <div class="stage-label"><div class="tag">Option A</div><div class="name">64px logo, top-left</div><div class="why">Same layout, just a bigger mark — now its wordmark reads, so I dropped "Ottawa Business Journal" from the eyebrow to avoid saying it twice.</div></div>
+  <div class="stage-body">
+    <a class="card">
+      <img class="logo l64" src="/assets/press/obj-logo.svg" alt="Ottawa Business Journal">
+      <div class="eyebrow">In the press · July 17, 2026</div>
+      <p class="headline">“Frustrated with weight management apps, couple builds ‘scientific’ alternative”</p>
+      <p class="excerpt">“There’s no engagement mechanics at all. … There are no badges, no streaks and body language is neutral throughout the app. A lot of it is to inform in an objective and neutral way.”</p>
+      <div class="source">— Ryan Groome, in the Ottawa Business Journal</div>
+      <div class="cta">Read the article →</div>
+    </a>
+  </div>
+</div>
+
+<!-- B -->
+<div class="stage">
+  <div class="stage-label"><div class="tag">Option B</div><div class="name">Masthead row (58px + name/date beside it)</div><div class="why">Logo and publication name sit together as a masthead, like a byline. Reads most like a real press feature; the logo earns a bigger size without floating alone.</div></div>
+  <div class="stage-body">
+    <a class="card">
+      <div class="masthead">
+        <img class="logo" src="/assets/press/obj-logo.svg" alt="Ottawa Business Journal">
+        <div class="mh-text">
+          <div class="mh-name">Ottawa Business Journal</div>
+          <div class="mh-meta">In the press · July 17, 2026</div>
+        </div>
+      </div>
+      <p class="headline">“Frustrated with weight management apps, couple builds ‘scientific’ alternative”</p>
+      <p class="excerpt">“There’s no engagement mechanics at all. … There are no badges, no streaks and body language is neutral throughout the app. A lot of it is to inform in an objective and neutral way.”</p>
+      <div class="source">— Ryan Groome, in the Ottawa Business Journal</div>
+      <div class="cta">Read the article →</div>
+    </a>
+  </div>
+</div>
+
+<!-- C -->
+<div class="stage">
+  <div class="stage-label"><div class="tag">Option C</div><div class="name">84px logo, prominent</div><div class="why">Largest — the mark becomes the first thing you see. Boldest, but starts to compete with the headline for the top of the card.</div></div>
+  <div class="stage-body">
+    <a class="card">
+      <img class="logo l84" src="/assets/press/obj-logo.svg" alt="Ottawa Business Journal">
+      <div class="eyebrow">In the press · July 17, 2026</div>
+      <p class="headline">“Frustrated with weight management apps, couple builds ‘scientific’ alternative”</p>
+      <p class="excerpt">“There’s no engagement mechanics at all. … There are no badges, no streaks and body language is neutral throughout the app. A lot of it is to inform in an objective and neutral way.”</p>
+      <div class="source">— Ryan Groome, in the Ottawa Business Journal</div>
+      <div class="cta">Read the article →</div>
+    </a>
+  </div>
+</div>
+
+<!-- D -->
+<div class="stage">
+  <div class="stage-label"><div class="tag">Option D</div><div class="name">Masthead + founders photo banner</div><div class="why">The "couple" headline + a photo of the two of you. Warm and human — but a photo pulls the card away from "third-party press" toward "our story." (Swap the placeholder for the real image.)</div></div>
+  <div class="stage-body">
+    <a class="card">
+      <div class="photo-banner">Ryan &amp; Eveline — founders photo goes here</div>
+      <div class="masthead">
+        <img class="logo" src="/assets/press/obj-logo.svg" alt="Ottawa Business Journal">
+        <div class="mh-text">
+          <div class="mh-name">Ottawa Business Journal</div>
+          <div class="mh-meta">In the press · July 17, 2026</div>
+        </div>
+      </div>
+      <p class="headline">“Frustrated with weight management apps, couple builds ‘scientific’ alternative”</p>
+      <p class="excerpt">“There’s no engagement mechanics at all. … There are no badges, no streaks and body language is neutral throughout the app.”</p>
+      <div class="source">— Ryan Groome, in the Ottawa Business Journal</div>
+      <div class="cta">Read the article →</div>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

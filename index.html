@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta property="og:title" content="Steady Scale — Keep a steady view">
-<meta property="og:description" content="Multiple daily readings, averaged into a clear trend. See what's actually happening — not just today's number.">
+<meta property="og:title" content="Steady Scale — A weight tracker built for you">
+<meta property="og:description" content="Steady Scale is a weight tracking app that helps you understand your weight — for losing, gaining, or simply maintaining.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://steadyscale.app/">
 <meta property="og:site_name" content="Steady Scale">
@@ -16,15 +16,16 @@
 <meta property="og:image:alt" content="Steady Scale — chart showing noisy daily measurements smoothed into a clear trend line.">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Steady Scale — Keep a steady view">
-<meta name="twitter:description" content="Multiple daily readings, averaged into a clear trend. See what's actually happening — not just today's number.">
+<meta name="twitter:title" content="Steady Scale — A weight tracker built for you">
+<meta name="twitter:description" content="Steady Scale is a weight tracking app that helps you understand your weight — for losing, gaining, or simply maintaining.">
 <meta name="twitter:image" content="https://steadyscale.app/og-image.png">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Steady Scale — Keep a steady view</title>
-<meta name="description" content="Multiple daily readings, averaged into a clear trend. See what's actually happening — not just today's number. iOS, on-device, $1.99/month.">
+<title>Steady Scale — A weight tracker built for you</title>
+<meta name="description" content="Steady Scale is a weight tracking app that helps you understand your weight — for losing, gaining, or maintaining. Private, on iPhone, $1.99/month.">
 <meta name="theme-color" content="#2781DB">
 <link rel="canonical" href="https://steadyscale.app/">
+<link rel="stylesheet" href="/assets/site.css">
 
 <script type="application/ld+json">
 {
@@ -77,6 +78,7 @@ body {
   padding-top: var(--nav-h);
 }
 a { color: inherit; }
+main { padding-bottom: 0; }
 
 .skip { position: absolute; top: -40px; left: 8px; background: var(--text); color: #FFF; padding: 8px 14px; border-radius: 6px; font-size: 13px; z-index: 100; transition: top 0.15s; }
 .skip:focus { top: 8px; }
@@ -91,15 +93,42 @@ a { color: inherit; }
 .nav-wm { font-size: 17px; letter-spacing: -0.4px; text-transform: lowercase; }
 .nav-wm .w-steady { font-weight: 700; color: var(--blue); }
 .nav-wm .w-scale  { font-weight: 400; color: var(--text); margin-left: 0.15em; }
-.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a { font-size: 13px; font-weight: 500; color: var(--secondary); text-decoration: none; transition: color 0.15s; }
 .nav-links a:hover { color: var(--blue); }
 
-/* Tour intro */
-.tour-head { text-align: center; padding: 72px 24px 0; max-width: 620px; margin: 0 auto; }
-.tour-head .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
-.tour-head h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 14px; color: var(--text); }
-.tour-head p { font-size: 17px; color: var(--secondary); line-height: 1.55; }
+/* Hero */
+.tour-head { text-align: center; padding: 92px 24px 60px; max-width: 700px; margin: 0 auto; }
+.tour-head .welcome { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--blue); margin-bottom: 18px; }
+.tour-head h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.8px; line-height: 1.1; margin-bottom: 18px; color: var(--text); }
+.tour-head h1 + p { font-size: 19px; color: var(--secondary); line-height: 1.6; max-width: 580px; margin: 0 auto; }
+.tour-head h1 + p b { color: var(--text); font-weight: 600; }
+.home-press { margin-top: 24px; font-size: 13px; color: var(--muted); }
+.home-press a { color: var(--secondary); font-weight: 600; text-decoration: none; }
+.home-press a:hover { color: var(--blue); }
+
+/* Carousel band (white — the screenshots are opaque white, so a fill would show their corners) */
+/* Edge-fading dividers via a horizontal-gradient border-image. */
+.tour-band { border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); border-image: linear-gradient(to right, transparent, var(--border) 25%, var(--border) 75%, transparent) 1; padding-bottom: 40px; }
+.tour-intro { text-align: center; max-width: 640px; margin: 0 auto; padding: 72px 24px 0; }
+.tour-intro .eyebrow { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+.tour-intro h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.15; margin-bottom: 10px; color: var(--text); }
+.tour-intro p { font-size: 16px; color: var(--secondary); }
+
+/* What it answers */
+.qs-sec { padding: 82px 24px; text-align: center; border-top: 1px solid var(--border-soft); border-image: linear-gradient(to right, transparent, var(--border) 25%, var(--border) 75%, transparent) 1; }
+.qs-sec .eyebrow { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+.qs-sec h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; margin-bottom: 40px; color: var(--text); }
+
+/* Shared icon grid — What it answers + Your data */
+.posture-list { margin: 0 auto; display: grid; gap: 26px 40px; text-align: left; }
+.posture-list.cols3 { max-width: 900px; grid-template-columns: repeat(3, 1fr); }
+.posture-list.cols2 { max-width: 780px; grid-template-columns: 1fr 1fr; }
+.posture-item { display: flex; align-items: flex-start; gap: 14px; }
+.posture-icon { flex: 0 0 40px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--surface); border-radius: 10px; color: var(--blue); }
+.posture-icon svg { width: 20px; height: 20px; }
+.posture-text { font-size: 15px; color: var(--secondary); line-height: 1.5; }
+.posture-text .posture-name { display: block; font-weight: 700; color: var(--text); font-size: 16px; margin-bottom: 3px; letter-spacing: -0.1px; }
 
 /* Carousel — native scroll-snap track */
 .carousel {
@@ -216,25 +245,19 @@ a { color: inherit; }
 .carousel-dots .dot:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 /* Pricing section */
-.pricing-section { padding: 80px 24px; text-align: center; background: var(--surface-tint); }
+.pricing-section { padding: 96px 24px; text-align: center; background: var(--surface-tint); }
 .pricing-inner { max-width: 620px; margin: 0 auto; }
 .pricing-inner .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
-.pricing-inner h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 14px; color: var(--text); }
+.pricing-inner h2 { font-size: 34px; font-weight: 700; letter-spacing: -0.6px; line-height: 1.12; margin-bottom: 14px; color: var(--text); }
 .pricing-inner p { font-size: 17px; color: var(--secondary); line-height: 1.55; }
+.pricing-inner .cta-sub { font-size: 14px; color: var(--muted); }
 
-/* Data posture */
-.data-section { padding: 80px 24px; background: var(--surface); }
-.data-inner { max-width: 1080px; margin: 0 auto; }
-.data-head { text-align: center; max-width: 620px; margin: 0 auto; }
-.data-head .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
-.data-head h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 14px; color: var(--text); }
-.data-head p { font-size: 17px; color: var(--secondary); line-height: 1.55; }
-.posture-list { max-width: 760px; margin: 44px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; }
-.posture-item { display: flex; align-items: flex-start; gap: 12px; }
-.posture-icon { flex: 0 0 32px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 8px; color: var(--blue); }
-.posture-icon svg { width: 16px; height: 16px; }
-.posture-text { font-size: 14.5px; color: var(--secondary); line-height: 1.55; }
-.posture-text .posture-name { font-weight: 700; color: var(--text); display: block; margin-bottom: 2px; }
+/* Your data */
+.data-section { padding: 82px 24px; background: var(--bg); text-align: center; border-top: 1px solid var(--border-soft); border-image: linear-gradient(to right, transparent, var(--border) 25%, var(--border) 75%, transparent) 1; }
+.data-inner { max-width: 900px; margin: 0 auto; }
+.data-head .eyebrow { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+.data-head h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.12; margin-bottom: 12px; color: var(--text); }
+.data-head p { font-size: 16px; color: var(--secondary); line-height: 1.55; max-width: 560px; margin: 0 auto 40px; }
 
 /* App Store badge */
 .appstore-badge {
@@ -259,7 +282,7 @@ a { color: inherit; }
 .appstore-badge .as-name { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin-top: 1px; }
 
 /* Footer */
-.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); }
+.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); border-image: linear-gradient(to right, transparent, var(--border) 25%, var(--border) 75%, transparent) 1; }
 .footer-nav { display: flex; justify-content: center; gap: 6px 22px; flex-wrap: wrap; margin-bottom: 20px; }
 .footer-nav a { font-size: 13px; color: var(--secondary); text-decoration: none; transition: color 0.15s; }
 .footer-nav a:hover { color: var(--blue); }
@@ -267,8 +290,11 @@ a { color: inherit; }
 
 /* Responsive */
 @media (max-width: 640px) {
-  .tour-head { padding: 48px 20px 0; }
-  .tour-head h1 { font-size: 26px; }
+  .tour-head { padding: 62px 20px 44px; }
+  .tour-head h1 { font-size: 32px; letter-spacing: -0.5px; }
+  .tour-head h1 + p { font-size: 17px; }
+  .tour-intro { padding-top: 52px; }
+  .tour-intro h2 { font-size: 24px; }
   .carousel { padding: 32px 0 16px; }
   .carousel-slide { grid-template-columns: 1fr; gap: 20px; text-align: center; padding: 0 24px; }
   .slide-image img { max-width: 220px; }
@@ -276,9 +302,11 @@ a { color: inherit; }
   .slide-text p { font-size: 15px; }
   /* Arrows hidden on mobile — swipe + dots are the primary affordances. */
   .carousel-arrow { display: none; }
+  .qs-sec { padding: 56px 20px; }
+  .qs-sec h2 { font-size: 24px; }
   .data-section { padding: 56px 20px; }
-  .data-head h2 { font-size: 26px; }
-  .posture-list { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+  .data-head h2 { font-size: 24px; }
+  .posture-list.cols3, .posture-list.cols2 { grid-template-columns: 1fr; gap: 20px; max-width: 420px; }
   .pricing-section { padding: 56px 20px; }
   .pricing-inner h2 { font-size: 26px; }
   .nav-links { gap: 18px; }
@@ -306,8 +334,13 @@ a { color: inherit; }
       <span class="nav-wm"><span class="w-steady">steady</span><span class="w-scale">scale</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/support.html">Support</a>
+      <a href="/" class="is-active">Home</a>
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/science.html">Science</a>
+      <a href="/guide.html">Quick guide</a>
+      <a href="/news.html">News</a>
+      <a href="/about.html">About</a>
+      <a href="/support.html">Contact us</a>
     </nav>
   </div>
 </header>
@@ -315,13 +348,18 @@ a { color: inherit; }
 <main id="main">
 
 <div class="tour-head">
-  <div class="eyebrow">Inside the app</div>
-  <h1>A quick tour.</h1>
-  <p>Ten screens — click, arrow, or swipe through to see the whole app.</p>
-  <a class="appstore-badge" href="https://apps.apple.com/us/app/steady-scale/id6775728814" aria-label="Download Steady Scale on the App Store">
-    <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C40.5 141.5-.9 184.8-.9 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-    <span class="as-text"><span class="as-sub">Download on the</span><span class="as-name">App Store</span></span>
-  </a>
+  <span class="welcome">Welcome to Steady Scale</span>
+  <h1>A weight tracker built for you</h1>
+  <p>Steady Scale is a weight tracking app that helps you <b>understand your weight</b>. See beyond day-to-day fluctuations and focus on the trends that matter, whether your goal is to lose weight, gain weight, or monitor your weight over time.</p>
+  <p class="home-press">As featured in the <a href="https://obj.ca/frustrated-weight-management-apps-couple-scientific-alt/?bypass=6a5a75eb1904b" target="_blank" rel="noopener">Ottawa Business Journal</a></p>
+</div>
+
+<section class="tour-band">
+
+<div class="tour-intro">
+  <span class="eyebrow">A quick tour</span>
+  <h2>See every screen</h2>
+  <p>Swipe, click, or use the arrow keys to explore the app.</p>
 </div>
 
 <section class="carousel" aria-roledescription="carousel" aria-label="A tour of Steady Scale">
@@ -336,7 +374,7 @@ a { color: inherit; }
       <div class="slide-image"><img src="/assets/screenshots/cropped/01-welcome.png" alt="Welcome screen with a small trend chart and the subtitle: Simple tracking that turns daily ups and downs into something you can trust." width="800" height="1588"></div>
       <div class="slide-text">
         <div class="eyebrow">Welcome</div>
-        <h2>A short setup.</h2>
+        <h2>A short setup</h2>
         <p>Onboarding takes about a minute. Pick how you want to track, choose a goal or reference weight, and set your weekly check-in day.</p>
       </div>
     </div>
@@ -345,7 +383,7 @@ a { color: inherit; }
       <div class="slide-image"><img src="/assets/screenshots/cropped/02-tracking-mode.png" alt="Tracking mode selection: Lose weight, Gain weight, or Monitor weight." width="800" height="1588"></div>
       <div class="slide-text">
         <div class="eyebrow">Tracking mode</div>
-        <h2>Loss, Gain, or Monitor.</h2>
+        <h2>Loss, Gain, or Monitor</h2>
         <p>Pick the one that fits. The weekly trend works the same for all three — and you can switch any time without losing your history.</p>
       </div>
     </div>
@@ -354,7 +392,7 @@ a { color: inherit; }
       <div class="slide-image"><img src="/assets/screenshots/cropped/03-goal-weight.png" alt="Goal weight picker with a BMI bar and an expandable card titled What makes a good goal weight." width="800" height="1588"></div>
       <div class="slide-text">
         <div class="eyebrow">Goal weight</div>
-        <h2>A goal you could maintain.</h2>
+        <h2>A goal you could maintain</h2>
         <p>Pick a weight you could see yourself maintaining, not just reaching. BMI is shown as a reference, not a prescription.</p>
       </div>
     </div>
@@ -363,7 +401,7 @@ a { color: inherit; }
       <div class="slide-image"><img src="/assets/screenshots/cropped/04-weekly-rate.png" alt="Weekly rate picker with four presets (0.5, 1.0, 1.5, 2.0 lb per week) and a day-of-week check-in selector." width="800" height="1588"></div>
       <div class="slide-text">
         <div class="eyebrow">Weekly rate</div>
-        <h2>Pick a pace.</h2>
+        <h2>Pick a pace</h2>
         <p>Choose any rate from 0.5 to 2.0 lb per week. Your rate sets a weekly target that stays constant throughout the week and updates after each check-in day.</p>
       </div>
     </div>
@@ -372,8 +410,8 @@ a { color: inherit; }
       <div class="slide-image"><img src="/assets/screenshots/cropped/05-completion.png" alt="Completion screen with a checkmark, You're all set heading, and a Start 7-Day Free Trial button." width="800" height="1588"></div>
       <div class="slide-text">
         <div class="eyebrow">Free trial</div>
-        <h2>Free for 7 days.</h2>
-        <p>No account, no marketing list, no upsells. Your data stays on your device and backs up to your iCloud. Cancel any time in iOS Settings.</p>
+        <h2>Free for 7 days</h2>
+        <p>No accounts, no servers, no ads. Your data stays on your device and backs up to your iCloud. Cancel any time in iOS Settings.</p>
       </div>
     </div>
 
@@ -381,8 +419,8 @@ a { color: inherit; }
       <div class="slide-image"><img src="/assets/screenshots/cropped/06-dashboard.png" alt="Dashboard with three cards: Goal arrival date, This Week pace, and Today's daily average." width="800" height="1588"></div>
       <div class="slide-text">
         <div class="eyebrow">Dashboard</div>
-        <h2>Long term, this week, today.</h2>
-        <p>Three cards show three time horizons: where you're heading, how this week's pace compares to plan, and today's daily average. The layout stays the same every morning — only the numbers update.</p>
+        <h2>Long term, this week, today</h2>
+        <p>Three cards show three time horizons: where you're heading, how this week's pace compares to plan, and today's daily average.</p>
       </div>
     </div>
 
@@ -390,7 +428,7 @@ a { color: inherit; }
       <div class="slide-image"><img src="/assets/screenshots/cropped/07-chart.png" alt="Chart screen showing daily measurements, a smoothed trend line, a goal projection, and check-in markers." width="800" height="1588"></div>
       <div class="slide-text">
         <div class="eyebrow">Chart</div>
-        <h2>Noise into signal.</h2>
+        <h2>Noise into signal</h2>
         <p>The chart layers raw weigh-ins, daily averages, and a 14-day rolling trend that filters out day-to-day noise. From your trend and chosen rate, it projects forward to your goal — so you can see when you'll get there.</p>
       </div>
     </div>
@@ -399,7 +437,7 @@ a { color: inherit; }
       <div class="slide-image"><img src="/assets/screenshots/cropped/08-log.png" alt="Log screen with a weight input field, date and time rows, and a list of recent measurements." width="800" height="1588"></div>
       <div class="slide-text">
         <div class="eyebrow">Log</div>
-        <h2>Log as often as you like.</h2>
+        <h2>Log as often as you like</h2>
         <p>Weigh in once a day or multiple times a day — whatever works for you. You can edit or backfill measurements any time, and unlikely entries get flagged so a typo doesn't throw off your trend.</p>
       </div>
     </div>
@@ -408,8 +446,8 @@ a { color: inherit; }
       <div class="slide-image"><img src="/assets/screenshots/cropped/09-settings.png" alt="Settings screen with Profile, Plan card showing goal, rate, and check-in day, plus Edit, Pause, and Delete actions." width="800" height="1588"></div>
       <div class="slide-text">
         <div class="eyebrow">Settings</div>
-        <h2>Plan, preferences, and backup.</h2>
-        <p>Your active plan lives in one card: edit, pause, or delete from there. Switching between Loss, Gain, and Monitor preserves your history — and deleted plans can be restored from Past plans.</p>
+        <h2>Plan, preferences, and backup</h2>
+        <p>Your active plan lives in one card: edit, pause, or delete from there. Switching between Loss, Gain, and Monitor preserves your history, and deleted plans can be restored from Past plans.</p>
       </div>
     </div>
 
@@ -417,7 +455,7 @@ a { color: inherit; }
       <div class="slide-image"><img src="/assets/screenshots/cropped/10-help.png" alt="Help screen with How it works, Reading the chart, Choosing a goal weight, and other expandable sections." width="800" height="1588"></div>
       <div class="slide-text">
         <div class="eyebrow">Help</div>
-        <h2>Every element explained.</h2>
+        <h2>Every element explained</h2>
         <p>The Help tab covers how the math works, how to read the chart, how your data is handled, and how to get in touch. Every part of the system is open.</p>
       </div>
     </div>
@@ -442,15 +480,30 @@ a { color: inherit; }
   </div>
 </section>
 
-<section class="pricing-section" aria-labelledby="pricing-title">
-  <div class="pricing-inner">
-    <div class="eyebrow">Pricing</div>
-    <h2 id="pricing-title">Free for 7 days.</h2>
-    <p>Then $1.99 USD/month or $14.99 USD/year. Cancel any time.</p>
-    <a class="appstore-badge" href="https://apps.apple.com/us/app/steady-scale/id6775728814" aria-label="Download Steady Scale on the App Store">
-      <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C40.5 141.5-.9 184.8-.9 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-      <span class="as-text"><span class="as-sub">Download on the</span><span class="as-name">App Store</span></span>
-    </a>
+</section>
+
+<section class="qs-sec" aria-labelledby="qs-title">
+  <span class="eyebrow">What it answers</span>
+  <h2 id="qs-title">Today, this week, and the long run</h2>
+  <div class="posture-list cols3">
+    <div class="posture-item">
+      <div class="posture-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <div class="posture-text"><span class="posture-name">Is today's number real?</span>Put today's reading in context with your daily average and trend, so one number never tells the whole story.</div>
+    </div>
+    <div class="posture-item">
+      <div class="posture-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 7 9 13 13 9 21 17"/><polyline points="15 17 21 17 21 11"/></svg>
+      </div>
+      <div class="posture-text"><span class="posture-name">Am I making progress?</span>See how this week's progress compares to your plan, so you know whether you're on track.</div>
+    </div>
+    <div class="posture-item">
+      <div class="posture-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+      </div>
+      <div class="posture-text"><span class="posture-name">When will I get there?</span>See where your current trend is heading and when you might reach your goal.</div>
+    </div>
   </div>
 </section>
 
@@ -458,47 +511,58 @@ a { color: inherit; }
   <div class="data-inner">
     <div class="data-head">
       <div class="eyebrow">Your data</div>
-      <h2 id="data-title">No accounts, no servers, no ads.</h2>
-      <p>Your data belongs to you. We never see it. We've also removed every design pattern that adds pressure — no streaks, points, reminders, or motivational messages.</p>
+      <h2 id="data-title">No accounts, no servers, no ads</h2>
+      <p>Your data belongs to you. We never see it — and we've removed every design pattern that adds pressure: no streaks, points, reminders, or motivational nudges.</p>
     </div>
-    <div class="posture-list">
+    <div class="posture-list cols2">
       <div class="posture-item">
         <div class="posture-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg>
         </div>
-        <div class="posture-text"><span class="posture-name">No accounts.</span>No username, password, or sign-in.</div>
+        <div class="posture-text"><span class="posture-name">No accounts</span>No username, password, or sign-in.</div>
       </div>
       <div class="posture-item">
         <div class="posture-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
         </div>
-        <div class="posture-text"><span class="posture-name">Local-first storage.</span>Your measurements live on your device.</div>
+        <div class="posture-text"><span class="posture-name">Local-first storage</span>Your measurements live on your device.</div>
       </div>
       <div class="posture-item">
         <div class="posture-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a4 4 0 0 0 0-8 6 6 0 0 0-11.7-1.5A4.5 4.5 0 0 0 6 18z"/></svg>
         </div>
-        <div class="posture-text"><span class="posture-name">Optional iCloud backup.</span>Encrypted under your Apple ID.</div>
+        <div class="posture-text"><span class="posture-name">Optional iCloud backup</span>Encrypted under your Apple ID.</div>
       </div>
       <div class="posture-item">
         <div class="posture-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M7 7V5a5 5 0 0 1 10 0v2"/></svg>
         </div>
-        <div class="posture-text"><span class="posture-name">No servers we operate.</span>Your data never touches our infrastructure.</div>
+        <div class="posture-text"><span class="posture-name">No servers we operate</span>Your data never touches our infrastructure.</div>
       </div>
       <div class="posture-item">
         <div class="posture-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
         </div>
-        <div class="posture-text"><span class="posture-name">No ads, no trackers.</span>No ad identifiers, no behavioural telemetry.</div>
+        <div class="posture-text"><span class="posture-name">No ads, no trackers</span>No ad identifiers, no behavioural telemetry.</div>
       </div>
       <div class="posture-item">
         <div class="posture-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12"/><polyline points="6 12 12 18 18 12"/><line x1="4" y1="21" x2="20" y2="21"/></svg>
         </div>
-        <div class="posture-text"><span class="posture-name">CSV export.</span>Your data is yours — take it with you anytime.</div>
+        <div class="posture-text"><span class="posture-name">CSV export</span>Your data is yours — take it with you anytime.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="pricing-section" aria-labelledby="cta-title">
+  <div class="pricing-inner">
+    <h2 id="cta-title">Download Steady Scale today</h2>
+    <p class="cta-sub">Free for 7 days, then $1.99/month or $14.99/year. Cancel any time.</p>
+    <a class="appstore-badge" href="https://apps.apple.com/us/app/steady-scale/id6775728814" aria-label="Download Steady Scale on the App Store">
+      <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C40.5 141.5-.9 184.8-.9 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+      <span class="as-text"><span class="as-sub">Download on the</span><span class="as-name">App Store</span></span>
+    </a>
   </div>
 </section>
 

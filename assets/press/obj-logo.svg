@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Ottawa Business Journal">
+  <circle cx="256" cy="256" r="256" fill="#161616"/>
+  <g fill="#FFFFFF" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" letter-spacing="-2" text-anchor="middle">
+    <text x="256" y="205" font-size="74">OTTAWA</text>
+    <text x="256" y="283" font-size="74">BUSINESS</text>
+    <text x="256" y="361" font-size="74">JOURNAL</text>
+  </g>
+</svg>

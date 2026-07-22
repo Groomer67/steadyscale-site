@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide footer card — style explorations</title>
+<style>
+  /* Real Steady Scale tokens (from assets/site.css) so these render faithfully */
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F5F5F5;
+    --surface-tint: #EBF4FF;
+    --celebration-border: rgba(39, 129, 219, 0.18);
+    --border: #E0E0E0;
+    --border-soft: #ECECEC;
+    --text: #2C2C2C;
+    --secondary: #555555;
+    --muted: #999999;
+    --blue: #2781DB;
+    --blue-deep: #1D65C4;
+    --shadow-md: 0 1px 3px rgba(0,0,0,.05), 0 4px 16px rgba(0,0,0,.06);
+    --radius-card: 12px;
+    --maxw-prose: 680px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    background: #F0F1F3;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    padding: 48px 0 96px;
+  }
+  .page-head { max-width: var(--maxw-prose); margin: 0 auto 8px; padding: 0 24px; }
+  .page-head h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.4px; }
+  .page-head p { font-size: 15px; color: var(--secondary); margin-top: 8px; line-height: 1.6; }
+  .page-head p code { background: #E4E6EA; border-radius: 4px; padding: 1px 5px; font-size: 13px; }
+
+  /* Each variant sits on a white "page" strip, exactly as it would on the guide page */
+  .stage { background: var(--bg); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); margin-top: 40px; padding: 40px 0 48px; }
+  .stage-label { max-width: var(--maxw-prose); margin: 0 auto 4px; padding: 0 24px; }
+  .stage-label .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); }
+  .stage-label .name { font-size: 18px; font-weight: 700; letter-spacing: -0.2px; margin-top: 6px; }
+  .stage-label .why { font-size: 14px; color: var(--secondary); margin-top: 4px; line-height: 1.55; }
+  .stage-body { max-width: var(--maxw-prose); margin: 24px auto 0; padding: 0 24px; }
+
+  /* Shared link treatment used across variants (the fix the current card lacks) */
+  .lnk { color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--celebration-border); font-weight: 500; }
+  .lnk:hover { border-bottom-color: var(--blue); }
+
+  /* =========================================================
+     0 · CURRENT (baseline) — links inherit grey, no structure
+     ========================================================= */
+  .v-current { padding: 22px 26px; background: var(--surface-tint); border: 1px solid var(--celebration-border); border-radius: var(--radius-card); font-size: 15px; color: var(--secondary); line-height: 1.65; }
+  .v-current a { color: inherit; text-decoration: none; }
+
+  /* =========================================================
+     A · STRUCTURED PROSE — eyebrow + heading + styled links.
+     Smallest change; keeps one card, adds hierarchy.
+     ========================================================= */
+  .vA { padding: 26px 28px; background: var(--surface-tint); border: 1px solid var(--celebration-border); border-radius: var(--radius-card); }
+  .vA .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+  .vA h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.2px; color: var(--text); margin-bottom: 8px; }
+  .vA p { font-size: 15px; color: var(--secondary); line-height: 1.65; }
+
+  /* =========================================================
+     B · TWO INTENTS, SPLIT — separates "go deeper" from "get help"
+     ========================================================= */
+  .vB { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .vB .panel { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 22px 22px 20px; display: flex; flex-direction: column; }
+  .vB .panel .ico { width: 34px; height: 34px; border-radius: 9px; background: var(--surface-tint); color: var(--blue); display: flex; align-items: center; justify-content: center; margin-bottom: 13px; }
+  .vB .panel .ico svg { width: 19px; height: 19px; }
+  .vB .panel h3 { font-size: 16px; font-weight: 700; letter-spacing: -0.1px; margin-bottom: 5px; }
+  .vB .panel p { font-size: 14px; color: var(--secondary); line-height: 1.55; margin-bottom: 14px; flex: 1; }
+  .vB .panel .links { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .vB .panel .links a { font-size: 14px; font-weight: 600; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .vB .panel .links a svg { width: 13px; height: 13px; }
+  .vB .panel .links a:hover { color: var(--blue-deep); }
+
+  /* =========================================================
+     C · DIRECTORY ROWS — icon + label + desc + arrow, scannable list
+     ========================================================= */
+  .vC { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden; }
+  .vC .head { padding: 18px 22px 14px; }
+  .vC .head .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--blue); }
+  .vC .head h3 { font-size: 16px; font-weight: 700; margin-top: 5px; }
+  .vC .row { display: flex; align-items: center; gap: 15px; padding: 15px 22px; border-top: 1px solid var(--border-soft); text-decoration: none; color: inherit; transition: background 0.12s; }
+  .vC .row:hover { background: var(--surface-tint); }
+  .vC .row .ico { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 9px; background: var(--surface-tint); color: var(--blue); display: flex; align-items: center; justify-content: center; }
+  .vC .row .ico svg { width: 18px; height: 18px; }
+  .vC .row .txt { flex: 1; min-width: 0; }
+  .vC .row .txt .t { font-size: 15px; font-weight: 600; color: var(--text); }
+  .vC .row .txt .d { font-size: 13px; color: var(--muted); margin-top: 1px; }
+  .vC .row .arw { color: var(--muted); flex: 0 0 auto; }
+  .vC .row:hover .arw { color: var(--blue); }
+  .vC .row .arw svg { width: 17px; height: 17px; display: block; }
+
+  /* =========================================================
+     D · MINIMAL, RULED — hairline rule, centered lead, pill links.
+     Airier, less "boxed."
+     ========================================================= */
+  .vD { text-align: center; padding: 8px 0 0; }
+  .vD hr { border: 0; border-top: 1px solid var(--border-soft); margin: 0 0 26px; }
+  .vD p { font-size: 15px; color: var(--secondary); max-width: 440px; margin: 0 auto 18px; line-height: 1.6; }
+  .vD .pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .vD .pill { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; color: var(--secondary); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 9px 16px; transition: all 0.12s; }
+  .vD .pill svg { width: 15px; height: 15px; color: var(--blue); }
+  .vD .pill:hover { border-color: var(--blue); color: var(--blue); background: var(--surface-tint); }
+
+  @media (max-width: 560px) {
+    .vB { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <h1>Quick guide — footer card explorations</h1>
+  <p>Four ways to redesign the bottom card. Each is rendered on a white strip at the real prose width, using the live site tokens, so what you see is what would ship. All link colors/underlines are the real fix the current card is missing. Copy is adjustable per layout. Pick one (or mix) and I'll wire it into <code>guide.html</code> + <code>site.css</code>.</p>
+</div>
+
+<!-- 0 · CURRENT -->
+<div class="stage">
+  <div class="stage-label">
+    <div class="tag">Current</div>
+    <div class="name">What's there now</div>
+    <div class="why">Single tinted card, flat prose. The links inherit grey body color — they don't read as links, which is most of why it feels flat.</div>
+  </div>
+  <div class="stage-body">
+    <div class="v-current">
+      For the method behind the numbers, see the <a href="#">Science</a> page and <a href="#">How it works</a>. For anything not covered here, reach us on the <a href="#">Contact us</a> page.
+    </div>
+  </div>
+</div>
+
+<!-- A · STRUCTURED PROSE -->
+<div class="stage">
+  <div class="stage-label">
+    <div class="tag">Option A</div>
+    <div class="name">Structured prose</div>
+    <div class="why">Smallest change: keep the one card, add an eyebrow + heading for hierarchy, and give the links real color + underline. Calmest, most in-keeping with the page.</div>
+  </div>
+  <div class="stage-body">
+    <div class="vA">
+      <div class="eyebrow">Keep exploring</div>
+      <h3>Want to go deeper?</h3>
+      <p>For the method behind the numbers, see the <a class="lnk" href="#">Science</a> page and <a class="lnk" href="#">How it works</a>. For anything not covered here, reach us on the <a class="lnk" href="#">Contact us</a> page.</p>
+    </div>
+  </div>
+</div>
+
+<!-- B · TWO INTENTS, SPLIT -->
+<div class="stage">
+  <div class="stage-label">
+    <div class="tag">Option B</div>
+    <div class="name">Two intents, split</div>
+    <div class="why">Splits the card's two real jobs into side-by-side panels: understand the method vs. get help. Most scannable; reads as a clear "what next."</div>
+  </div>
+  <div class="stage-body">
+    <div class="vB">
+      <div class="panel">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6.5L5.5 18a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 9.5V3"/></svg></div>
+        <h3>The method behind the numbers</h3>
+        <p>How Steady Scale turns noisy weigh-ins into a trend and a forecast.</p>
+        <div class="links">
+          <a href="#">Science <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#">How it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8A8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5z"/></svg></div>
+        <h3>Still have a question?</h3>
+        <p>Anything not covered here — we read every message.</p>
+        <div class="links">
+          <a href="#">Contact us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- C · DIRECTORY ROWS -->
+<div class="stage">
+  <div class="stage-label">
+    <div class="tag">Option C</div>
+    <div class="name">Directory rows</div>
+    <div class="why">A little navigation list — icon, label, one-line description, arrow. Each destination gets equal, tappable weight. Most "utility," great on mobile.</div>
+  </div>
+  <div class="stage-body">
+    <div class="vC">
+      <div class="head">
+        <div class="eyebrow">Keep exploring</div>
+        <h3>Where to next</h3>
+      </div>
+      <a class="row" href="#">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6.5L5.5 18a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 9.5V3"/></svg></div>
+        <div class="txt"><div class="t">Science</div><div class="d">The method behind the numbers</div></div>
+        <span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="row" href="#">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <div class="txt"><div class="t">How it works</div><div class="d">The app, end to end</div></div>
+        <span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="row" href="#">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8A8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5z"/></svg></div>
+        <div class="txt"><div class="t">Contact us</div><div class="d">Anything not covered here</div></div>
+        <span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- D · MINIMAL, RULED -->
+<div class="stage">
+  <div class="stage-label">
+    <div class="tag">Option D</div>
+    <div class="name">Minimal, ruled</div>
+    <div class="why">No box at all — a hairline rule, a short centered lead, and three outline "pill" links. Lightest footprint; lets the page end quietly.</div>
+  </div>
+  <div class="stage-body">
+    <div class="vD">
+      <hr>
+      <p>For the method behind the numbers, or anything not covered here:</p>
+      <div class="pills">
+        <a class="pill" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6.5L5.5 18a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 9.5V3"/></svg> Science</a>
+        <a class="pill" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> How it works</a>
+        <a class="pill" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8A8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5z"/></svg> Contact us</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

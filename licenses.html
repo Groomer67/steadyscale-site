@@ -62,12 +62,12 @@ a:hover { text-decoration: underline; }
 .nav-wm { font-size: 17px; letter-spacing: -0.4px; text-transform: lowercase; }
 .nav-wm .w-steady { font-weight: 700; color: var(--blue); }
 .nav-wm .w-scale  { font-weight: 400; color: var(--text); margin-left: 0.15em; }
-.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a { font-size: 13px; font-weight: 500; color: var(--secondary); text-decoration: none; }
 .nav-links a:hover { color: var(--blue); text-decoration: none; }
 
-.container { max-width: 760px; margin: 0 auto; padding: 56px 24px 64px; }
-h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+.container { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; }
+h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
 .updated { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
 .lead { font-size: 15px; color: var(--secondary); margin-bottom: 32px; line-height: 1.6; max-width: 620px; }
 
@@ -111,14 +111,14 @@ h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8
 
 .note { font-size: 13px; color: var(--muted); font-style: italic; margin-top: 22px; line-height: 1.6; }
 
-.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); }
+.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); border-image: linear-gradient(to right, transparent, var(--border) 25%, var(--border) 75%, transparent) 1; }
 .footer-nav { display: flex; justify-content: center; gap: 6px 22px; flex-wrap: wrap; margin-bottom: 20px; }
 .footer-nav a { font-size: 13px; color: var(--secondary); text-decoration: none; transition: color 0.15s; }
 .footer-nav a:hover { color: var(--blue); }
 .footer-meta { font-size: 12px; color: var(--muted); line-height: 1.6; }
 @media (max-width: 560px) {
   .container { padding: 40px 20px 48px; }
-  h1 { font-size: 28px; }
+  h1 { font-size: 32px; }
   .pkg-row { grid-template-columns: 1fr; gap: 6px; }
   .pkg-license { justify-self: start; }
   .nav-links { gap: 18px; }
@@ -141,7 +141,12 @@ h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="/">Home</a>
-      <a href="/support.html">Support</a>
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/science.html">Science</a>
+      <a href="/guide.html">Quick guide</a>
+      <a href="/news.html">News</a>
+      <a href="/about.html">About</a>
+      <a href="/support.html">Contact us</a>
     </nav>
   </div>
 </header>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title" content="The science behind Steady Scale">
+<meta property="og:description" content="The research Steady Scale is built on, and how it turns noisy daily weigh-ins into a trend and a forecast, including why we use a ridge-regularized regression. Cited throughout.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://steadyscale.app/science">
+<meta property="og:site_name" content="Steady Scale">
+<meta property="og:image" content="https://steadyscale.app/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Science — Steady Scale</title>
+<meta name="description" content="The research Steady Scale is built on, and how it turns noisy daily weigh-ins into a trend and a forecast, including why we use a ridge-regularized regression. Cited throughout.">
+<meta name="theme-color" content="#2781DB">
+<link rel="canonical" href="https://steadyscale.app/science">
+<link rel="stylesheet" href="/assets/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "The science behind Steady Scale",
+  "description": "The research behind the design, and how Steady Scale turns noisy weigh-ins into a trend and a forecast.",
+  "image": "https://steadyscale.app/og-image.png",
+  "author": [
+    { "@type": "Person", "name": "Ryan Groome" },
+    { "@type": "Person", "name": "Eveline Soares Menezes" }
+  ],
+  "publisher": { "@type": "Organization", "name": "Steady Scale Inc." },
+  "url": "https://steadyscale.app/science",
+  "citation": [
+    { "@type": "CreativeWork", "name": "The impact of regular self-weighing on weight management: a systematic literature review", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2588640/" },
+    { "@type": "CreativeWork", "name": "Weighing everyday matters: daily weighing improves weight loss and adoption of weight control behaviors", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4380831/" },
+    { "@type": "CreativeWork", "name": "Frequency of Self-Weighing and Weight Change: Cohort Study With 10,000 Smart Scale Users", "url": "https://pubmed.ncbi.nlm.nih.gov/34075879/" },
+    { "@type": "CreativeWork", "name": "Consistent self-monitoring of weight: a key component of successful weight loss maintenance", "url": "https://pubmed.ncbi.nlm.nih.gov/18198319/" },
+    { "@type": "CreativeWork", "name": "What is the psychological impact of self-weighing? A meta-analysis", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4917920/" },
+    { "@type": "CreativeWork", "name": "Composition of two-week change in body weight under unrestricted free-living conditions", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5506524/" },
+    { "@type": "CreativeWork", "name": "Ridge regression: biased estimation for nonorthogonal problems", "url": "https://doi.org/10.1080/00401706.1970.10488634" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Steady Scale home">
+      <svg viewBox="0 0 64 64" fill="none" role="img" aria-hidden="true">
+        <path d="M 9 18 C 22 17, 30 46, 53 46" stroke="#2781DB" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="53" cy="46" r="6" fill="#2781DB"/>
+      </svg>
+      <span class="nav-wm"><span class="w-steady">steady</span><span class="w-scale">scale</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/science.html" class="is-active">Science</a>
+      <a href="/guide.html">Quick guide</a>
+      <a href="/news.html">News</a>
+      <a href="/about.html">About</a>
+      <a href="/support.html">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <h1>The science behind Steady Scale</h1>
+      <p class="lead">Body weight fluctuates from day to day due to many factors unrelated to long-term changes in body mass. Extracting a meaningful trend from these measurements requires balancing responsiveness with resistance to short-term noise.</p>
+      <p class="lead">Steady Scale uses a statistical model to estimate that underlying trend. This page describes the model, the choices behind its design, the testing used to evaluate it, and the limits of what it can predict.</p>
+    </div>
+  </div>
+
+  <article class="prose">
+
+    <h2>Why measure weight?</h2>
+    <p>Steady Scale is built on a simple premise: awareness gives you choices. Regularly recording your weight helps you see meaningful changes while they are still small, whether that's recognizing progress sooner or noticing an unintended drift early enough to respond.</p>
+    <p>Frequent self-weighing has consistently been associated with greater weight loss, less regain, and better long-term maintenance.<sup class="ref"><a href="#ref1">1</a>,<a href="#ref2">2</a>,<a href="#ref3">3</a></sup> These studies cannot establish causation, but they suggest that regular measurement helps people notice gradual changes before they become large ones.</p>
+    <p>The same principle applies after reaching a goal. Among people who have kept weight off, consistent self-monitoring is associated with lasting success, while letting the habit lapse is associated with regain.<sup class="ref"><a href="#ref4">4</a></sup> A slow drift is difficult to notice from one measurement to the next; a trend makes it visible while it is still small.</p>
+    <p>The psychological side has been studied too. A large meta-analysis found that, for most adults, self-weighing is not associated with disordered eating or poorer body image, although some groups, particularly younger people, showed small negative associations with well-being.<sup class="ref"><a href="#ref5">5</a></sup></p>
+    <p>These findings shaped the design. Rather than encouraging more weighing through reminders or streaks, the app tries to make each measurement more informative. The goal is not to react to every fluctuation, but to understand meaningful changes when they appear. Its language stays body-neutral, never treating a single number as a judgment.</p>
+
+    <h2>The problem: separating signal from noise</h2>
+    <p>Your weight changes from one morning to the next for many reasons besides body fat. Water balance, glycogen stores, sodium, meal timing, and gut contents can all move the scale substantially over a day or two.<sup class="ref"><a href="#ref6">6</a></sup></p>
+    <p>Every weigh-in therefore contains two things: the long-term direction your weight is moving, and short-term fluctuations that say little about body composition. The challenge is separating them.</p>
+
+    <h2>Our solution</h2>
+    <p>Steady Scale estimates your trend in two steps.</p>
+    <p>First, every reading recorded during a day is averaged into a single daily value. Extra measurements do not add noise; they sharpen the estimate of that day's weight.</p>
+    <p>Second, the app fits a ridge regression through the previous fourteen days of daily averages. The fitted value at the present day is your current trend.</p>
+    <p>That is the entire trend model.</p>
+    <figure>
+      <img src="/assets/figures/fig1_signal_noise.png" width="1179" height="1001" alt="Three panels of real data: every weigh-in and the daily averages with the 14-day ridge trend through them; the detrended residuals over time; and their distribution with a Gaussian fit, mean +0.02 ± 0.06 lb and standard deviation 0.65 lb.">
+      <figcaption><strong>Figure 1.</strong> Four months of real weigh-ins, their daily averages, and the fitted 14-day trend. The lower panels show the residuals: centered on zero (mean +0.02 &plusmn; 0.06 lb) and close to Gaussian, σ ≈ 0.65 lb.</figcaption>
+    </figure>
+    <p>Figure 1 shows the model applied to four months of real weigh-ins. It also shows the residuals, the difference between each daily average and the fitted trend. Centered on zero, the residuals behave like random measurement noise rather than a missed pattern, suggesting the trend captures the systematic movement without introducing bias.</p>
+
+    <h2>Choosing the trend model</h2>
+    <p>A model that explains yesterday perfectly is not necessarily the model that predicts tomorrow best. So we treated the design as an optimization problem: compare combinations of model type and window length, and keep the one that forecasts best.</p>
+    <p>We compared eight candidate models, including moving averages, ordinary and weighted regressions, exponential smoothing, and more flexible curve fits, across a range of window lengths. Each combination was repeatedly fitted to its trailing window, asked to predict the days ahead, and scored on its errors, on real data and on simulated scenarios with plateaus, rate changes, and gaps in logging.</p>
+    <figure>
+      <img src="/assets/figures/fig2_model_selection.png" width="1423" height="704" alt="Two panels of forecast error versus horizon for eight candidate models on real data: absolute mean error on the left, standard deviation of error on the right. The quadratic fit and two smoothing models leave the frame; ridge stays lowest among the unbiased models at every horizon.">
+      <figcaption><strong>Figure 2.</strong> Walk-forward forecast error for the eight candidates at the 14-day window, zero to 14 days ahead, on real data. Horizon zero is the fit itself, so the ridge curves start at the residual numbers from Figure 1. The quadratic fit hugs the past tightest (0.49 lb, the only curve below the noise floor) and predicts worst.</figcaption>
+    </figure>
+    <p>The result illustrates a classic trap. The models with the smallest fitting errors, the ones that followed every local fluctuation, produced the largest forecasting errors. The best-performing combination was not the one that reproduced the past most faithfully. It was a fourteen-day ridge regression.</p>
+    <p>It may not draw the smoothest line, but it consistently produced the most accurate forecasts with the least overall bias.</p>
+
+    <h2>Why ridge regression?</h2>
+    <p>Every trend model makes the same trade-off. A highly flexible model follows every fluctuation: it fits yesterday's measurements extremely well, but produces unstable forecasts because it mistakes random variation for real change. An overly smooth model has the opposite problem: it ignores the noise, but reacts slowly when your weight genuinely begins to change.</p>
+    <p>The challenge is finding the right balance between these extremes. Ridge regression strikes that balance by penalizing large swings in slope, accepting a small increase in fitting error in exchange for a more stable estimate of the underlying direction.<sup class="ref"><a href="#ref7">7</a></sup></p>
+    <p>The model can be written compactly. The trend at day <em>t</em> is a straight line,</p>
+    <div style="overflow-x:auto; margin:26px 0;">
+      <math display="block" style="font-size:1.15em;">
+        <mrow>
+          <mi>trend</mi><mo>(</mo><mi>t</mi><mo>)</mo>
+          <mo>=</mo>
+          <msubsup><mi>&beta;</mi><mn>0</mn><mo>&#x2217;</mo></msubsup>
+          <mo>+</mo>
+          <msubsup><mi>&beta;</mi><mn>1</mn><mo>&#x2217;</mo></msubsup>
+          <mi>t</mi>
+        </mrow>
+      </math>
+    </div>
+    <p>whose intercept and slope are chosen to minimise the ridge objective:</p>
+    <div style="overflow-x:auto; margin:26px 0;">
+      <math display="block" style="font-size:1.15em;">
+        <mrow>
+          <mo>(</mo><msubsup><mi>&beta;</mi><mn>0</mn><mo>&#x2217;</mo></msubsup><mo>,</mo><msubsup><mi>&beta;</mi><mn>1</mn><mo>&#x2217;</mo></msubsup><mo>)</mo>
+          <mo>=</mo>
+          <munder>
+            <mo movablelimits="false">argmin</mo>
+            <mrow><msub><mi>&beta;</mi><mn>0</mn></msub><mo>,</mo><msub><mi>&beta;</mi><mn>1</mn></msub></mrow>
+          </munder>
+          <munder>
+            <mo movablelimits="false">&sum;</mo>
+            <mi>i</mi>
+          </munder>
+          <msup>
+            <mrow><mo>(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>&minus;</mo><msub><mi>&beta;</mi><mn>0</mn></msub><mo>&minus;</mo><msub><mi>&beta;</mi><mn>1</mn></msub><msub><mi>x</mi><mi>i</mi></msub><mo>)</mo></mrow>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <mi>&lambda;</mi>
+          <msubsup><mi>&beta;</mi><mn>1</mn><mn>2</mn></msubsup>
+        </mrow>
+      </math>
+    </div>
+    <p>Here <em>y</em> represents the daily averages from the previous fourteen days and <em>x</em> the day they were measured. The final term, λβ₁², is what distinguishes ridge regression from ordinary least squares. It discourages steep slopes that are only weakly supported by the data, reducing overreaction to short-term fluctuations. The app uses λ = 1 with time measured in days.</p>
+    <p>The result is intentionally conservative. The trend is not designed to react to every measurement. It is designed to react when the evidence supports a genuine change.</p>
+
+    <h2>Why fourteen days?</h2>
+    <p>Window length is a similar compromise. Short windows respond quickly, but much of what they respond to is noise. Long windows are steadier, but increasingly describe where your weight was rather than where it is now: a trailing window takes roughly its own length to fully reflect a genuine change.</p>
+    <p>In the same test, forecast accuracy improved rapidly up to about ten days, then showed diminishing returns. Longer windows became slightly steadier, but increasingly lagged behind genuine changes because they relied on older measurements. Fourteen days was the shortest window that captured nearly all of the improvement in forecast accuracy while remaining responsive to genuine changes.</p>
+    <p>That is the window Steady Scale uses.</p>
+
+    <h2>How accurate is it?</h2>
+    <p>Understanding the accuracy of the model helps put its estimates into context.</p>
+    <p>Because the forecast predicts the trend rather than an individual weigh-in, we evaluated it against the trend itself. We repeatedly asked the model where it expected the trend to be several days later, then compared each prediction with the trend calculated after those measurements became available. We tested the model on both real and simulated data covering weight loss, weight gain, maintenance, and datasets with plateaus and different day-to-day variability. Typical forecasting error was <strong>0.2 to 0.5&nbsp;lb</strong> one day ahead, <strong>0.5 to 1.2&nbsp;lb</strong> three days ahead, and <strong>1.1 to 2.8&nbsp;lb</strong> seven days ahead.</p>
+    <p>A seven-day forecast is best thought of as a preview based on your current trajectory, not a prediction set in stone. A lot can change over the course of a week. As new measurements arrive, the forecast updates and its uncertainty narrows. When projecting just one day into the future, the underlying trend can typically be estimated within a few tenths of a pound. This is significant considering that normal day-to-day fluctuations in body weight are often much larger.</p>
+    <p>These results also define the limits of the model. The forecast estimates where your trend is heading, not what the scale will read tomorrow morning. And it cannot anticipate changes that have not happened yet. If your eating, activity, or routine changes, the estimate changes with it. A forecast that never moved would look more certain, but it would be less honest.</p>
+    <p>The same uncertainty applies to long-term projections. Rather than presenting a single confident goal date, the app shows a range that widens over time, reflecting the growing uncertainty of longer forecasts.</p>
+
+  </article>
+
+  <section class="citations">
+    <h2>References</h2>
+    <ol>
+      <li id="ref1">VanWormer JJ, French SA, Pereira MA, Welsh EM. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2588640/" target="_blank" rel="noopener">The impact of regular self-weighing on weight management: a systematic literature review</a>. <em>International Journal of Behavioral Nutrition and Physical Activity</em>, 2008.</li>
+      <li id="ref2">Steinberg DM, Bennett GG, Askew S, Tate DF. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4380831/" target="_blank" rel="noopener">Weighing everyday matters: daily weighing improves weight loss and adoption of weight control behaviors</a>. <em>Journal of the Academy of Nutrition and Dietetics</em>, 2015.</li>
+      <li id="ref3">Vuorinen A-L, Helander E, Pietil&auml; J, Korhonen I. <a href="https://pubmed.ncbi.nlm.nih.gov/34075879/" target="_blank" rel="noopener">Frequency of Self-Weighing and Weight Change: Cohort Study With 10,000 Smart Scale Users</a>. <em>Journal of Medical Internet Research</em>, 2021.</li>
+      <li id="ref4">Butryn ML, Phelan S, Hill JO, Wing RR. <a href="https://pubmed.ncbi.nlm.nih.gov/18198319/" target="_blank" rel="noopener">Consistent self-monitoring of weight: a key component of successful weight loss maintenance</a>. <em>Obesity (Silver Spring)</em>, 2007.</li>
+      <li id="ref5">Benn Y, Webb TL, Chang BPI, Harkin B. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4917920/" target="_blank" rel="noopener">What is the psychological impact of self-weighing? A meta-analysis</a>. <em>Health Psychology Review</em>, 2016.</li>
+      <li id="ref6">Bhutani S, Kahn E, Tasali E, Schoeller DA. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5506524/" target="_blank" rel="noopener">Composition of two-week change in body weight under unrestricted free-living conditions</a>. <em>Physiological Reports</em>, 2017.</li>
+      <li id="ref7">Hoerl AE, Kennard RW. <a href="https://doi.org/10.1080/00401706.1970.10488634" target="_blank" rel="noopener">Ridge regression: biased estimation for nonorthogonal problems</a>. <em>Technometrics</em>, 1970.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <nav class="footer-nav" aria-label="Secondary">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/licenses.html">Open-source licenses</a>
+  </nav>
+  <div class="footer-meta">
+    &copy; 2026 Steady Scale Inc., Canada
+  </div>
+</footer>
+
+</body>
+</html>
