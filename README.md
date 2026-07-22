@@ -9,19 +9,26 @@ Hosted on GitHub Pages from this repo. `CNAME` routes the `steadyscale.app` apex
 | File | Purpose |
 |---|---|
 | `index.html` | Landing — tour intro + 10-screen scroll-snap carousel of app screenshots + pricing section + "Your data" privacy posture |
+| `how-it-works.html` | How it works — the method (daily averaging, the 14-day trend, plan target vs forecast, projection + uncertainty cone) |
+| `science.html` | The science — research + statistical model behind the app, cited, with author bylines |
+| `guide.html` | Quick guide — product + domain Q&A / help (`FAQPage` schema on the question-framed entries) |
+| `about.html` | About — founder bios (a physicist + a kinesiologist), headshots + LinkedIn / Scholar |
+| `news.html` | News — press + launches (OBJ press card + Peerlist / Product Hunt / App Store badges) |
 | `support.html` | Contact page — email link + copy-to-clipboard button |
 | `privacy.html` | Privacy Policy (generated from `legal/PrivacyPolicy.md` in the app repo) |
 | `terms.html` | Terms of Service (generated from `legal/TermsOfService.md` in the app repo) |
 | `licenses.html` | Open-source license acknowledgments |
 | `favicon.svg`, `og-image.png` | Brand assets |
-| `sitemap.xml`, `robots.txt`, `CNAME` | Hosting + SEO config |
+| `llms.txt`, `sitemap.xml`, `robots.txt`, `CNAME` | Hosting + SEO / AI config |
 
-Top nav across every page: brand · Home · Support.
+Top nav across every page: brand · Home · How it works · Science · Quick guide · News · About · Contact us.
 Footer across every page: Privacy · Terms · Licenses · `© 2026 Steady Scale Inc., Canada`.
 
 ## Source of truth for copy
 
-Site copy lives in [`Strings.md`](Strings.md) — edit there first, then mirror into the rendered HTML.
+The shipped source of truth is the live HTML. Structured English copy records: the homepage **"A quick tour" carousel** → [`Strings.md`](Strings.md); the **content pages** (How it works, Science, Quick guide, About) → Markdown drafts in the **app repo** at `~/Code/SteadyScale/marketing/website/` (`how-it-works.md`, `science.md`, `guide.md`, `about.md`), which carry the copy + design rationale. Those pages are live, so edit the md draft and re-port to the HTML here on change (no Markdown→HTML builder for content pages yet). Legal pages (Privacy, Terms) are generated from the app repo's `legal/*.md` via `_scripts/build_legal.py`; other homepage sections + Support are authored directly in the HTML.
+
+**Localization** (site is English-only today): see [`Strings.md`](Strings.md) → "Localization" for the translation plan — per-locale pages + `hreflang` + per-locale sitemap, generated from one template.
 
 Legal copy lives in `legal/PrivacyPolicy.md` and `legal/TermsOfService.md` in the app repo (`~/Code/SteadyScale/`). To update them on the site, edit the markdown there, then re-run `_scripts/build_legal.py` from this repo root.
 
@@ -63,7 +70,7 @@ Edit any HTML file directly. Push to `main` and GitHub Pages rebuilds within ~1 
 When updating shared values:
 
 - Design tokens live in each page's `:root` block — keep them in sync.
-- Nav and footer markup is duplicated across all five HTML pages — update all of them.
+- Nav and footer markup is duplicated across all ten HTML pages — update all of them.
 
 ## Contact
 
