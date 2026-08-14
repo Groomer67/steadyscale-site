@@ -30,22 +30,56 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://steadyscale.app/#organization",
+  "name": "Steady Scale Inc.",
+  "alternateName": "Steady Scale",
+  "description": "Steady Scale Inc. is an Ottawa-based software company. It builds Steady Scale, a privacy-first iPhone app that applies statistical trend analysis to daily weigh-ins so people can see whether their weight is actually changing.",
+  "url": "https://steadyscale.app/",
+  "logo": "https://steadyscale.app/og-image.png",
+  "email": "support@steadyscale.app",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ottawa",
+    "addressRegion": "Ontario",
+    "addressCountry": "CA"
+  },
+  "subjectOf": {
+    "@type": "NewsArticle",
+    "@id": "https://obj.ca/frustrated-weight-management-apps-couple-scientific-alt/",
+    "headline": "Frustrated with weight management apps, couple builds ‘scientific’ alternative",
+    "url": "https://obj.ca/frustrated-weight-management-apps-couple-scientific-alt/",
+    "datePublished": "2026-07-17",
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "name": "Ottawa Business Journal",
+      "url": "https://obj.ca/"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": "https://steadyscale.app/#app",
   "name": "Steady Scale",
   "description": "A privacy-first iPhone weight tracker that uses statistical trend analysis to separate the underlying trend from day-to-day fluctuations, helping people understand whether their weight is really changing rather than reacting to daily noise. No accounts, no ads, no gamification; supports weight loss, gain, and maintenance.",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "iOS 17 or later",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Steady Scale Inc.",
-    "address": "Ottawa, Ontario, Canada"
-  },
+  "publisher": { "@id": "https://steadyscale.app/#organization" },
   "offers": [
     { "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "name": "Monthly" },
     { "@type": "Offer", "price": "14.99", "priceCurrency": "USD", "name": "Annual" }
   ],
   "url": "https://steadyscale.app/",
-  "downloadUrl": "https://apps.apple.com/us/app/steady-scale/id6775728814"
+  "downloadUrl": "https://apps.apple.com/us/app/steady-scale-weight-tracker/id6775728814",
+  "sameAs": [
+    "https://apps.apple.com/us/app/steady-scale-weight-tracker/id6775728814",
+    "https://www.producthunt.com/products/steady-scale",
+    "https://peerlist.io/groomeryan/project/steady-scale"
+  ]
 }
 </script>
 
@@ -53,10 +87,12 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://steadyscale.app/#website",
   "name": "Steady Scale",
   "url": "https://steadyscale.app/",
   "description": "Steady Scale is a privacy-first iPhone weight-tracking app that uses statistical trend analysis to help people understand the direction of their weight instead of reacting to daily fluctuations.",
-  "publisher": { "@type": "Organization", "name": "Steady Scale Inc." }
+  "publisher": { "@id": "https://steadyscale.app/#organization" },
+  "about": { "@id": "https://steadyscale.app/#app" }
 }
 </script>
 
@@ -570,7 +606,7 @@ main { padding-bottom: 0; }
   <div class="pricing-inner">
     <h2 id="cta-title">Download Steady Scale today</h2>
     <p class="cta-sub">Free for 7 days, then $1.99/month or $14.99/year. Cancel any time.</p>
-    <a class="appstore-badge" href="https://apps.apple.com/us/app/steady-scale/id6775728814" aria-label="Download Steady Scale on the App Store">
+    <a class="appstore-badge" href="https://apps.apple.com/us/app/steady-scale-weight-tracker/id6775728814" aria-label="Download Steady Scale on the App Store">
       <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C40.5 141.5-.9 184.8-.9 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
       <span class="as-text"><span class="as-sub">Download on the</span><span class="as-name">App Store</span></span>
     </a>
