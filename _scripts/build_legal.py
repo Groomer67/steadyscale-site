@@ -299,7 +299,7 @@ def main() -> None:
         html_path=SITE / "terms.html",
         slug="terms",
         title="Terms of Service — Steady Scale",
-        meta_desc="Terms of Service for the Steady Scale iOS app and steadyscale.app website. Subscription, trial, refunds, disclaimers, and governing law.",
+        meta_desc="Terms of Service for the Steady Scale app for iOS and Android, and the steadyscale.app website. Subscription, trial, refunds, disclaimers, and governing law.",
         og_desc="Terms of Service for Steady Scale. Subscription, trial, disclaimers, and governing law.",
     )
 

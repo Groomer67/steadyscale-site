@@ -62,14 +62,14 @@ a:hover { text-decoration: underline; }
 .nav-wm { font-size: 17px; letter-spacing: -0.4px; text-transform: lowercase; }
 .nav-wm .w-steady { font-weight: 700; color: var(--blue); }
 .nav-wm .w-scale  { font-weight: 400; color: var(--text); margin-left: 0.15em; }
-.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
 .nav-links a { font-size: 13px; font-weight: 500; color: var(--secondary); text-decoration: none; }
 .nav-links a:hover { color: var(--blue); text-decoration: none; }
 
-.container { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+.container { max-width: 720px; margin: 0 auto; padding: 56px 24px 64px; }
 
 /* Legal document typography */
-.legal-doc h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; color: var(--text); }
+.legal-doc h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; color: var(--text); }
 .legal-doc .doc-meta { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
 .legal-doc .doc-meta strong { color: var(--secondary); font-weight: 600; }
 .legal-doc h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.25px; margin-top: 44px; margin-bottom: 14px; color: var(--text); line-height: 1.25; }
@@ -129,7 +129,7 @@ a:hover { text-decoration: underline; }
   font-style: italic;
 }
 
-.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); border-image: linear-gradient(to right, transparent, var(--border) 25%, var(--border) 75%, transparent) 1; }
+.footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); }
 .footer-nav { display: flex; justify-content: center; gap: 6px 22px; flex-wrap: wrap; margin-bottom: 20px; }
 .footer-nav a { font-size: 13px; color: var(--secondary); text-decoration: none; transition: color 0.15s; }
 .footer-nav a:hover { color: var(--blue); }
@@ -137,7 +137,7 @@ a:hover { text-decoration: underline; }
 
 @media (max-width: 640px) {
   .container { padding: 40px 20px 48px; }
-  .legal-doc h1 { font-size: 32px; }
+  .legal-doc h1 { font-size: 28px; }
   .legal-doc h2 { font-size: 19px; margin-top: 36px; }
   .legal-doc h3 { font-size: 16px; }
   .legal-doc table { font-size: 13px; }
@@ -162,20 +162,15 @@ a:hover { text-decoration: underline; }
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="/">Home</a>
-      <a href="/how-it-works">How it works</a>
-      <a href="/science">Science</a>
-      <a href="/guide">Quick guide</a>
-      <a href="/news">News</a>
-      <a href="/about">About</a>
-      <a href="/support">Contact us</a>
+      <a href="/support.html">Support</a>
     </nav>
   </div>
 </header>
 
 <main id="main" class="container legal-doc">
 <h1>Privacy Policy</h1>
-<div class="doc-meta"><strong>Effective date:</strong> May 30, 2026 &middot; <strong>Last updated:</strong> June 7, 2026</div>
-<p>This Privacy Policy describes how <strong>Steady Scale Inc.</strong> ("<strong>Steady Scale</strong>," "<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>") collects, uses, discloses, and protects information in connection with the Steady Scale mobile application for iOS (the "<strong>App</strong>"), our website at steadyscale.app (the "<strong>Site</strong>"), and any related services (collectively, the "<strong>Services</strong>").</p>
+<div class="doc-meta"><strong>Effective date:</strong> May 30, 2026 &middot; <strong>Last updated:</strong> October 28, 2026</div>
+<p>This Privacy Policy describes how <strong>Steady Scale Inc.</strong> ("<strong>Steady Scale</strong>," "<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>") collects, uses, discloses, and protects information in connection with the Steady Scale mobile application for iOS and Android (the "<strong>App</strong>"), our website at steadyscale.app (the "<strong>Site</strong>"), and any related services (collectively, the "<strong>Services</strong>").</p>
 <p>By downloading, installing, or using the Services, you ("<strong>you</strong>" or "<strong>User</strong>") acknowledge that you have read and understood this Privacy Policy. If you do not agree with this Policy, do not install or use the Services.</p>
 <hr />
 <h2>1. At a Glance</h2>
@@ -183,17 +178,17 @@ a:hover { text-decoration: underline; }
 <ul>
 <li><strong>No user accounts.</strong> You do not create an account, username, or password to use the App.</li>
 <li><strong>Local-first storage.</strong> Your weight measurements, plan history, and settings are stored on your device using an on-device database.</li>
-<li><strong>Optional iCloud backup.</strong> If enabled (the default), an encrypted copy of your data is written to your personal iCloud account under your Apple ID. We have no access to it.</li>
+<li><strong>Device backup to your own cloud account.</strong> On iOS, if iCloud backup is enabled (the default), the App writes an encrypted copy of your data to your personal iCloud account under your Apple ID. On Android, the operating system's Auto Backup feature may copy the App's data to your personal Google Account; this is performed by Android itself, not by the App. In both cases the backup resides in your own cloud account and <strong>we have no access to it</strong>.</li>
 <li><strong>No servers operated by us.</strong> We do not operate servers that receive, store, or process your weight measurements, daily averages, trends, or other health information.</li>
 <li><strong>No advertising and no sale of data.</strong> We do not display advertising in the App, we do not use advertising identifiers, and we do not sell, rent, or share your personal information for cross-context behavioural advertising.</li>
-<li><strong>Limited third parties.</strong> Apple Inc. processes your subscription purchase, the App's distribution, your optional iCloud backup, and (if you have enabled it at the operating-system level) anonymous crash diagnostics that we receive through App Store Connect. RevenueCat Inc. processes your subscription entitlement state. We do not operate, and have not integrated, any third-party crash-reporting or behavioural-analytics SDK in v1 of the App.</li>
+<li><strong>Limited third parties.</strong> Apple Inc. processes your subscription purchase, the App's distribution, your optional iCloud backup, and (if you have enabled it at the operating-system level) anonymous crash diagnostics that we receive through App Store Connect. Google LLC performs the equivalent functions for the Android version of the App: distribution through Google Play, processing of subscription purchases, operating-system-level Auto Backup to your Google Account, and (where applicable) aggregated crash and performance reporting through Play Console. RevenueCat Inc. processes your subscription entitlement state. We do not operate, and have not integrated, any third-party crash-reporting or behavioural-analytics SDK in v1 of the App.</li>
 </ul>
 <p>This summary is provided for convenience and is qualified in its entirety by the remainder of this Policy.</p>
 <hr />
 <h2>2. Definitions</h2>
 <p>In this Policy, the following capitalized terms have the meanings set out below:</p>
 <ul>
-<li><strong>"App"</strong> means the Steady Scale mobile application for iOS published by Steady Scale Inc.</li>
+<li><strong>"App"</strong> means the Steady Scale mobile application published by Steady Scale Inc. for iOS (distributed through the App Store) and for Android (distributed through Google Play).</li>
 <li><strong>"Personal Information"</strong> means information about an identifiable individual, or information that can be used, alone or in combination with other information, to identify an individual. The meaning of Personal Information includes "personal data" as that term is used under the General Data Protection Regulation (EU) 2016/679 ("<strong>GDPR</strong>"), the United Kingdom General Data Protection Regulation ("<strong>UK GDPR</strong>"), and equivalent legislation, and "personal information" as defined under the <em>Personal Information Protection and Electronic Documents Act</em> (Canada) ("<strong>PIPEDA</strong>"), the <em>California Consumer Privacy Act</em> as amended by the <em>California Privacy Rights Act</em> ("<strong>CCPA/CPRA</strong>"), Quebec's <em>Act Respecting the Protection of Personal Information in the Private Sector</em> ("<strong>Quebec Law 25</strong>"), and other applicable privacy laws.</li>
 <li><strong>"Services"</strong> has the meaning given in the preamble above.</li>
 <li><strong>"Site"</strong> means the website at https://steadyscale.app and any subdomains operated by Steady Scale Inc.</li>
@@ -230,7 +225,9 @@ Email: support@steadyscale.app</p>
 <ul>
 <li><strong>Apple App Store and StoreKit.</strong> Apple Inc. processes the purchase of the App and any in-App subscription. Apple provides us with anonymous, aggregated reporting (downloads, retention metrics, subscription events) through App Store Connect. We do not receive your name, Apple ID, payment information, or precise location from Apple.</li>
 <li><strong>iCloud (Apple).</strong> If iCloud backup is enabled on your device, the App writes a backup of your local database to the iCloud Documents container associated with your Apple ID. This backup is stored under your Apple ID and is governed by Apple's iCloud terms and privacy policies. We do not have access to it.</li>
-<li><strong>RevenueCat (RevenueCat, Inc.).</strong> RevenueCat is our subscription infrastructure provider. RevenueCat receives a randomly generated anonymous identifier (an "App User ID"), the validated subscription receipt issued by Apple, and standard technical metadata collected by its software development kit — including a device-scoped vendor identifier (the iOS "identifier for vendor," or IDFV), the App version, the operating-system version, and your country or region. RevenueCat uses this information to validate your subscription, determine whether you have an active entitlement, and detect and prevent fraud. It is used only to operate and secure the subscription service and is <strong>not</strong> used for advertising. RevenueCat does not receive your weight measurements, health information, name, email address, or Apple ID.</li>
+<li><strong>Google Play and Google Play Billing (Google LLC).</strong> For the Android version of the App, Google processes the download of the App and any in-App subscription. Google provides us with anonymous, aggregated reporting (installs, retention metrics, subscription events, and crash and performance statistics) through Play Console. We do not receive your name, Google Account credentials, payment information, or precise location from Google.</li>
+<li><strong>Android Auto Backup (Google).</strong> On Android, the operating system's Auto Backup feature may copy the App's data directory — which contains the local database described in Section 4.1 — to your personal Google Account. This differs from the iOS backup described above in a way worth stating plainly: <strong>the backup is performed by the Android operating system, not by the App.</strong> We do not write it, we do not schedule it, we have no programmatic way to read it, and we have no way to determine whether you have Auto Backup enabled. It is governed by your agreement with Google and by your Android system settings, and it is <strong>not transmitted to or accessible by Steady Scale Inc.</strong> You can enable or disable Auto Backup for the App in your Android system settings; the App provides no control over it.</li>
+<li><strong>RevenueCat (RevenueCat, Inc.).</strong> RevenueCat is our subscription infrastructure provider. RevenueCat receives a randomly generated anonymous identifier (an "App User ID"), the validated subscription receipt issued by the applicable app store, and standard technical metadata collected by its software development kit — including the App version, the operating-system version, and your country or region. <strong>On iOS, that metadata also includes a device-scoped vendor identifier (the "identifier for vendor," or IDFV). On Android, no device identifier is collected:</strong> RevenueCat's Android SDK collects an advertising identifier or Android ID only where a developer enables an integration that requires one, and we have enabled no such integration. RevenueCat uses this information to validate your subscription, determine whether you have an active entitlement, and detect and prevent fraud. It is used only to operate and secure the subscription service and is <strong>not</strong> used for advertising. RevenueCat does not receive your weight measurements, health information, name, email address, Apple ID, or Google Account.</li>
 <li><strong>Apple App Store Connect crash diagnostics.</strong> Apple's iOS operating system includes a system-level setting at <strong>Settings → Privacy &amp; Security → Analytics &amp; Improvements → Share With App Developers</strong>. If you have enabled this setting on your device, Apple shares anonymous, aggregated crash reports and performance metrics with us through App Store Connect, including information such as a stack trace, the App version, the iOS version, and the device model. <strong>No weight measurements, plan information, notes, or other health information are included in these crash reports.</strong> This setting is controlled at the iOS level and is independent of the App; it is off by default unless you have previously opted in. Steady Scale does not operate a separate crash-reporting SDK in v1 of the App, and we do not transmit crash data to any third party other than Apple.</li>
 </ul>
 <h3>4.4 Information We Do Not Collect</h3>
@@ -239,12 +236,12 @@ Email: support@steadyscale.app</p>
 <li>Require you to create an account, register, or provide an email address, name, date of birth, or password to use the App;</li>
 <li>Operate servers that store your weight measurements, daily averages, trend lines, forecasts, or other computed health metrics;</li>
 <li>Use third-party behavioural analytics software development kits (SDKs) or third-party crash-reporting SDKs in v1 of the App;</li>
-<li>Collect or use advertising identifiers (IDFA or IDFV) for advertising purposes;</li>
+<li>Collect or use advertising identifiers — Apple's Identifier for Advertisers (IDFA) or Identifier for Vendors (IDFV), or the Android Advertising ID — for advertising purposes;</li>
 <li>Display third-party advertising in the App;</li>
 <li>Sell, rent, lease, or trade your Personal Information for monetary or other valuable consideration;</li>
 <li>Share your Personal Information with third parties for those third parties' direct marketing purposes;</li>
 <li>Collect precise geolocation information from your device;</li>
-<li>Access your iOS Health (HealthKit) data, Photos, Contacts, Microphone, or Camera.</li>
+<li>Access your platform health data (Apple HealthKit on iOS, or Health Connect on Android), or your Photos, Contacts, Microphone, or Camera. The App requests no such permission on either platform; on Android the only permission it declares is network access (<code>INTERNET</code>).</li>
 </ul>
 <p>If we change any of the foregoing in a future version of the App, we will update this Policy in accordance with Section 13 and, where required by law, obtain your consent.</p>
 <h3>4.5 The Site (steadyscale.app)</h3>
@@ -269,8 +266,8 @@ Email: support@steadyscale.app</p>
 <td>Subscription receipt and App User ID (Section 4.3)</td>
 </tr>
 <tr>
-<td>To restore your data on a new device or after reinstalling the App, at your initiation</td>
-<td>iCloud backup file (Section 4.3, Section 7)</td>
+<td>To restore your data on a new device or after reinstalling the App</td>
+<td>iCloud backup file, at your initiation (iOS); Android Auto Backup data, restored automatically by the operating system at install (Section 4.3, Section 7)</td>
 </tr>
 <tr>
 <td>To respond to your inquiries and provide customer support</td>
@@ -307,9 +304,14 @@ Email: support@steadyscale.app</p>
 <td>Subscription transaction information; backup file stored under your Apple ID; aggregated, anonymous crash diagnostics</td>
 </tr>
 <tr>
+<td>Google LLC</td>
+<td>Distribution of the App through Google Play, processing of subscription purchases, operating-system-level Auto Backup of App data to your Google Account, and provision of anonymous, aggregated crash and performance reporting through Play Console</td>
+<td>Subscription transaction information; App data copied to your Google Account by the Android operating system; aggregated, anonymous crash and performance diagnostics</td>
+</tr>
+<tr>
 <td>RevenueCat, Inc.</td>
 <td>Subscription entitlement management and fraud prevention</td>
-<td>Anonymous App User ID, Apple-issued subscription receipt, and standard SDK technical metadata (device-scoped vendor identifier (IDFV), App version, operating-system version, country/region)</td>
+<td>Anonymous App User ID, store-issued subscription receipt, and standard SDK technical metadata (App version, operating-system version, country/region; on iOS only, the device-scoped vendor identifier (IDFV) — no device identifier is collected on Android)</td>
 </tr>
 </tbody>
 </table>
@@ -320,20 +322,33 @@ Email: support@steadyscale.app</p>
 <h3>6.4 No Sale or Sharing of Personal Information</h3>
 <p>We do not "sell" Personal Information, and we do not "share" Personal Information for cross-context behavioural advertising, in each case as those terms are defined under the CCPA/CPRA, Quebec Law 25, or other applicable laws. We have not done so in the 12 months preceding the effective date of this Policy.</p>
 <hr />
-<h2>7. iCloud Backup</h2>
+<h2>7. Device Backup</h2>
+<p>The App can be backed up to your own personal cloud account. <strong>The mechanism differs by platform, and so does the degree of control the App gives you.</strong> In both cases, the backup resides in your own account and is <strong>not transmitted to or accessible by Steady Scale Inc.</strong></p>
+<h3>7.1 iCloud Backup (iOS)</h3>
 <p>When iCloud backup is enabled (the default), the App writes a copy of your local database — including your measurements, plans, quality flag records, and global configuration — to the iCloud Documents ubiquity container associated with your Apple ID. The backup is stored in your personal iCloud account.</p>
 <ul>
 <li>The backup is <strong>not transmitted to or accessible by Steady Scale Inc.</strong> It is stored, encrypted in transit and at rest, by Apple under the terms of your iCloud agreement with Apple.</li>
 <li>The backup is intended for <strong>single-device recovery</strong> (for example, restoring your data after reinstalling the App or moving to a new device). The App does not currently provide real-time multi-device synchronization.</li>
-<li>You can disable iCloud backup at any time in <strong>Settings → Backup &amp; Export</strong>. After you disable backup, the App will stop writing new backup data. Any existing backup file remains in iCloud until you delete it through <strong>iOS Settings → [your name] → iCloud → Manage Account Storage</strong>, or by deleting the App from devices signed in to your Apple ID.</li>
+<li>You can disable iCloud backup at any time in <strong>Settings → Backup</strong>. After you disable backup, the App will stop writing new backup data. Any existing backup file remains in iCloud until you delete it through <strong>iOS Settings → [your name] → iCloud → Manage Account Storage</strong>, or by deleting the App from devices signed in to your Apple ID.</li>
 </ul>
 <p>Your use of iCloud is governed by Apple's terms of service and privacy policy, which are independent of this Policy and over which we have no control.</p>
+<h3>7.2 Android Auto Backup (Android)</h3>
+<p>On Android, backup is handled by <strong>the operating system rather than by the App</strong>. Where Auto Backup is enabled on your device, Android may copy the App's data directory — which contains the same local database — to your personal Google Account.</p>
+<ul>
+<li><strong>We do not perform this backup.</strong> The App does not write it, schedule it, or receive confirmation that it has occurred, and it is <strong>not transmitted to or accessible by Steady Scale Inc.</strong> It is stored by Google under the terms of your Google Account agreement.</li>
+<li><strong>Android controls when it runs.</strong> Auto Backup is performed periodically by the operating system, typically no more than once per day and generally only when the device is idle, charging, and connected to an unmetered network. A backup may therefore be substantially less current than the data on your device.</li>
+<li><strong>The App provides no backup controls on Android, and cannot report their state.</strong> There is no in-App toggle, no "back up now" action, and no last-backup timestamp, because Android exposes no interface for the App to offer them. The App also has <strong>no way to determine whether you have Auto Backup enabled</strong>, so it does not claim that a backup exists.</li>
+<li><strong>You control it in your Android system settings</strong>, where you can turn device backup on or off and delete existing backup data from your Google Account. The controls Android offers, and whether they can be applied to an individual app, vary by Android version and device manufacturer.</li>
+<li><strong>Export remains the path you control directly.</strong> Because the App cannot observe or trigger Auto Backup, the <strong>Export</strong> function in <strong>Settings → Manage data</strong> is the method by which you can obtain a copy of your data on demand, independent of any platform backup.</li>
+</ul>
+<p>Your use of Android Auto Backup is governed by Google's terms of service and privacy policy, which are independent of this Policy and over which we have no control.</p>
 <hr />
 <h2>8. Data Retention</h2>
-<p>Because your measurements, plans, and configuration are stored on your device (and, if you have enabled it, in your iCloud account), <strong>you control the retention period</strong>.</p>
+<p>Because your measurements, plans, and configuration are stored on your device (and, where a platform backup is enabled, in your own iCloud or Google Account), <strong>you control the retention period</strong>.</p>
 <ul>
 <li><strong>Local data</strong> persists on your device until you delete individual records within the App, reset the App from within Settings, or uninstall the App. Uninstalling the App removes all locally stored information immediately.</li>
-<li><strong>iCloud backup files</strong> persist in your iCloud account until you remove them through iOS Settings or until your Apple ID is deactivated, in accordance with Apple's terms.</li>
+<li><strong>iCloud backup files</strong> (iOS) persist in your iCloud account until you remove them through iOS Settings or until your Apple ID is deactivated, in accordance with Apple's terms.</li>
+<li><strong>Android Auto Backup data</strong> persists in your Google Account in accordance with Google's terms and your Android system settings. Because this backup is created and managed by the operating system rather than by the App (Section 7.2), it is deleted through your Android system settings or your Google Account, not from within the App.</li>
 <li><strong>Support correspondence</strong> (Section 4.2) is retained for <strong>twenty-four (24) months</strong> following the resolution of your inquiry, after which it is deleted or de-identified. We may retain correspondence for a longer period only where required to comply with legal obligations, to defend or pursue a legal claim, or to maintain accounting and tax records as required by applicable law.</li>
 <li><strong>Subscription transaction records</strong> (Section 4.3) — including the association between the anonymous App User ID and your subscription entitlement state — are held by our subscription processor, RevenueCat, for so long as your Subscription remains active and thereafter in accordance with RevenueCat's data-retention practices. Because no account links these records to your identity, they remain associated only with the anonymous App User ID. You may request deletion of these records at any time by contacting us as described in Section 11, and we will direct their deletion from our RevenueCat records, subject to any retention required to comply with legal, accounting, or tax obligations. We may retain anonymized, aggregated subscription statistics for longer periods for accounting and business reporting purposes.</li>
 <li><strong>Aggregated, anonymous crash diagnostics</strong> that you have elected to share with developers through your iOS device settings (Section 4.3) are retained by Apple in accordance with Apple's retention practices for App Store Connect data, over which we have no control. We retain only aggregated diagnostic summaries derived from this information for as long as is reasonably necessary for product debugging and quality improvement, and not longer than twenty-four (24) months.</li>
@@ -342,15 +357,15 @@ Email: support@steadyscale.app</p>
 <h2>9. Data Security</h2>
 <p>We have implemented technical and organizational measures designed to protect the limited information we process against unauthorized access, alteration, disclosure, or destruction. These include:</p>
 <ul>
-<li><strong>Local storage with no off-device transmission of health data.</strong> Your measurements and plans are stored only in the App's local database and (if enabled) your iCloud backup.</li>
-<li><strong>Apple-managed transport and at-rest encryption</strong> for any information that traverses Apple's infrastructure (App Store purchases, iCloud backup).</li>
+<li><strong>Local storage with no off-device transmission of health data.</strong> Your measurements and plans are stored only in the App's local database and, where a platform backup is enabled, in your own iCloud account or Google Account.</li>
+<li><strong>Platform-managed transport and at-rest encryption</strong> for any information that traverses Apple's or Google's infrastructure (App Store or Google Play purchases, iCloud backup, Android Auto Backup).</li>
 <li><strong>No collection of authentication credentials</strong>, because the App requires no account.</li>
 <li><strong>Restricted access</strong> to support correspondence and aggregated reporting, limited to personnel who have a legitimate need.</li>
 </ul>
-<p>No method of electronic storage or transmission is one hundred percent secure. While we strive to use commercially reasonable measures to protect your information, we cannot guarantee its absolute security. You are responsible for safeguarding your device, your device passcode, your Apple ID credentials, and any backups you create.</p>
+<p>No method of electronic storage or transmission is one hundred percent secure. While we strive to use commercially reasonable measures to protect your information, we cannot guarantee its absolute security. You are responsible for safeguarding your device, your device passcode, your Apple ID or Google Account credentials, and any backups you create.</p>
 <hr />
 <h2>10. International Data Transfers</h2>
-<p>Steady Scale Inc. is located in Canada. Apple's iCloud, App Store, and App Store Connect infrastructure and RevenueCat's infrastructure may be located in the United States, the European Union, or other jurisdictions. If you access the Services from outside Canada, your information may be processed in Canada and in other jurisdictions whose data protection laws may differ from those of your country.</p>
+<p>Steady Scale Inc. is located in Canada. Apple's iCloud, App Store, and App Store Connect infrastructure, Google's Google Play, Play Console, and Google Account backup infrastructure, and RevenueCat's infrastructure may be located in the United States, the European Union, or other jurisdictions. If you access the Services from outside Canada, your information may be processed in Canada and in other jurisdictions whose data protection laws may differ from those of your country.</p>
 <p>Where required by applicable law (including the GDPR, the UK GDPR, Quebec Law 25, and PIPEDA), we and our service providers rely on legally recognized transfer mechanisms, including the European Commission's Standard Contractual Clauses and equivalent UK and Canadian frameworks.</p>
 <p>By using the Services, you acknowledge that your information may be processed in jurisdictions other than the one in which you reside, in accordance with applicable law.</p>
 <hr />
@@ -358,10 +373,10 @@ Email: support@steadyscale.app</p>
 <p>Subject to applicable law and verification of your identity, you have the rights set out in this Section. To exercise any of these rights, contact us at <strong>support@steadyscale.app</strong> with the subject line "<strong>Privacy Request</strong>" and identify the right you wish to exercise. We will respond within the timeframes required by applicable law.</p>
 <h3>11.1 Rights Available to All Users</h3>
 <ul>
-<li><strong>Access and portability.</strong> You can export your full data set as a CSV file at any time, directly from <strong>Settings → Backup &amp; Export</strong> within the App. The export contains the complete record of your measurements and configuration as stored on your device. No request to us is required.</li>
+<li><strong>Access and portability.</strong> You can export your full data set as a CSV file at any time, directly from <strong>Settings → Manage data</strong> within the App. The export contains the complete record of your measurements and configuration as stored on your device. No request to us is required.</li>
 <li><strong>Correction.</strong> You can edit any measurement within the App and update your settings at any time.</li>
-<li><strong>Deletion.</strong> You can delete individual measurements within the App or remove all locally stored data by uninstalling the App. iCloud backups can be deleted through iOS Settings as described in Section 7.</li>
-<li><strong>Withdrawal of consent.</strong> Where Apple's iOS-level developer analytics sharing setting is the basis on which crash diagnostics are made available to us (Section 4.3), you may withdraw consent at any time by turning off <strong>Settings → Privacy &amp; Security → Analytics &amp; Improvements → Share With App Developers</strong> on your device. More generally, you may withdraw any consent you have given us at any time. Withdrawal does not affect the lawfulness of processing carried out before withdrawal.</li>
+<li><strong>Deletion.</strong> You can delete individual measurements within the App or remove all locally stored data by uninstalling the App. iCloud backups can be deleted through iOS Settings, and Android Auto Backup data through your Android system settings or Google Account, as described in Section 7.</li>
+<li><strong>Withdrawal of consent.</strong> Where a platform-level diagnostics-sharing setting — Apple's iOS developer analytics sharing setting, or the equivalent Android usage-and-diagnostics setting — is the basis on which crash diagnostics are made available to us (Section 4.3), you may withdraw consent at any time by turning off <strong>Settings → Privacy &amp; Security → Analytics &amp; Improvements → Share With App Developers</strong> on your device. More generally, you may withdraw any consent you have given us at any time. Withdrawal does not affect the lawfulness of processing carried out before withdrawal.</li>
 </ul>
 <h3>11.2 Additional Rights for Residents of the European Economic Area, United Kingdom, and Switzerland</h3>
 <p>If you are located in the EEA, the UK, or Switzerland, you have the following additional rights under the GDPR or UK GDPR, as applicable, in respect of Personal Information for which we are the data controller:</p>
@@ -397,7 +412,7 @@ Email: support@steadyscale.app</p>
 <td>Performance of a contract or our legitimate interests (Article 6(1)(b) or (f) GDPR)</td>
 </tr>
 <tr>
-<td>Receiving aggregated, anonymous crash diagnostics from Apple (where you have enabled the corresponding iOS setting) to debug and improve the App</td>
+<td>Receiving aggregated, anonymous crash diagnostics from Apple or Google (where you have enabled the corresponding platform setting) to debug and improve the App</td>
 <td>Our legitimate interests in maintaining and improving the Services (Article 6(1)(f) GDPR), with your consent at the iOS level being the gating mechanism that controls whether any such data is made available to us</td>
 </tr>
 <tr>
@@ -452,9 +467,9 @@ Email: <strong>support@steadyscale.app</strong></p>
 
 <footer class="footer" role="contentinfo">
   <nav class="footer-nav" aria-label="Secondary">
-    <a href="/privacy">Privacy Policy</a>
-    <a href="/terms">Terms of Service</a>
-    <a href="/licenses">Open-source licenses</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/licenses.html">Open-source licenses</a>
   </nav>
   <div class="footer-meta">
     &copy; 2026 Steady Scale Inc., Canada
