@@ -5,24 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta property="og:title" content="Steady Scale — A weight tracker built for you">
-<meta property="og:description" content="Steady Scale is a weight tracking app that helps you understand your weight — for losing, gaining, or simply maintaining.">
+<meta property="og:description" content="Steady Scale is a weight tracking app that helps you understand your weight — for losing, gaining, or maintaining. Private, on iPhone and Android, $1.99/month.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://steadyscale.app/">
 <meta property="og:site_name" content="Steady Scale">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://steadyscale.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="Steady Scale — chart showing noisy daily measurements smoothed into a clear trend line.">
+<meta property="og:image:alt" content="The Steady Scale wordmark, below the logo's trend line and endpoint dot.">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Steady Scale — A weight tracker built for you">
-<meta name="twitter:description" content="Steady Scale is a weight tracking app that helps you understand your weight — for losing, gaining, or simply maintaining.">
+<meta name="twitter:description" content="Steady Scale is a weight tracking app that helps you understand your weight — for losing, gaining, or maintaining. Private, on iPhone and Android, $1.99/month.">
 <meta name="twitter:image" content="https://steadyscale.app/og-image.png">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Steady Scale — A weight tracker built for you</title>
-<meta name="description" content="Steady Scale is a weight tracking app that helps you understand your weight — for losing, gaining, or maintaining. Private, on iPhone, $1.99/month.">
+<meta name="description" content="Steady Scale is a weight tracking app that helps you understand your weight — for losing, gaining, or maintaining. Private, on iPhone and Android, $1.99/month.">
 <meta name="theme-color" content="#2781DB">
 <link rel="canonical" href="https://steadyscale.app/">
 <link rel="stylesheet" href="/assets/site.css">
@@ -34,7 +35,7 @@
   "@id": "https://steadyscale.app/#organization",
   "name": "Steady Scale Inc.",
   "alternateName": "Steady Scale",
-  "description": "Steady Scale Inc. is an Ottawa-based software company. It builds Steady Scale, a privacy-first iPhone app that applies statistical trend analysis to daily weigh-ins so people can see whether their weight is actually changing.",
+  "description": "Steady Scale Inc. is an Ottawa-based software company. It builds Steady Scale, a privacy-first iPhone and Android app that applies statistical trend analysis to daily weigh-ins so people can see whether their weight is actually changing.",
   "url": "https://steadyscale.app/",
   "logo": "https://steadyscale.app/og-image.png",
   "email": "support@steadyscale.app",
@@ -65,18 +66,41 @@
   "@type": "SoftwareApplication",
   "@id": "https://steadyscale.app/#app",
   "name": "Steady Scale",
-  "description": "A privacy-first iPhone weight tracker that uses statistical trend analysis to separate the underlying trend from day-to-day fluctuations, helping people understand whether their weight is really changing rather than reacting to daily noise. No accounts, no ads, no gamification; supports weight loss, gain, and maintenance.",
+  "description": "A privacy-first weight tracker for iPhone and Android that uses statistical trend analysis to separate the underlying trend from day-to-day fluctuations, helping people understand whether their weight is really changing rather than reacting to daily noise. No accounts, no ads, no gamification; supports weight loss, gain, and maintenance.",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "iOS 17 or later",
+  "operatingSystem": ["iOS 15.0 or later", "Android 7.0 or later"],
+  "softwareVersion": "1.2.0",
+  "datePublished": "2026-06-30",
+  "featureList": [
+    "Averages multiple weigh-ins per day into a single daily figure",
+    "Estimates the underlying trend with a 14-day rolling Ridge regression",
+    "Weekly check-ins against a plan target that stays fixed through the week",
+    "Goal-date projection with an uncertainty range that widens further out",
+    "Loss, gain, and monitor tracking modes",
+    "Data stored on the device, with CSV export and backup restore",
+    "No account, no ads, no streaks or engagement mechanics"
+  ],
+  "screenshot": [
+    "https://steadyscale.app/assets/screenshots/cropped/06-dashboard.png",
+    "https://steadyscale.app/assets/screenshots/cropped/07-chart.png",
+    "https://steadyscale.app/assets/screenshots/cropped/08-log.png",
+    "https://steadyscale.app/assets/screenshots/cropped/03-goal-weight.png",
+    "https://steadyscale.app/assets/screenshots/cropped/04-weekly-rate.png",
+    "https://steadyscale.app/assets/screenshots/cropped/09-settings.png"
+  ],
   "publisher": { "@id": "https://steadyscale.app/#organization" },
   "offers": [
     { "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "name": "Monthly" },
     { "@type": "Offer", "price": "14.99", "priceCurrency": "USD", "name": "Annual" }
   ],
   "url": "https://steadyscale.app/",
-  "downloadUrl": "https://apps.apple.com/us/app/steady-scale-weight-tracker/id6775728814",
+  "downloadUrl": [
+    "https://apps.apple.com/us/app/steady-scale-weight-tracker/id6775728814",
+    "https://play.google.com/store/apps/details?id=app.steadyscale.steady_scale"
+  ],
   "sameAs": [
     "https://apps.apple.com/us/app/steady-scale-weight-tracker/id6775728814",
+    "https://play.google.com/store/apps/details?id=app.steadyscale.steady_scale",
     "https://www.producthunt.com/products/steady-scale",
     "https://peerlist.io/groomeryan/project/steady-scale"
   ]
@@ -90,7 +114,7 @@
   "@id": "https://steadyscale.app/#website",
   "name": "Steady Scale",
   "url": "https://steadyscale.app/",
-  "description": "Steady Scale is a privacy-first iPhone weight-tracking app that uses statistical trend analysis to help people understand the direction of their weight instead of reacting to daily fluctuations.",
+  "description": "Steady Scale is a privacy-first weight-tracking app for iPhone and Android that uses statistical trend analysis to help people understand the direction of their weight instead of reacting to daily fluctuations.",
   "publisher": { "@id": "https://steadyscale.app/#organization" },
   "about": { "@id": "https://steadyscale.app/#app" }
 }
@@ -170,7 +194,9 @@ main { padding-bottom: 0; }
 /* Shared icon grid — What it answers + Your data */
 .posture-list { margin: 0 auto; display: grid; gap: 26px 40px; text-align: left; }
 .posture-list.cols3 { max-width: 900px; grid-template-columns: repeat(3, 1fr); }
-.posture-list.cols2 { max-width: 780px; grid-template-columns: 1fr 1fr; }
+/* 860, not 780, so "iCloud on iPhone, Google on Android. Never to us." sits on
+   one line; the 640px breakpoint below still collapses this to one column. */
+.posture-list.cols2 { max-width: 860px; grid-template-columns: 1fr 1fr; }
 .posture-item { display: flex; align-items: flex-start; gap: 14px; }
 .posture-icon { flex: 0 0 40px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--surface); border-radius: 10px; color: var(--blue); }
 .posture-icon svg { width: 20px; height: 20px; }
@@ -306,27 +332,18 @@ main { padding-bottom: 0; }
 .data-head h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.12; margin-bottom: 12px; color: var(--text); }
 .data-head p { font-size: 16px; color: var(--secondary); line-height: 1.55; max-width: 560px; margin: 0 auto 40px; }
 
-/* App Store badge */
-.appstore-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  background: #000;
-  color: #FFF;
-  border-radius: 9px;
-  padding: 8px 15px;
-  text-decoration: none;
-  line-height: 1;
-  margin-top: 28px;
-  transition: transform 0.1s ease, box-shadow 0.15s ease;
-}
-.appstore-badge:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); text-decoration: none; }
-.appstore-badge:active { transform: translateY(0); }
-.appstore-badge:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
-.appstore-badge svg { width: 18px; height: 24px; flex: 0 0 auto; }
-.appstore-badge .as-text { display: flex; flex-direction: column; align-items: flex-start; }
-.appstore-badge .as-sub { font-size: 10px; font-weight: 400; letter-spacing: 0.01em; }
-.appstore-badge .as-name { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin-top: 1px; }
+/* Store badges — official Apple + Google assets, used unmodified.
+   Sized so the two VISIBLE buttons match: Google bakes its required clear space
+   into the file (564x168 of art inside 646x250), Apple does not. See
+   assets/badges/README.md before changing either number. */
+.store-badges { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 28px; }
+.store-badge { display: inline-block; line-height: 0; border-radius: 9px; transition: transform 0.1s ease, filter 0.15s ease; }
+.store-badge img { display: block; width: auto; }
+.appstore-badge img { height: 44px; margin: 0 4px; }   /* Apple's clear space is not in the file */
+.playstore-badge img { height: 65px; }                 /* 65 x 168/250 = 44 visible */
+.store-badge:hover { transform: translateY(-1px); filter: drop-shadow(0 3px 8px rgba(16, 24, 40, 0.22)); }
+.store-badge:active { transform: translateY(0); }
+.store-badge:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 
 /* Footer */
 .footer { padding: 56px 24px 40px; text-align: center; border-top: 1px solid var(--border-soft); border-image: linear-gradient(to right, transparent, var(--border) 25%, var(--border) 75%, transparent) 1; }
@@ -418,7 +435,7 @@ main { padding-bottom: 0; }
   <div class="carousel-track" aria-live="polite">
 
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 10: Welcome">
-      <div class="slide-image"><img src="/assets/screenshots/cropped/01-welcome.png" alt="Welcome screen with a small trend chart and the subtitle: Simple tracking that turns daily ups and downs into something you can trust." width="800" height="1588"></div>
+      <div class="slide-image"><img src="/assets/screenshots/cropped/01-welcome.png" alt="Welcome screen, showing scattered weigh-ins with a trend line drawn through them." width="800" height="1650"></div>
       <div class="slide-text">
         <div class="eyebrow">Welcome</div>
         <h2>A short setup</h2>
@@ -427,7 +444,7 @@ main { padding-bottom: 0; }
     </div>
 
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 10: Tracking mode">
-      <div class="slide-image"><img src="/assets/screenshots/cropped/02-tracking-mode.png" alt="Tracking mode selection: Lose weight, Gain weight, or Monitor weight." width="800" height="1588" loading="lazy"></div>
+      <div class="slide-image"><img src="/assets/screenshots/cropped/02-tracking-mode.png" alt="Tracking mode screen, offering Lose, Gain, and Monitor weight as three choices." width="800" height="1650" loading="lazy"></div>
       <div class="slide-text">
         <div class="eyebrow">Tracking mode</div>
         <h2>Loss, Gain, or Monitor</h2>
@@ -436,7 +453,7 @@ main { padding-bottom: 0; }
     </div>
 
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 10: Goal weight">
-      <div class="slide-image"><img src="/assets/screenshots/cropped/03-goal-weight.png" alt="Goal weight picker with a BMI bar and an expandable card titled What makes a good goal weight." width="800" height="1588" loading="lazy"></div>
+      <div class="slide-image"><img src="/assets/screenshots/cropped/03-goal-weight.png" alt="Goal weight screen, with a scrolling weight picker above a coloured BMI bar." width="800" height="1650" loading="lazy"></div>
       <div class="slide-text">
         <div class="eyebrow">Goal weight</div>
         <h2>A goal you could maintain</h2>
@@ -445,7 +462,7 @@ main { padding-bottom: 0; }
     </div>
 
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 10: Weekly rate">
-      <div class="slide-image"><img src="/assets/screenshots/cropped/04-weekly-rate.png" alt="Weekly rate picker with four presets (0.5, 1.0, 1.5, 2.0 lb per week) and a day-of-week check-in selector." width="800" height="1588" loading="lazy"></div>
+      <div class="slide-image"><img src="/assets/screenshots/cropped/04-weekly-rate.png" alt="Weekly rate screen, with four pace presets and a check-in day selector." width="800" height="1650" loading="lazy"></div>
       <div class="slide-text">
         <div class="eyebrow">Weekly rate</div>
         <h2>Pick a pace</h2>
@@ -454,16 +471,16 @@ main { padding-bottom: 0; }
     </div>
 
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 10: Free trial">
-      <div class="slide-image"><img src="/assets/screenshots/cropped/05-completion.png" alt="Completion screen with a checkmark, You're all set heading, and a Start 7-Day Free Trial button." width="800" height="1588" loading="lazy"></div>
+      <div class="slide-image"><img src="/assets/screenshots/cropped/05-completion.png" alt="Final setup screen, with monthly and yearly plan cards and a link to continue without subscribing." width="800" height="1650" loading="lazy"></div>
       <div class="slide-text">
         <div class="eyebrow">Free trial</div>
         <h2>Free for 7 days</h2>
-        <p>No accounts, no servers, no ads. Your data stays on your device and backs up to your iCloud. Cancel any time in iOS Settings.</p>
+        <p>Choose a monthly or yearly subscription, or try the app without subscribing. No account needed, and you can cancel any time.</p>
       </div>
     </div>
 
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="6 of 10: Dashboard">
-      <div class="slide-image"><img src="/assets/screenshots/cropped/06-dashboard.png" alt="Dashboard with three cards: Goal arrival date, This Week pace, and Today's daily average." width="800" height="1588" loading="lazy"></div>
+      <div class="slide-image"><img src="/assets/screenshots/cropped/06-dashboard.png" alt="Dashboard, with three stacked cards: goal date, this week's pace, today's average." width="800" height="1650" loading="lazy"></div>
       <div class="slide-text">
         <div class="eyebrow">Dashboard</div>
         <h2>Long term, this week, today</h2>
@@ -472,7 +489,7 @@ main { padding-bottom: 0; }
     </div>
 
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="7 of 10: Chart">
-      <div class="slide-image"><img src="/assets/screenshots/cropped/07-chart.png" alt="Chart screen showing daily measurements, a smoothed trend line, a goal projection, and check-in markers." width="800" height="1588" loading="lazy"></div>
+      <div class="slide-image"><img src="/assets/screenshots/cropped/07-chart.png" alt="Chart screen, with faint daily weigh-ins under a smooth blue trend line and a dashed projection." width="800" height="1650" loading="lazy"></div>
       <div class="slide-text">
         <div class="eyebrow">Chart</div>
         <h2>Noise into signal</h2>
@@ -481,7 +498,7 @@ main { padding-bottom: 0; }
     </div>
 
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="8 of 10: Log">
-      <div class="slide-image"><img src="/assets/screenshots/cropped/08-log.png" alt="Log screen with a weight input field, date and time rows, and a list of recent measurements." width="800" height="1588" loading="lazy"></div>
+      <div class="slide-image"><img src="/assets/screenshots/cropped/08-log.png" alt="Log screen, with a large weight field above a dated list of recent weigh-ins." width="800" height="1650" loading="lazy"></div>
       <div class="slide-text">
         <div class="eyebrow">Log</div>
         <h2>Log as often as you like</h2>
@@ -490,7 +507,7 @@ main { padding-bottom: 0; }
     </div>
 
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="9 of 10: Settings">
-      <div class="slide-image"><img src="/assets/screenshots/cropped/09-settings.png" alt="Settings screen with Profile, Plan card showing goal, rate, and check-in day, plus Edit, Pause, and Delete actions." width="800" height="1588" loading="lazy"></div>
+      <div class="slide-image"><img src="/assets/screenshots/cropped/09-settings.png" alt="Settings screen, with the current plan in one card above backup and data options." width="800" height="1650" loading="lazy"></div>
       <div class="slide-text">
         <div class="eyebrow">Settings</div>
         <h2>Plan, preferences, and backup</h2>
@@ -499,7 +516,7 @@ main { padding-bottom: 0; }
     </div>
 
     <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="10 of 10: Help">
-      <div class="slide-image"><img src="/assets/screenshots/cropped/10-help.png" alt="Help screen with How it works, Reading the chart, Choosing a goal weight, and other expandable sections." width="800" height="1588" loading="lazy"></div>
+      <div class="slide-image"><img src="/assets/screenshots/cropped/10-help.png" alt="Help screen, a list of expandable topics under headings like Using the app." width="800" height="1650" loading="lazy"></div>
       <div class="slide-text">
         <div class="eyebrow">Help</div>
         <h2>Every element explained</h2>
@@ -578,7 +595,7 @@ main { padding-bottom: 0; }
         <div class="posture-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a4 4 0 0 0 0-8 6 6 0 0 0-11.7-1.5A4.5 4.5 0 0 0 6 18z"/></svg>
         </div>
-        <div class="posture-text"><span class="posture-name">Optional iCloud backup</span>Encrypted under your Apple ID.</div>
+        <div class="posture-text"><span class="posture-name">Backup to your own account</span>iCloud on iPhone, Google on Android. Never to us.</div>
       </div>
       <div class="posture-item">
         <div class="posture-icon" aria-hidden="true">
@@ -606,10 +623,14 @@ main { padding-bottom: 0; }
   <div class="pricing-inner">
     <h2 id="cta-title">Download Steady Scale today</h2>
     <p class="cta-sub">Free for 7 days, then $1.99/month or $14.99/year. Cancel any time.</p>
-    <a class="appstore-badge" href="https://apps.apple.com/us/app/steady-scale-weight-tracker/id6775728814" aria-label="Download Steady Scale on the App Store">
-      <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C40.5 141.5-.9 184.8-.9 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-      <span class="as-text"><span class="as-sub">Download on the</span><span class="as-name">App Store</span></span>
-    </a>
+    <div class="store-badges">
+      <a class="store-badge appstore-badge" href="https://apps.apple.com/us/app/steady-scale-weight-tracker/id6775728814" target="_blank" rel="noopener">
+        <img src="/assets/badges/app-store.svg" alt="Download on the App Store" width="132" height="44">
+      </a>
+      <a class="store-badge playstore-badge" href="https://play.google.com/store/apps/details?id=app.steadyscale.steady_scale" target="_blank" rel="noopener">
+        <img src="/assets/badges/google-play.png" alt="Get it on Google Play" width="168" height="65">
+      </a>
+    </div>
   </div>
 </section>
 

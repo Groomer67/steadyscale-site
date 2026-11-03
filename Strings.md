@@ -33,7 +33,7 @@ Ten slides, in order. Each has: eyebrow · headline · body · image alt text ·
 - **Eyebrow** — Welcome
 - **Headline** — A short setup
 - **Body** — Onboarding takes about a minute. Pick how you want to track, choose a goal or reference weight, and set your weekly check-in day.
-- **Image alt** — Welcome screen with a small trend chart and the subtitle: Simple tracking that turns daily ups and downs into something you can trust.
+- **Image alt** — Welcome screen, showing scattered weigh-ins with a trend line drawn through them.
 - **Dot label** — Welcome
 - **Screenshot** — `assets/screenshots/cropped/01-welcome.png`
 
@@ -42,7 +42,7 @@ Ten slides, in order. Each has: eyebrow · headline · body · image alt text ·
 - **Eyebrow** — Tracking mode
 - **Headline** — Loss, Gain, or Monitor
 - **Body** — Pick the one that fits. The weekly trend works the same for all three — and you can switch any time without losing your history.
-- **Image alt** — Tracking mode selection: Lose weight, Gain weight, or Monitor weight.
+- **Image alt** — Tracking mode screen, offering Lose, Gain, and Monitor weight as three choices.
 - **Dot label** — Tracking mode
 - **Screenshot** — `assets/screenshots/cropped/02-tracking-mode.png`
 
@@ -51,7 +51,7 @@ Ten slides, in order. Each has: eyebrow · headline · body · image alt text ·
 - **Eyebrow** — Goal weight
 - **Headline** — A goal you could maintain
 - **Body** — Pick a weight you could see yourself maintaining, not just reaching. BMI is shown as a reference, not a prescription.
-- **Image alt** — Goal weight picker with a BMI bar and an expandable card titled What makes a good goal weight.
+- **Image alt** — Goal weight screen, with a scrolling weight picker above a coloured BMI bar.
 - **Dot label** — Goal weight
 - **Screenshot** — `assets/screenshots/cropped/03-goal-weight.png`
 
@@ -60,7 +60,7 @@ Ten slides, in order. Each has: eyebrow · headline · body · image alt text ·
 - **Eyebrow** — Weekly rate
 - **Headline** — Pick a pace
 - **Body** — Choose any rate from 0.5 to 2.0 lb per week. Your rate sets a weekly target that stays constant throughout the week and updates after each check-in day.
-- **Image alt** — Weekly rate picker with four presets (0.5, 1.0, 1.5, 2.0 lb per week) and a day-of-week check-in selector.
+- **Image alt** — Weekly rate screen, with four pace presets and a check-in day selector.
 - **Dot label** — Weekly rate
 - **Screenshot** — `assets/screenshots/cropped/04-weekly-rate.png`
 
@@ -68,8 +68,8 @@ Ten slides, in order. Each has: eyebrow · headline · body · image alt text ·
 
 - **Eyebrow** — Free trial
 - **Headline** — Free for 7 days
-- **Body** — No accounts, no servers, no ads. Your data stays on your device and backs up to your iCloud. Cancel any time in iOS Settings.
-- **Image alt** — Completion screen with a checkmark, You're all set heading, and a Start 7-Day Free Trial button.
+- **Body** — Choose a monthly or yearly subscription, or try the app without subscribing. No account needed, and you can cancel any time.
+- **Image alt** — Final setup screen, with monthly and yearly plan cards and a link to continue without subscribing.
 - **Dot label** — Free trial
 - **Screenshot** — `assets/screenshots/cropped/05-completion.png`
 
@@ -78,7 +78,7 @@ Ten slides, in order. Each has: eyebrow · headline · body · image alt text ·
 - **Eyebrow** — Dashboard
 - **Headline** — Long term, this week, today
 - **Body** — Three cards show three time horizons: where you're heading, how this week's pace compares to plan, and today's daily average.
-- **Image alt** — Dashboard with three cards: Goal arrival date, This Week pace, and Today's daily average.
+- **Image alt** — Dashboard, with three stacked cards: goal date, this week's pace, today's average.
 - **Dot label** — Dashboard
 - **Screenshot** — `assets/screenshots/cropped/06-dashboard.png`
 
@@ -87,7 +87,7 @@ Ten slides, in order. Each has: eyebrow · headline · body · image alt text ·
 - **Eyebrow** — Chart
 - **Headline** — Noise into signal
 - **Body** — The chart layers raw weigh-ins, daily averages, and a 14-day rolling trend that filters out day-to-day noise. From your trend and chosen rate, it projects forward to your goal — so you can see when you'll get there.
-- **Image alt** — Chart screen showing daily measurements, a smoothed trend line, a goal projection, and check-in markers.
+- **Image alt** — Chart screen, with faint daily weigh-ins under a smooth blue trend line and a dashed projection.
 - **Dot label** — Chart
 - **Screenshot** — `assets/screenshots/cropped/07-chart.png`
 
@@ -96,7 +96,7 @@ Ten slides, in order. Each has: eyebrow · headline · body · image alt text ·
 - **Eyebrow** — Log
 - **Headline** — Log as often as you like
 - **Body** — Weigh in once a day or multiple times a day — whatever works for you. You can edit or backfill measurements any time, and unlikely entries get flagged so a typo doesn't throw off your trend.
-- **Image alt** — Log screen with a weight input field, date and time rows, and a list of recent measurements.
+- **Image alt** — Log screen, with a large weight field above a dated list of recent weigh-ins.
 - **Dot label** — Log
 - **Screenshot** — `assets/screenshots/cropped/08-log.png`
 
@@ -105,7 +105,7 @@ Ten slides, in order. Each has: eyebrow · headline · body · image alt text ·
 - **Eyebrow** — Settings
 - **Headline** — Plan, preferences, and backup
 - **Body** — Your active plan lives in one card: edit, pause, or delete from there. Switching between Loss, Gain, and Monitor preserves your history, and deleted plans can be restored from Past plans.
-- **Image alt** — Settings screen with Profile, Plan card showing goal, rate, and check-in day, plus Edit, Pause, and Delete actions.
+- **Image alt** — Settings screen, with the current plan in one card above backup and data options.
 - **Dot label** — Settings
 - **Screenshot** — `assets/screenshots/cropped/09-settings.png`
 
@@ -114,6 +114,6 @@ Ten slides, in order. Each has: eyebrow · headline · body · image alt text ·
 - **Eyebrow** — Help
 - **Headline** — Every element explained
 - **Body** — The Help tab covers how the math works, how to read the chart, how your data is handled, and how to get in touch. Every part of the system is open.
-- **Image alt** — Help screen with How it works, Reading the chart, Choosing a goal weight, and other expandable sections.
+- **Image alt** — Help screen, a list of expandable topics under headings like Using the app.
 - **Dot label** — Help
 - **Screenshot** — `assets/screenshots/cropped/10-help.png`

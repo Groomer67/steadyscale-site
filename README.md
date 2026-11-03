@@ -45,11 +45,13 @@ No external dependencies. No analytics. No cookies.
 
 ## Assets
 
-- `assets/screenshots/raw/` — source iOS Simulator captures (status bar reset to `9:41` via `xcrun simctl status_bar booted override --time "9:41"` before capture)
-- `assets/screenshots/cropped/` — processed 800px-wide PNGs for the carousel
-- `assets/screenshots/crop.py` — rounded-rect mask + button-protrusion processor that produces the cropped versions
+- `assets/screenshots/raw/` — bare device captures, copied from the app repo's `app_store/screenshots/raw-ios/` (1320×2868). **The same captures the App Store listing is composed from**, so the carousel and the store art can never show different builds.
+- `assets/screenshots/cropped/` — processed 800×1650 PNGs for the carousel
+- `assets/screenshots/frame.py` — draws the phone body (rounded screen, bezel, side buttons) around each capture on white. Geometry is lifted from the app repo's `app_store/screenshots/compose.py` so the site's phones and the store screenshots read as one system; the store art's drop shadow is deliberately omitted, since these sit on the page's white.
 
-To replace a screenshot: drop the new capture into `raw/`, then run `python3 assets/screenshots/crop.py` to regenerate the cropped version.
+To replace the screenshots: re-capture in the app repo (`app_store/screenshots/README.md` has the procedure — canonical dataset, frozen `DevClock`, status-bar recipe), copy `raw-ios/*.png` into `raw/`, then run `python3 assets/screenshots/frame.py`. If the capture device changes, the output height changes with it — the script prints the `width`/`height` to put on the carousel's `<img>` tags.
+
+*(Until November 2026 this was `crop.py`, which masked a phone silhouette out of an iOS **Simulator** window capture that drew its own bezel. The app repo now captures bare screen content at device resolution, so the site draws the body itself.)*
 
 ## Build script
 

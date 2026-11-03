@@ -1,8 +1,8 @@
 # Steady Scale
 
-> A privacy-first iPhone weight-tracking app that uses statistical trend analysis to separate the underlying trend from day-to-day fluctuations, so people can understand whether their weight is really changing instead of reacting to daily noise. No accounts, no ads, no gamification. Supports weight loss, gain, and maintenance.
+> A privacy-first weight-tracking app for iPhone and Android that uses statistical trend analysis to separate the underlying trend from day-to-day fluctuations, so people can understand whether their weight is really changing instead of reacting to daily noise. No accounts, no ads, no gamification. Supports weight loss, gain, and maintenance.
 
-Steady Scale is designed more like a scientific measurement instrument than a social or engagement-driven app. It averages multiple weigh-ins per day and fits a 14-day rolling Ridge (L2-regularized) regression to estimate the underlying weight trend, then projects a goal date with an honest, widening uncertainty range. Data is stored on the user's device with optional private iCloud backup. It is a subscription app ($1.99/month or $14.99/year) with a 7-day free trial, iPhone-only.
+Steady Scale is designed more like a scientific measurement instrument than a social or engagement-driven app. It averages multiple weigh-ins per day and fits a 14-day rolling Ridge (L2-regularized) regression to estimate the underlying weight trend, then projects a goal date with an honest, widening uncertainty range. Data is stored on the user's device, with optional backup to the user's own iCloud on iPhone or Google Account on Android. It is a subscription app ($1.99/month or $14.99/year) with a 7-day free trial, available on the App Store and Google Play.
 
 Built in Ottawa, Canada by Ryan Groome (experimental physicist, PhD) and Eveline Soares Menezes (kinesiologist, PhD).
 
@@ -13,9 +13,26 @@ Built in Ottawa, Canada by Ryan Groome (experimental physicist, PhD) and Eveline
 - [Quick guide](https://steadyscale.app/guide): short answers — reading the chart, choosing a goal and rate, why weight fluctuates day to day, how data is handled.
 - [About](https://steadyscale.app/about): who builds Steady Scale (a physicist and a kinesiologist).
 
+## Get the app
+
+- [App Store](https://apps.apple.com/us/app/steady-scale-weight-tracker/id6775728814): iPhone, iOS 15.0 or later.
+- [Google Play](https://play.google.com/store/apps/details?id=app.steadyscale.steady_scale): Android 7.0 or later.
+
+Both listings are the same app at the same price: $1.99/month or $14.99/year after a 7-day free trial.
+
 ## Key concepts
 
 - Body weight fluctuates day to day mostly because of water, food, and digestion, not fat — most short-term change is fat-free mass.
 - A weight *trend* (rolling average) is more informative than any single daily weigh-in.
 - Steady Scale separates signal (the trend) from noise (daily fluctuation) using statistical smoothing rather than reacting to each reading.
-- Privacy-first: on-device storage, optional private iCloud backup, no accounts, no ads, no analytics, no streaks or engagement mechanics.
+- Privacy-first: on-device storage, optional backup to the user's own iCloud or Google Account, no accounts, no ads, no analytics, no streaks or engagement mechanics.
+
+## Policies and support
+
+- [Privacy policy](https://steadyscale.app/privacy): what is collected and what is not. No accounts, no servers operated by Steady Scale, no advertising or analytics SDKs.
+- [Terms of service](https://steadyscale.app/terms): subscription, trial, disclaimers, governing law.
+- [Contact](https://steadyscale.app/support): support@steadyscale.app.
+
+## Scope
+
+Steady Scale is an awareness and measurement tool, not a medical or diagnostic device. It does not diagnose, treat, or prescribe, and its trends and forecasts are statistical estimates from the weights a person enters, not personalized health advice.

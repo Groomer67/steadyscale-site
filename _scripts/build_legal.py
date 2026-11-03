@@ -22,16 +22,20 @@ TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta property="og:title" content="{title}">
-<meta property="og:description" content="{og_desc}">
+<meta property="og:description" content="{meta_desc}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://steadyscale.app/{slug}">
 <meta property="og:site_name" content="Steady Scale">
 <meta property="og:image" content="https://steadyscale.app/og-image.png">
-<meta property="og:image:alt" content="Steady Scale — chart showing noisy daily measurements smoothed into a clear trend line.">
+<meta property="og:image:alt" content="The Steady Scale wordmark, below the logo's trend line and endpoint dot.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
-<meta name="twitter:description" content="{og_desc}">
+<meta name="twitter:description" content="{meta_desc}">
 <meta name="twitter:image" content="https://steadyscale.app/og-image.png">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -179,7 +183,12 @@ a:hover {{ text-decoration: underline; }}
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="/">Home</a>
-      <a href="/support.html">Support</a>
+      <a href="/how-it-works">How it works</a>
+      <a href="/science">Science</a>
+      <a href="/guide">Quick guide</a>
+      <a href="/news">News</a>
+      <a href="/about">About</a>
+      <a href="/support">Contact us</a>
     </nav>
   </div>
 </header>
@@ -190,9 +199,9 @@ a:hover {{ text-decoration: underline; }}
 
 <footer class="footer" role="contentinfo">
   <nav class="footer-nav" aria-label="Secondary">
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms of Service</a>
-    <a href="/licenses.html">Open-source licenses</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/licenses">Open-source licenses</a>
   </nav>
   <div class="footer-meta">
     &copy; 2026 Steady Scale Inc., Canada
@@ -240,8 +249,10 @@ def convert(md_path: Path, html_path: Path, slug: str, title: str,
     )
 
     # Cross-link the two legal docs to each other.
-    html_body = html_body.replace('./PrivacyPolicy.md', '/privacy.html')
-    html_body = html_body.replace('./TermsOfService.md', '/terms.html')
+    # Extensionless, matching every other internal link on the site — a .html
+    # URL is a second, non-canonical address for the same page.
+    html_body = html_body.replace('./PrivacyPolicy.md', '/privacy')
+    html_body = html_body.replace('./TermsOfService.md', '/terms')
 
     # Preserve line breaks inside blockquotes (addresses) — markdown collapses
     # single newlines to spaces, which mashes multi-line addresses into one line.
